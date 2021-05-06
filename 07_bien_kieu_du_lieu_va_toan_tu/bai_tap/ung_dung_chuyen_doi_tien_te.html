@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ungdungchuyendoitiente</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th style="width: 100px">Amount</th>
+        <th style="width: 100px">From Currency</th>
+        <th style="width: 100px">To Currency</th>
+        <th style="width: 100px"></th>
+    </tr>
+    <tr>
+        <th style="width: 100px">
+            <input type="number" id="money">
+        </th>
+        <th>
+            <select>
+                <option value="vn">VND</option>
+            </select>
+        </th>
+        <th>
+            <select>
+                <option value="my">USD</option>
+            </select>
+        </th>
+        <th>
+            <input type="button" value="Convert" onclick="chuyendoitien()">
+        </th>
+    </tr>
+    <tr style="text-align: left">
+        <th colspan="4" id="result"></th>
+    </tr>
+</table>
+</body>
+<script>
+    function chuyendoitien() {
+        let a = parseInt(document.getElementById("money").value)
+        let b = a/23000
+        document.getElementById("result").innerText = "Result: " + b
+    }
+
+</script>
+</html>

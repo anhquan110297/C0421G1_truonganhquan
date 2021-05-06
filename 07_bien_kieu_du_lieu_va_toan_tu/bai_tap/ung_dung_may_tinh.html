@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ungdungmaytinh</title>
+</head>
+<body>
+    <div>
+        <input type="number" id="number1">
+        <input type="number" id="number2">
+    </div>
+    <div style="margin-top: 20px">
+        <button onclick="addition()">Addition(+)</button>
+        <button onclick="subtraction()">Subtraction(-)</button>
+        <button onclick="multiplication()">Multiplication(*)</button>
+        <button onclick="division()">Division(/)</button>
+    </div>
+    <div>
+        <p id="result">Result: </p>
+    </div>
+</body>
+<script>
+    function addition() {
+        let a = parseFloat(document.getElementById("number1").value)
+        let b = parseFloat(document.getElementById("number2").value)
+        let c = ( a + b )
+        document.getElementById("result").innerText = ("Result: ") + c
+    }
+    function subtraction() {
+        let a = parseFloat(document.getElementById("number1").value)
+        let b = parseFloat(document.getElementById("number2").value)
+        let c = ( a - b )
+        document.getElementById("result").innerText = ("Result: ") + c
+    }
+    function multiplication() {
+        let a = parseFloat(document.getElementById("number1").value)
+        let b = parseFloat(document.getElementById("number2").value)
+        let c = ( a * b )
+        document.getElementById("result").innerText = ("Result: ") + c
+    }
+    function division() {
+        let a = parseFloat(document.getElementById("number1").value)
+        let b = parseFloat(document.getElementById("number2").value)
+        let c = (a / b)
+        document.getElementById("result").innerText = ("Result: ") + c
+    }
+</script>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bienkieudulieuvatoantu</title>
+</head>
+
+<body>
+<input type="text" id="physicalMark">
+<input type="text" id="chemistryMark">
+<input type="text" id="biologicalMark">
+<button onclick="outputsum()"> sum </button>
+<button onclick="outputavg()"> avg </button>
+<br><br>
+<input type="text" id="Temperature">
+<button onclick="outputconvertCtoF()">convert C to F</button>
+<button onclick="outputconvertFtoC()">convert F to C</button>
+<br><br>
+<input type="text" id="radius">
+<button onclick="outputacreage()">acreage</button>
+<br><br>
+<input type="text" id="radius2">
+<button onclick="outputperimeter()">perimeter</button>
+</body>
+    <script>
+        //tinh tong va trung binh 3 mon hoc
+        function outputsum() {
+            let a = parseFloat(document.getElementById("physicalMark").value)
+            let b = parseFloat(document.getElementById("chemistryMark").value)
+            let c = parseFloat(document.getElementById("biologicalMark").value)
+            alert(a + b + c)
+        }
+        function outputavg() {
+            let a = parseFloat(document.getElementById("physicalMark").value)
+            let b = parseFloat(document.getElementById("chemistryMark").value)
+            let c = parseFloat(document.getElementById("biologicalMark").value)
+            alert((a+b+c)/3)
+
+        }
+        // chuyen doi do f sang c va nguoc lai
+        function outputconvertCtoF() {
+            let C = parseFloat(document.getElementById("Temperature").value)
+            let F = 9/5*C + 32
+            document.write("độ F là: " + F)
+        }
+        function outputconvertFtoC() {
+            let F = parseFloat(document.getElementById("Temperature").value)
+            let C = 5/9*(F-32)
+            document.write("độ C là: " + C)
+        }
+        // tinh dien tinh hinh tron
+        function outputacreage() {
+            let r = parseFloat(document.getElementById("radius").value)
+            alert(r*r*3.14)
+
+        }
+        //tinh chu vi hinh tron
+        function outputperimeter() {
+            let r = parseFloat(document.getElementById("radius2").value)
+            alert(r*2*3.14)
+
+        }
+
+
+    
+    </script>
+</html>
