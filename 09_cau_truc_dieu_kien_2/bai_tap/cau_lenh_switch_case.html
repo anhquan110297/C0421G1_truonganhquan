@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>caulenhswitchcase</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="months">
+        <input type="button" value="dayInMonth" id="songay" onclick="tinh()">
+    </form>
+</body>
+    <script>
+        function tinh() {
+            let a = parseInt(document.getElementById("months").value)
+            switch (a) {
+                case 1 :
+                    console.log("31")
+                    break;
+                case 2 :
+                    console.log("28,29")
+                    break;
+                case 3 :
+                    console.log("31")
+                    break;
+                case 4 :
+                    console.log("30")
+                    break;
+                case 5 :
+                    console.log("31")
+                    break;
+                case 6 :
+                    console.log("30")
+                    break;
+                case 7 :
+                    console.log("31")
+                    break;
+                case 8 :
+                    console.log("31")
+                    break;
+                case 9 :
+                    console.log("30")
+                    break;
+                case 10 :
+                    console.log("31")
+                    break;
+                case 11 :
+                    console.log("30")
+                    break;
+                case 12 :
+                    console.log("31")
+                default :
+                    console.log("undefined")
+
+            }
+
+
+        }
+    </script>
+</html>

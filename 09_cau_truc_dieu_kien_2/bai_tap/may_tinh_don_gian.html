@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>maytinhdongian</title>
+</head>
+<body>
+    <form>
+        <table style="border: 2px solid " width="20%">
+            <tr colspan="4">
+                <th>
+                    <textarea name="text" id="input" cols="30" rows="10" ></textarea>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <input type="button" name="Number" value="1" onclick="output1()">
+                    <input type="button" name="Number" value="2" id="number2" onclick="output2()">
+                    <input type="button" name="Number" value="3" id="number3" onclick="output3()">
+                    <input type="button" name="Operation" value="+" id="+" onclick="outputdaucong">
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <input type="button" name="Number" value="4" id="number4" onclick="output4()">
+                    <input type="button" name="Number" value="5" id="number5" onclick="output5()">
+                    <input type="button" name="Number" value="6" id="number6" onclick="output6()">
+                    <input type="button" name="Operation" value="-" id="-" onclick="outputdautru()">
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <input type="button" name="Number" value="7" id="number7" onclick="output7()">
+                    <input type="button" name="Number" value="8" id="number8" onclick="output8()">
+                    <input type="button" name="Number" value="9" id="number9" onclick="output9()">
+                    <input type="button" name="Operation" value="x" id="x" onclick="outputdaunhan()">
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <input type="button" name="Operation" value="C" id="c" onclick="outputreset()">
+                    <input type="button" name="Number" value="0" id="number0" onclick="output0()">
+                    <input type="button" name="Operation" value="=" id="=" onclick="outputdaubang()">
+                    <input type="button" name="Operation" value="/" id="/" onclick="outputdauchia()">
+                </th>
+            </tr>
+        </table>
+    </form>
+</body>
+    <script>
+        function output1() {
+            let number = document.getElementById("input").value;
+            document.getElementById("input").innerText = number +"1"
+        }
+        function output2() {
+            let number = document.getElementById("input").value;
+            document.getElementById("input").innerText = number +"2"
+        }
+        function output3() {
+            let number = document.getElementById("input").value;
+            document.getElementById("input").innerText = number +"3"
+        }
+        function output4() {
+            let number = document.getElementById("input").value;
+            document.getElementById("input").innerText = number +"4"
+        }
+        function output5() {
+            let number = document.getElementById("input").value;
+            document.getElementById("input").innerText = number +"5"
+        }
+        function output6() {
+            let number = document.getElementById("input").value;
+            document.getElementById("input").innerText = number +"6"
+        }
+        function output7() {
+            let number = document.getElementById("input").value;
+            document.getElementById("input").innerText = number +"7"
+        }
+        function output8() {
+            let number = document.getElementById("input").value;
+            document.getElementById("input").innerText = number +"8"
+        }
+        function output9() {
+            let number = document.getElementById("input").value;
+            document.getElementById("input").innerText = number +"9"
+        }
+        function outputdaucong() {
+            let number = document.getElementById("input");
+            document.getElementById("input").innerText = number +"-";
+        }
+        function outputdautru() {
+            let number = document.getElementById("input");
+            document.getElementById("input").innerText = number +"-";
+        }
+        function outputdaunhan() {
+            let number = document.getElementById("input");
+            document.getElementById("input").innerText = number +"-";
+        }
+        function outputdauchia() {
+            let number = document.getElementById("input");
+            document.getElementById("input").innerText = number +"-";
+        }
+        function outputreset() {
+            let number = document.getElementById("input");
+            document.getElementById("input").innerText = number +"-";
+        }
+        function output0() {
+            let number = document.getElementById("input").value;
+            document.getElementById("input").innerText = number+"0";
+        }
+    </script>
+</html>
