@@ -6,9 +6,9 @@
 </head>
 <body>
     <script>
-        let weight = parseFloat(prompt("please input weight")).value
-        let height = parseFloat(prompt("please input height")).value
-        let bmi = weight / ( height ^ 2 )
+        let weight = parseFloat(prompt("please input weight (Kg)")).value
+        let height = parseFloat(prompt("please input height (Cm)")).value
+        let bmi = (weight / ( height ^ 2 ) )
         if (bmi < 18)
             alert("Underweight")
         else if (18 > bmi < 25.0)

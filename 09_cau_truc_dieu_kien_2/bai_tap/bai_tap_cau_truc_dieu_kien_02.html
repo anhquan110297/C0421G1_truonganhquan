@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>baiTapCauTrucDieuKien02</title>
+</head>
+<body>
+<!--    BÀI TẬP CONVERT ĐỘ C SANG ĐỘ F-->
+<!--    <form>-->
+<!--        <label> Please input Celsius: </label>-->
+<!--        <input type="text" id="temperature">-->
+<!--        <input type="button" value="Convert" onclick="convertCtoF()"><br>-->
+<!--        <label>Fahrenheit:</label>-->
+<!--        <input type="text" id="out">-->
+<!--    </form>-->
+
+<!--    BÀI TẬP CHUYỂN ĐỔI TỪ FEET SANG METER-->
+<!--    <form>-->
+<!--        <label>Meter</label>-->
+<!--        <input type="text" id="meter">-->
+<!--        <input type="button" value="Convert" id="cOnvert" onclick="convertMtoF()"><br>-->
+<!--        <label>Feet</label>-->
+<!--        <input type="text" id="feet">-->
+<!--    </form>-->
+
+<!--    BÀI TẬP TÍNH DIỆN TÍCH HÌNH VUÔNG-->
+<!--    <form>-->
+<!--        <label>SIDE: </label>-->
+<!--        <input type="number" id="side">-->
+<!--        <input type="button" onclick="calArea()" value="calculate"><br>-->
+<!--        <label>AREA: </label>-->
+<!--        <input type="number" id="area">-->
+<!--    </form>-->
+
+<!--        BÀI TẬP TÍNH DIỆN TÍCH HÌNH CHỮ NHẬT-->
+<!--    <input type="text" id="width">-->
+<!--    <input type="text" id="length">-->
+<!--    <input type="button" id="calculate" onclick="calculateArea()" value="Calulate"><br>-->
+<!--    <span id="resultArea">Result: </span>-->
+
+<!--    BÀI TẬP GIẢI PHƯƠNG TRÌNH BẬC 1-->
+<!--    <h5 style="color: red">T có phương trình ax + b= 0</h5>-->
+<!--    <input type="text" id="a">-->
+<!--    <input type="text" id="b">-->
+<!--    <input type="button" id="calculate" onclick="calculateResult()" value="result"><br><br>-->
+<!--    <span id="outPutResult" style="color: red">Result: </span>-->
+
+<!--    BÀI TẬP GIẢI PHƯƠNG TRÌNH BẬC 2-->
+<!--    <h5 style="color: red">T có phương trình ax2 + bx + c = 0</h5>-->
+<!--    <input type="text" id="a" value="a">-->
+<!--    <input type="text" id="b" value="b">-->
+<!--    <input type="text" id="c" value="c">-->
+<!--    <input type="button" id="calculate" onclick="calculateResult()" value="result"><br><br>-->
+<!--    <span id="outPutResult1" style="color: red">Result x1: </span><br>-->
+<!--    <span id="outPutResult2" style="color: red">Result x2: </span>-->
+
+<!--    BÀI TẬP KIỂM TRA CÓ PHẢI LÀ SỐ TUỔI CỦA 1 NGƯỜI HAY KHÔNG?-->
+<!--    <input type="text" id="age">-->
+<!--    <input type="button" onclick="ageCheck()" value="check"><br>-->
+<!--    <span id="resultAge"></span>-->
+
+<!--    BÀI TẬP KIỂM TRA XEM 3 CẠNH A,B,C CÓ PHẢI LÀ 1 TAM GIÁC HAY KHÔNG-->
+<!--    <input type="text" id="aSide">-->
+<!--    <input type="text" id="bSide">-->
+<!--    <input type="text" id="cSide">-->
+<!--    <input type="button" onclick="checkTriangle()" value="check"><br>-->
+<!--    <span id="result" >Result: </span>-->
+</body>
+    <script>
+    //     BÀI TẬP CONVERT ĐỘ C SANG ĐỘ F
+    // function convertCtoF() {
+    //     let C = document.getElementById("temperature").value
+    //     let F = (C * 9/5 + 32)
+    //     document.getElementById("out").value = F
+    // }
+
+
+    // BÀI TẬP CHUYỂN ĐỔI TỪ FEET SANG METER
+    // function convertMtoF() {
+    //     let m = parseFloat(document.getElementById("meter").value)
+    //     let ft = m * 3.2808
+    //     document.getElementById("feet").value = ft
+    //
+    // }
+
+
+    //  BÀI TẬP TÍNH DIỆN TÍCH HÌNH VUÔNG
+    //  function calArea() {
+    //  let a = parseFloat(document.getElementById("side").value)
+    //  let arc = a*a
+    //  document.getElementById("area").value = arc
+    // }
+
+    //     BÀI TẬP TÍNH DIỆN TÍCH TAM GIÁC VUÔNG BIẾT 2 CẠNH BÊNH
+    //     function calculateArea() {
+    //         let a = parseFloat(document.getElementById("sideA").value)
+    //         let b = parseFloat(document.getElementById("sideB").value)
+    //         let area = (a*b)/2
+    //         document.getElementById("resultArea").innerText = "Result: " + area +"cm2"
+    // }
+
+    // BÀI TẬP TÍNH DIỆN TÍCH HÌNH CHỮ NHẬT
+    // function calculateArea() {
+    //     let a = parseFloat(document.getElementById("width").value)
+    //     let b = parseFloat(document.getElementById("length").value)
+    //     let area = a * b
+    //     document.getElementById("resultArea").innerText = "Result: " + area +"cm2"
+    // }
+
+     //     BÀI TẬP GIẢI PHƯƠNG TRÌNH BẬC 1
+     // function calculateResult() {
+     //    let a = parseInt(document.getElementById("a").value)
+     //    let b = parseInt(document.getElementById("b").value)
+     //    let x = -b/a
+     //     if (a == 0 && b == 0) {
+     //         document.getElementById("outPutResult").innerText= "Result: Phương trình vô số nghiệm"
+     //     }
+     //     else if (a == 0 && b!= 0){
+     //         document.getElementById("outPutResult").innerText= "Result: Phương trình vô nghiệm "
+     //         }
+     //     else {
+     //         document.getElementById("outPutResult").innerText= "Result: " +x
+     //         }
+     // }
+
+    // BÀI TẬP GIẢI PHƯƠNG TRÌNH BẬC 2
+    // function calculateResult() {
+    //     let a = parseInt(document.getElementById("a").value)
+    //     let b = parseInt(document.getElementById("b").value)
+    //     let c = parseInt(document.getElementById("c").value)
+    //     let delta = ((b*b)- 4*a*c)
+    //     if (a == 0) {
+    //         document.getElementById("outPutResult").innerText = "Result: x1=x2= " + (-c/b)
+    //     }
+    //     else if (a != 0 && delta < 0){
+    //         document.getElementById("outPutResult1").innerText = "Result: Phương trình vô nghiệm"
+    //         document.getElementById("outPutResult2").innerText = "Result: Phương trình vô nghiệm"
+    //     }
+    //     else if (a != 0 && delta == 0){
+    //         document.getElementById("outPutResult1").innerText = "Result: x1=x2=" + (-b/(2*a))
+    //         document.getElementById("outPutResult2").innerText = "Result: x1=x2=" + (-b/(2*a))
+    //     }
+    //     else if (a != 0 && delta > 0){
+    //         document.getElementById("outPutResult1").innerText = "Result: x1= " + ((-b + Math.sqrt(delta))/(2*a))
+    //         document.getElementById("outPutResult2").innerText = "Result: x2= " + ((-b - Math.sqrt(delta))/(2*a))
+    //     }
+    // }
+
+
+    //     BÀI TẬP KIỂM TRA CÓ PHẢI LÀ SỐ TUỔI CỦA 1 NGƯỜI HAY KHÔNG?
+    //     function ageCheck() {
+    //         let a = parseInt(document.getElementById("age").value)
+    //         if (a <= 120 && a > 0){
+    //             document.getElementById("resultAge").innerText = "Là số tuổi của 1 người"}
+    //         else {
+    //                 document.getElementById("resultAge").innerText= "Không phải là số tuổi của 1 người"
+    //             }
+    //     }
+
+        // BÀI TẬP KIỂM TRA XEM 3 CẠNH A,B,C CÓ PHẢI LÀ 1 TAM GIÁC HAY KHÔNG
+        // function checkTriangle() {
+        //     let a = parseInt(document.getElementById("aSide").value)
+        //     let b = parseInt(document.getElementById("bSide").value)
+        //     let c = parseInt(document.getElementById("cSide").value)
+        //     if (a + b > c && a + c > b && b + c > a) {
+        //         document.getElementById("result").innerText = "Là tam giác"
+        //     } else {
+        //         document.getElementById("result").innerText = " Không phải là tam giác"
+        //     }
+        // }
+        
+    </script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hienthicacsonguyentodautien</title>
+</head>
+<body>
+
+</body>
+    <script>
+        let run = 2
+        let countPrime = 0
+        let userPrimeNumbers = parseInt(prompt("Please input PrimeNumbers "))
+        while (true){
+            let count = 0
+            for (let i = 1; i <=run; i++) {
+                if (run % i === 0) {
+                    count++
+                }
+            }
+            if ( count === 2) {
+                console.log(run)
+                countPrime++
+            }
+             if (countPrime === userPrimeNumbers){
+                break;
+              }
+            run++
+        }
+    </script>
+</html>

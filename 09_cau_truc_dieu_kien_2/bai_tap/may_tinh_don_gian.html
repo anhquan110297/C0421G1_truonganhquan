@@ -17,7 +17,7 @@
                     <input type="button" name="Number" value="1" onclick="output1()">
                     <input type="button" name="Number" value="2" id="number2" onclick="output2()">
                     <input type="button" name="Number" value="3" id="number3" onclick="output3()">
-                    <input type="button" name="Operation" value="+" id="+" onclick="outputdaucong">
+                    <input type="button" name="Operation" value="+" id="+" onclick="outputdaucong()">
                 </th>
             </tr>
             <tr>
@@ -85,28 +85,32 @@
             document.getElementById("input").innerText = number +"9"
         }
         function outputdaucong() {
-            let number = document.getElementById("input");
-            document.getElementById("input").innerText = number +"-";
+            let number = document.getElementById("input").value;
+            document.getElementById("input").innerText = number + "+"
         }
         function outputdautru() {
-            let number = document.getElementById("input");
+            let number = document.getElementById("input").value;
             document.getElementById("input").innerText = number +"-";
         }
         function outputdaunhan() {
-            let number = document.getElementById("input");
-            document.getElementById("input").innerText = number +"-";
+            let number = document.getElementById("input").value;
+            document.getElementById("input").innerText = number +"*";
         }
         function outputdauchia() {
-            let number = document.getElementById("input");
-            document.getElementById("input").innerText = number +"-";
+            let number = document.getElementById("input").value;
+            document.getElementById("input").innerText = number +"/";
         }
         function outputreset() {
-            let number = document.getElementById("input");
-            document.getElementById("input").innerText = number +"-";
+            let number = document.getElementById("input").value;
+            document.getElementById("input").innerText = "";
         }
         function output0() {
             let number = document.getElementById("input").value;
             document.getElementById("input").innerText = number+"0";
+        }
+        function outputdaubang() {
+            let number = document.getElementById("input").value;
+            document.getElementById("input").innerText = eval(number);
         }
     </script>
 </html>
