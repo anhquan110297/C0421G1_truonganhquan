@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>baitapthem</title>
+</head>
+<body>
+<!--<button value="Alert" id="buttonAlert" onclick="showAlert()">Alert</button>-->
+
+
+<!--<h1>Thay đổi nội dung của thẻ html</h1>-->
+<!--        <span id="content">Thời tiết hôm nay thế nào</span><br><br>-->
+<!--        <input type="button" id="btn1" onclick="sunnyDay()" value="Sunnyday">-->
+<!--        <input type="button" id="btn2" onclick="rainyDay()" value="RainyDay" style="margin-right: 100px">-->
+
+
+<!--        thêm thẻ html-->
+        <h1>Thêm thẻ HTML</h1>
+        <div>
+            <input type="text" id="input">
+            <input type="button" id="btn" value="Add" onclick="addHtml()">
+        </div>
+        <div>
+            <span id="output"></span>
+        </div>
+
+</body>
+    <script>
+        // function showAlert() {
+        // alert("xin chào các bạn lớp C0421G1")
+        // }
+
+        // thay đổi nội dung thẻ html
+        // let a = document.getElementById("btn1")
+        // let b = document.getElementById("btn2")
+        // let div = document.getElementById("content")
+        // function sunnyDay() {
+        //     document.getElementById("content").innerHTML = "hôm nay trời nắng đẹp"
+        // }
+        // function rainyDay() {
+        //     document.getElementById("content").innerHTML = "hôm nay trời mưa ngâu"
+        // }
+
+    function addHtml() {
+        let a = document.getElementById("input").value
+        let b = document.getElementById("output").value
+        document.getElementById("output").innerText = a
+        if (a===""){
+            alert("bạn chưa nhập nội dung")
+        }
+    }
+    </script>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    // Bài 1- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử.
+    // Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10
+    // let display = ""
+    // let integer = [-3,-4,-1,0,3,2,6,1,-12,13]
+    // let b = 0
+    // for (let i = 0; i < integer.length;i++) {
+    //     if (integer[i] >= 10) {
+    //         b++
+    //         display += integer[i] +","
+    //         // console.log(integer[i],b)
+    //     }
+    //     document.getElementById("result").innerHTML ="và có" + " "+ b +" "+ "số lớn hơn 10 là : "+ display
+    // }
+
+
+    // Bài 2- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau.
+    // Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.
+    // let integer = [1,5,6,2,12,5,124,51,21,57,62]
+    // let max = integer[0]
+    // for (i = 0; i <integer.length;i++){
+    //     if (max < integer[i]){
+    //         max = integer[i]
+    //     }
+    //     document.getElementById("result").innerHTML = "số lớn nhất là: " + max +"<br>"+" Giá trị max nằm ở vị trí: " + integer.indexOf(max)
+    // }
+
+
+    // Bài 3- Viết chương trình khởi tạo mảng số nguyên.
+    // Hiển hiện giá trị lớn nhất trong mảng đó. In ra giá trị trung bình của các phần tử trong mảng
+    // let integer = new Array(3)
+    // let sum = 0
+    // for (let i= 0; i< integer.length;i++){
+    //     integer[i] = parseInt(prompt("Please enter elements: "))
+    //     let max = integer[0]
+    //         if (max < integer[i]){
+    //             max = integer[i]
+    //         // console.log(max)
+    //     }
+    //     sum = sum + integer[i]
+    //     let avg = (sum/3)
+    //         document.getElementById("result").innerHTML = "Trung bình cộng của các phần tử trong mảng là: " + avg + "<br>" +
+    //             "Giá trị lớn nhất của mảng là: " + max
+    // }
+
+    // Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó
+    // let integer = new Array(5)
+    // for (let i = 0; i < integer.length ; i++){
+    //     integer[i] = parseInt(prompt("Please enter elements: "))
+    // }
+    // integer.reverse()
+    // console.log(integer)
+
+    // Bài 5- Viết chương trình đếm số nguyên âm trong một chuỗi
+    // let a = parseInt(prompt("How much elements you want?"))
+    // let myArr = []
+    // let count = 0
+    // let display = ""
+    // for (let i = 0; i< a;i++){
+    //     myArr[i] = parseInt(prompt("Please enter elements: "))
+    //     if (myArr[i] < 0){
+    //         count++
+    //         display += myArr[i] +","
+    //     }
+    // }
+    // document.getElementById("result").innerText = "Số nguyên âm trong chuỗi là: " + count
+
+    // Bài 6
+    // let array= [1,2,3,4,5,6,7,8,9,10];
+    // let v = parseInt(prompt("Please enter: "))
+    // let a = false;
+    // for (let i =0; i < array.length;i++){
+    //     if ( v === array[i]) {
+    //         a = true
+    //         break
+    //     }
+    // }
+    // if (true){
+    //     document.getElementById("result").innerText = "V is in Array"
+    // }
+    // else {
+    //     document.getElementById("result").innerText = "V is  NOT in Array"
+    // }
+
+    // Bài 7:Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V.
+    // Chương trình kiểm tra xem V có thuộc mảng đã cho không, nếu V thuộc mảng đã cho xoá V khỏi mảng (Bản chất việc xoá ở đây tức là dịch phần tử ở bên phải V sang vị trí của V,
+    // và gán 0 cho phần tử cuối cùng của mảng)
+    //         let array= [1,2,3,4,5,6,7,8,9,10]
+    //         let v = parseInt(prompt("Please enter: "))
+    //         for (let i =0; i < array.length;i++){
+    //             if ( v === array[i]){
+    //                 let b = i    //b là biến tạm để lưu giá trị i
+    //                 array.splice(b,1)          // hàm splice ở đây giúp chúng t xóa 1 phần tử trong mảng
+    //                   array.push(0)           //  splice(vị trí muốn xóa,số lượng xóa)
+    //             }
+    //         }
+    //         document.getElementById("result").innerText = array
+
+    // Bài 8- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử.
+    // Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.
+    //     let myArray = new Array(10)
+    //     for (let i =0; i < myArray.length; i++)
+    //     myArray[i] = parseInt(prompt("Please enter elements: "))
+    //     //console.log(myArray)
+    //     myArray.sort(function (a, b) {
+    //         return (b - a)
+    //     })
+    //     document.write(myArray)
+
+    // Bài 9- Viết chương trình khởi tạo/nhập vào 2 mảng số nguyên gồm 10 phần tử, gọi là mảng a và b.
+    // Mảng c là một mảng được khai báo gồm 20 phần tử số nguyên.
+    // Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c. Hiển thị mảng c.
+    // let myArrayA = new Array(10)
+    // let myArrayB = new Array(10)
+    //
+    // for (let i = 0; i < myArrayA.length; i++){
+    //     myArrayA[i] = parseInt(prompt("Please enter elements in ArrayA: "))
+    //     // console.log(myArrayA)
+    // }
+    // for (let i= 0; i< myArrayB.length;i++) {
+    //     myArrayB[i] = parseInt(prompt("Please enter elements in ArrayB"))
+    // }
+    // let myArrayC = myArrayA.concat(myArrayB)
+    // document.write(myArrayC)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

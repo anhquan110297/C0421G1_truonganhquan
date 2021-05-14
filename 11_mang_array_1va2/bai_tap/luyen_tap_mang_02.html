@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyentapmang2</title>
+</head>
+<body>
+
+</body>
+    <script>
+        //Bài 1:
+        let display = ""
+        let a = [
+            [1, 2, 1, 24],
+            [8, 11, 9, 4],
+            [7, 0, 7, 27],
+            [7, 4, 28, 14],
+            [3, 10, 26, 7]
+        ];
+        for (let i =0; i< a.length; i++){
+            console.log(a.length)
+            display += "row"+ i + "<br>"
+            for (let j =0; j< a[0].length; j++){
+                display += "'"+ a[i][j] +"'" + "<br>";
+            }
+        }
+        console.log(display);
+        document.write(display)
+
+        // Bài 2: Viết một chương trình để in các ký tự trong một mảng theo thứ tự đảo ngược
+        // let a = parseInt(prompt("How much elements do you want: "))
+        // let myArr = []
+        // for (let i = 0; i< a;i++){
+        //     myArr[i] = parseInt(prompt("Please enter elements: "))
+        // }
+        // document.write(myArr.reverse())
+
+        // Bài 3: Viết một chương trình khai báo một mảng ký tự và kích thước của mảng. Chương trình này đếm số ký tự số trong mảng.
+        // let a = parseInt(prompt("How much elements do you want: "))
+        // let myArr= []
+        // let count = 0
+        // for (let i=0 ; i<a;i++){
+        //     myArr[i] = prompt("Please enter elements: ")
+        //     if (isNaN(myArr[i]) === false){    ; //isNaN() là hàm giúp kiểm tra xem các tham số trong() có phải là khác số không
+        //         count++
+        //     }
+        // }
+        // document.write("Số kí tự là số: " + count)
+
+        // Bài 4: Viết một chương trình để đếm số từ trong một chuỗi
+        // let myArr = []
+        // let a = parseInt(prompt("How much elements do you want: "))
+        // let count = 0
+        // for (let i=0; i<a;i++){
+        //     myArr[i] = prompt("Please enter elements: ")
+        //     if (isNaN(myArr[i])){
+        //         count++
+        //     }
+        // }
+        // document.write("Số từ trong chuỗi này là: ")
+
+        //Bài 5: Viết một chương trình nhập vào 2 chuỗi, sau đó kiểm tra xem hai chuỗi có giống nhau hay không
+        // let myArrA = []
+        // let myArrB = []
+        // let a = parseInt(prompt("How many elements do you want in the myArrA: "))
+        // let b = parseInt(prompt("How many elements do you want in the myArrB: "))
+        // for (let i=0; i < a; i++){
+        //     myArrA[i] = prompt("Please enter elements in myArrA: ")
+        //     x = myArrA[i]
+        //
+        // }
+        // // console.log(myArrA)
+        // for (let i=0;i<b;i++){
+        //     myArrB[i] = prompt("Please enter elements in myArrB: ")
+        //     y = myArrB[i]
+        // }
+        // if (x === y){
+        //     alert("Hai chuỗi A và B bạn vừa nhập giống nhau")
+        // }else{
+        //     alert("Hai chuỗi A và B bạn vừa nhập không giống nhau")
+        // }
+
+
+        // Bài 6: Viết chương trình nhập vào một mảng ký tự,
+        // tìm tất cả các ký tự trong mảng là (-) và thay thế các ký tự này bởi ký tự ( _ )
+        // let a = parseInt(prompt("How much elements you want: "))
+        // let myArr = []
+        // for (let i=0; i < a;i++ ){
+        //     myArr[i] = prompt("Please enter elements: ")
+        //     // console.log(myArr)
+        //     if (myArr[i] == "-"){
+        //         myArr = "_"
+        //     }
+        // }
+    </script>
+</html>

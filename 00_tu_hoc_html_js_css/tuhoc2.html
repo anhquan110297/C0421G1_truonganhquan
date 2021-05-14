@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // row = 2
+    // 9 8 7 //
+    // 4 5 3//
+    let row = parseInt(prompt("Please input row: "));
+    let a = new Array(row);
+        for (let i = 0; i < a.length; i++) {
+            let col = parseInt(prompt("Please input col for row " + i));
+            a[i] = new Array(col);
+            for (let j = 0; j < col; j++) {
+                a[i][j] = parseInt(prompt("Please input element " + i + " " + j));
+            }
+        }
+        console.log(a);
+</script>
+</body>
+</html>

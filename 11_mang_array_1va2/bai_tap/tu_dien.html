@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tudien</title>
+</head>
+<body>
+    <input type="text" id="dic">
+    <input type="button" id="btnDisplay" value="Search" onclick="dictionary()">
+    <p id="result"></p>
+</body>
+    <script>
+
+        function dictionary() {
+            let a = document.getElementById("dic").value
+            let english = ["rice","basketball","teacher"]
+            let chinese = ["白饭","篮球","老师"]
+            for (let i =0; i <= english.length; i++){
+                if (a === english[i]){
+                    document.getElementById("result").innerText = chinese[i]
+                    break
+                }
+                else{
+                    document.getElementById("result").innerText = "undif"
+                }
+            }
+
+        }
+    </script>
+</html>
