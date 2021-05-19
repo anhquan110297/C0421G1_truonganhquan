@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ungdungquanlysudungham</title>
+</head>
+<body>
+<div>
+    <form action="google.com.vn" method="get">
+        <h3><strong>Add new product</strong></h3>
+        <input type="text" id="inputProduct" placeholder="New Product">
+        <input type="button" id="btnAdd" onclick="addProduct()" value="Add"
+               style="color: #ffffff; background-color: rgba(0,204,10,0.87)">
+    </form>
+</div>
+<div>
+    <h3><strong>Display All Product</strong></h3>
+    <div id="display"></div>
+</div>
+</body>
+<script>
+    let product = ["Sony Xperia", "Samsung Galaxy", "Nokia 6",
+        "Xiaomi Redmi Note 4", "Apple iphone 6s", "Xiaomi Mi 5s Plus",
+        "Apple iphone 8 plus", "Fujitsu F-04E", "Oppo A71"]
+
+    function display() {
+        let html = "    <table>\n" +
+            "        <tr>\n" +
+            "            <td style=\"height:10px;padding:3px;width:200px\"><strong>Product Name</strong></td>\n" +
+            "            <td colspan=\"2\"></td>\n" +
+            "        </tr>\n"
+        for (let i = 0; i < product.length; i++) {
+            html = html +
+                "        <tr>\n" +
+                "            <td style=\"height:10px;padding:3px;width:200px\" id=\"outputProduct0\">" + product[i] + "</td>\n" +
+                "            <td style=\"height:10px;padding:3px;width:200px\">\n" +
+                "                <form><input type=\"button\" value=\"Edit\" onclick=\"editProduct(" + i + ")\"></form>\n" +
+                "            </td>\n" +
+                "            <td style=\"height:10px;padding:3px;width:200px\"><input type=\"button\" value=\"Delete\"\n" +
+                "                                                                   onclick=\"deleteProduct(" + i + ")\"></td>\n" +
+                "        </tr>\n"
+        }
+        html = html +
+            "</table>"
+        document.getElementById("display").innerHTML = html;
+    }
+
+    display()
+
+    function addProduct() {
+        let newProduct = document.getElementById("inputProduct").value
+        if (document.getElementById("inputProduct").value == "") {
+            alert("Không có phần tử nào được thêm vào")
+        } else {
+            product.push(document.getElementById("inputProduct").value)
+            display()
+            alert(document.getElementById("inputProduct").value + " đã được thêm vào danh sách")
+            console.log(product)
+            document.getElementById("inputProduct").value = ""
+        }
+
+    }
+
+    function deleteProduct(index) {
+        let authentication = confirm("Are you serious ? ")
+        if (authentication) {
+            product.splice(index, 1)
+            display()
+        }
+    }
+
+    function editProduct(index) {
+        product.splice(index, 1, prompt("Please edit"))
+        display()
+    }
+</script>
+</html>

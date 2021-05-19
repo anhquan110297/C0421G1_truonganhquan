@@ -9,23 +9,23 @@
 </body>
     <script>
         //Bài 1:
-        // let display = ""
-        // let a = [
-        //     [1, 2, 1, 24],
-        //     [8, 11, 9, 4],
-        //     [7, 0, 7, 27],
-        //     [7, 4, 28, 14],
-        //     [3, 10, 26, 7]
-        // ];
-        // for (let i =0; i< a.length; i++){
-        //     console.log(a.length)
-        //     display += "row"+ i + "<br>"
-        //     for (let j =0; j< a[0].length; j++){
-        //         display += "'"+ a[i][j] +"'" + "<br>";
-        //     }
-        // }
-        // console.log(display);
-        // document.write(display)
+        let display = ""
+        let a = [
+            [1, 2, 1, 24],
+            [8, 11, 9, 4],
+            [7, 0, 7, 27],
+            [7, 4, 28, 14],
+            [3, 10, 26, 7]
+        ];
+        for (let i =0; i< a.length; i++){
+            console.log(a.length)
+            display += "row"+ i + "<br>"
+            for (let j =0; j< a[0].length; j++){
+                display += "'"+ a[i][j] +"'" + "<br>";
+            }
+        }
+        console.log(display);
+        document.write(display)
 
         // Bài 2: Viết một chương trình để in các ký tự trong một mảng theo thứ tự đảo ngược
         // let a = parseInt(prompt("How much elements do you want: "))
@@ -94,13 +94,5 @@
 
 
 
-
-        if (month === 2) {
-            console.log("tháng 2 năm " + isleapyear + "có 28 ngày")
-        } else if (month === 1 && month === 3 && month === 5 && month === 7 && month === 18 && month === 10 && month === 12) {
-            console.log("tháng" + month + "năm" + isleapyear + "có 31 ngày")
-        } else if (month === 4 && month === 6 && month === 9 && month === 11) {
-            console.log("tháng" + month + "năm" + isleapyear + "có 30 ngày")
-        }
     </script>
 </html>

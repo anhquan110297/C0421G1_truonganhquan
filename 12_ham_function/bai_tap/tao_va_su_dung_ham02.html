@@ -5,64 +5,108 @@
     <title>taovasudungham02</title>
 </head>
 <body>
-
+<div>
+    <input type="text" id="enterAnything" oninput="test(this.value)">
+    <p id="result"></p>
+</div>
 </body>
-    <script>
-        // Bài 1: Viết hàm tính bình phương của một số bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.
-        // function square(number) {
-        //     let result =  number*number
-        //     return result
-        // }
-        // let number = parseInt(prompt("Please enter a number"))
-        // console.log(square(number))
+<script>
+    // Bài 1: Viết hàm tính bình phương của một số bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.
+    // function square(number) {
+    //     let result =  number*number
+    //     return result
+    // }
+    // let number = parseInt(prompt("Please enter a number"))
+    // console.log(square(number))
 
-        //Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được
-        // function area(raidus) {
-        //     let result = raidus*raidus*Math.PI
-        //     return result
-        // }
-        // function perimeter(radius) {
-        //     let result = 2*radius*Math.PI
-        //     return result
-        // }
-        // let radius = parseFloat(prompt("PleaFactorialse enter radius"))
-        // console.log(area(radius))
-        // console.log(perimeter(radius))
+    //Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được
+    // function area(raidus) {
+    //     let result = raidus*raidus*Math.PI
+    //     return result
+    // }
+    // function perimeter(radius) {
+    //     let result = 2*radius*Math.PI
+    //     return result
+    // }
+    // let radius = parseFloat(prompt("PleaFactorialse enter radius"))
+    // console.log(area(radius))
+    // console.log(perimeter(radius))
 
-        //Bài 3:Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.
-        // function factorial(number) {
-        //     for (let i=1;i<=number;i++){
-        //             factor = factor * i
-        //     }
-        //     return factor
-        // }
-        // let factor = 1
-        // let number = parseFloat(prompt("Please enter factorial number: "))
-        // console.log(factorial(number))
+    //Bài 3:Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.
+    // function factorial(number) {
+    //     for (let i=1;i<=number;i++){
+    //             factor = factor * i
+    //     }
+    //     return factor
+    // }
+    // let factor = 1
+    // let number = parseFloat(prompt("Please enter factorial number: "))
+    // console.log(factorial(number))
 
-        // Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. Nếu là ký tự số hàm trả về true, ngược lại trả về false.
-        // function checkNumber(anything) {
-        //     if (isNaN(anything) == false) {
-        //         return true
-        //     } else {
-        //         return false
-        //     }
-        // }
-        // let anything = prompt("Please enter anything")
-        // console.log(checkNumber(anything))
+    // Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. Nếu là ký tự số hàm trả về true, ngược lại trả về false.
+    // function checkNumber(anything) {
+    //     if (isNaN(anything) == false) {
+    //         return true
+    //     } else {
+    //         return false
+    //     }
+    // }
+    // let anything = prompt("Please enter anything")
+    // console.log(checkNumber(anything))
 
-        // Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.
-        //     let a = parseInt(prompt("Please enter a number: "));
-        //     let b = parseInt(prompt("Please enter b number: "));
-        //     let c = parseInt(prompt("Please enter c number: "));
-        //     function checkMinNumbers(a,b,c) {
-        //         if ((a<b)&&(a<c))
-        //             console.log(a)
-        //         else if (b>c)
-        //             console.log(c)
-        //         else
-        //             console.log(b)
-        //     }
-        //     checkMinNumbers(a,b,c);
-    </script>
+    // Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.
+    //     let a = parseInt(prompt("Please enter a number: "));
+    //     let b = parseInt(prompt("Please enter b number: "));
+    //     let c = parseInt(prompt("Please enter c number: "));
+    //     function checkMinNumbers(a,b,c) {
+    //         if ((a<b)&&(a<c))
+    //             console.log(a)
+    //         else if (b>c)
+    //             console.log(c)
+    //         else
+    //             console.log(b)
+    //     }
+    //     checkMinNumbers(a,b,c);
+
+    // Bài 6: Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không.
+    // Nếu là nguyên dương trả về true, ngược lại trả về false.
+    // function integerCheck(number) {
+    //     if (integer > 0){
+    //         return true
+    //     }else {
+    //         return false
+    //     }
+    // }
+    // let integer = parseInt(prompt("Please enter a number:"))
+    // console.log(integerCheck(integer))
+
+    // Bài 7,8: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.
+    // let index = parseInt(prompt("How much elements do you want?"))
+    // function reverseArr() {
+    //     let arr = new Array(index)
+    //     for (let i=0;i<index;i++){
+    //         arr[i] = parseFloat(prompt("Please enter " + i +" element" ))
+    //     }
+    //     document.write(arr.reverse())
+    // }
+    // reverseArr()
+
+    // Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không.
+    //  Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1.
+    function test(any) {
+        let myArray = [1, 1, 1, "a", "b", "s", "asd", 2, 3, 2, 4];
+        let count = 0
+        let bool = false
+        for (let i = 0; i < myArray.length; i++) {
+            if (any === myArray[i]) {
+                count++
+                bool = true
+            }
+        }
+        if (bool)
+            document.getElementById("result").innerText = "Có ký tự"+myArray[i]+ "trong mảng" + " và txuất hiện" + count + "lần"
+        else
+            document.getElementById("result").innerText = "Không có ký  tự trong mảng"
+    }
+</script>
 </html>
