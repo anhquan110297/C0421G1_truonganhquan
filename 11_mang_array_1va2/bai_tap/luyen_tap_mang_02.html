@@ -57,24 +57,26 @@
         // document.write("Số từ trong chuỗi này là: " + display)
 
         // Bài 5: Viết một chương trình nhập vào 2 chuỗi, sau đó kiểm tra xem hai chuỗi có giống nhau hay không
-        // let myArrA = []
-        // let myArrB = []
-        // let a = parseInt(prompt("How many elements do you want in the myArrA: "))
-        // let b = parseInt(prompt("How many elements do you want in the myArrB: "))
-        // for (let i=0; i < a; i++){
-        //     myArrA[i] = prompt("Please enter elements in myArrA: ")
-        //     x = myArrA[i]
-        //
+        // let myStr1 = prompt("Please enter")
+        // let myStr2 = prompt("Please enter")
+        // let myArr1 = myStr1.split("")     //ngoài ra chúng t còn có thể sử dụng hàm Array.from ví dụ Array.from(myStr1)
+        // let myArr1 = myStr1.split("")     //ngoài ra chúng t còn có thể sử dụng hàm Array.from ví dụ Array.from(myStr2)
+        // let myArr2 = myStr2.split("")
+        // let check = true;
+        // if (myStr1.length == myStr2.length){
+        //     for (let i = 0;i<myArr1.length;i++){
+        //         if (myArr1[i] != myArr2[i]){
+        //             check = false
+        //         break;
+        //         }
+        //     }
+        // }else {
+        //     check = false
         // }
-        // // console.log(myArrA)
-        // for (let i=0;i<b;i++){
-        //     myArrB[i] = prompt("Please enter elements in myArrB: ")
-        //     y = myArrB[i]
-        // }
-        // if (x === y){
-        //     alert("Hai chuỗi A và B bạn vừa nhập giống nhau")
+        // if (check){
+        //     alert("2 chuỗi bạn nhập giống nhau")
         // }else{
-        //     alert("Hai chuỗi A và B bạn vừa nhập không giống nhau")
+        //     alert("2 chuỗi bạn nhập khác nhau")
         // }
 
 
@@ -89,5 +91,16 @@
         //         myArr[i] = "_"
         //     }
         // }
+
+
+
+
+        if (month === 2) {
+            console.log("tháng 2 năm " + isleapyear + "có 28 ngày")
+        } else if (month === 1 && month === 3 && month === 5 && month === 7 && month === 18 && month === 10 && month === 12) {
+            console.log("tháng" + month + "năm" + isleapyear + "có 31 ngày")
+        } else if (month === 4 && month === 6 && month === 9 && month === 11) {
+            console.log("tháng" + month + "năm" + isleapyear + "có 30 ngày")
+        }
     </script>
 </html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>feetandmetersconvert</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="feet" placeholder="Feet" oninput="feetToMetersConvert()"><br>
+        <span id="result1">Meters: </span>
+    </div>
+    <br><br>
+    <div>
+        <input type="text" id="meters" placeholder="Meters" oninput="metersToFeetConvert()"><br>
+        <span id="result2">Foot: </span>
+    </div>
+</body>
+    <script>
+        function feetToMetersConvert(feet) {
+        let a = document.getElementById("feet").value
+         document.getElementById("result1").innerText = "Meters: "+0.305 * a
+        }
+        function metersToFeetConvert(meters) {
+            let b = document.getElementById("meters").value
+            document.getElementById("result2").innerText = "Feet: "+3.279 * b
+        }
+    </script>
+</html>

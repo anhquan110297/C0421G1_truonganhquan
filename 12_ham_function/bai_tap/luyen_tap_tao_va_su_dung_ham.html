@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyentaptaovasudungham</title>
+</head>
+<body>
+<!--Bài 1: Tạo hàm alertMessage() hiển thị hộp thoại chứa chuỗi  "Xin chao". Gọi hàm từ trong phần <body> của trang web.-->
+<!--    <div>-->
+<!--        <input type="button" onclick="alertmess()" value="click me">-->
+<!--    </div>-->
+
+
+<!--Bài 2: Tạo hàm nhận vào một đối số dạng số, tăng giá trị đối số đó lên 1 và trả lại giá trị cho lời gọi hàm. -->
+<!--Gọi hàm từ trong phần <body> của trang web và hiển thị kết quả lên màn hình.-->
+<!--        <div>-->
+<!--            <input type="button" onclick="clickme2()" value="click me">-->
+<!--            <input type="number" id="input">-->
+<!--            <p id="result">Result: </p>-->
+<!--        </div>-->
+
+<!--<div>BÀI 3 <br>-->
+<!--    <input type="number">-->
+<!--    <button onclick="exerciseThree()">Click</button>-->
+<!--    <p id="resultThree"></p>-->
+<!--</div>-->
+
+    <div>
+        <input type="text" id="input" placeholder="Please enter a star">
+        <input type="button" onclick="star()" value="Click me to check"><br>
+        <span id="result"></span>
+    </div>
+</body>
+    <script>
+        // Bài 1: Tạo hàm alertMessage() hiển thị hộp thoại chứa chuỗi  "Xin chao". Gọi hàm từ trong phần <body> của trang web.
+        // function alertmess(){
+        // alert("Xin chào")
+        // }
+
+        // Bài 2: Tạo hàm nhận vào một đối số dạng số, tăng giá trị đối số đó lên 1 và trả lại giá trị cho lời gọi hàm.
+        // Gọi hàm từ trong phần <body> của trang web và hiển thị kết quả lên màn hình.
+        // function clickme2(num) {
+        //     var num = document.getElementById("input").value
+        //     num = parseFloat(num) + 1;
+        //     document.getElementById("result").innerText = num
+        // }
+
+        // function clickme2() {
+        //     var num = document.getElementById("input").value;
+        //     test(num);
+        // }
+        // function test(parameter) {
+        //     parameter = parseInt(parameter) + 1
+        //     document.getElementById("result").innerText = parameter;
+        // }
+
+
+        // Bài 3: Tạo hàm nhận vào hai tham số. Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai, hiển thị hộp thoại thông báo cho người dùng. 
+        // Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, trả về tổng của hai tham số.
+        //  let a = parseInt(prompt("Please enter a number: "));
+        //     let b = parseInt(prompt("Please enter b number "));
+        //     function baiTap3(a,b) {
+        //         if (a>b){
+        //             alert("tham số a lớn hơn tham số b");
+        //         } else{
+        //             let c = a + b;
+        //             console.log(c);
+        //         }
+        //     }
+        //  baiTap3(a,b);
+
+
+        // Bài 4: Thêm các hàm alert() vào những vị trí thích hợp trong đoạn mã sau
+        // để bạn có thể nhìn thấy giá trị của biến result trước và sau lời gọi hàm. Đoạn mã có dạng như sau:
+        // function addNumbers() {
+        //     firstNum = 4;
+        //     secondNum = 8;
+        //     result = firstNum + secondNum;
+        //     return result;
+        // }
+        // result = 0;
+        // alert(result);
+        // result = addNumbers();
+        // alert(result);
+
+        // Bài 5: Tạo một mảng với bảy phần tử dạng chuỗi có giá trị là tên các ngôi sao sau: Polaris, Aldebaran, Deneb, Vega, Altair, Dubhe và Regulus. 
+        // Tạo một mảng khác với bảy phần tử dạng chuỗi có giá trị là tên các chòm sao tương ứng chứa các ngôi sao: Ursa Minor, Tarurus, Cygnus, Lyra, Aquila, Ursa Major và Leo. 
+        // Tiếp theo, tạo một hàm nhận vào một tham số dạng chuỗi duy nhất. 
+        // Trong hàm này, duyệt qua mảng thứ nhất để tìm tên ngôi sao. Nếu tìm thấy, trả lại giá trị tương ứng với chỉ số đó ở mảng thứ hai. 
+        // Nói cách khác, trả lại tên chòm sao của ngôi sao đó. 
+        // Trong phần <body> của trang web, dùng hộp thoại prompt để người dùng nhập vào tên của ngôi sao, sau đó gọi hàm với thông tin đầu vào. 
+        // Đừng quên xử lý trong trường hợp không tìm thấy ngôi sao nào. Cho kết quả hiển thị trên màn hình.
+
+        // function star() {
+        //     let x = document.getElementById("input").value
+        //     let a = ["Polaris","Aldebaran","Deneb","Vega","Altair","Dubhe","Regulus"]
+        //     let b = ["UrsaMinor","Taurus","Cygnus","Lyra","Aquila","UrsaMajor","Leo"]
+        //     for (let i=0; i<= 6; i++){
+        //         if (x === a[i]){
+        //             document.getElementById("result").innerText = "Result: ngôi sao tương ứng với chòm sao của bạn là " + b[i]
+        //             break
+        //         }else {
+        //             document.getElementById("result").innerText = "Result: Không có ngồi sao tương ứng"
+        //         }
+        //     }
+        // }
+    </script>
+</html>
