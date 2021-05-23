@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiemtradoixung</title>
+</head>
+<body>
+
+</body>
+<script>
+    function checkStr(strQuan,i,j) {
+        if (i >= j){
+            return true
+
+        }else {
+            if (strQuan[i] !== strQuan[j]){
+                return false
+            }else {
+                i++
+                j--
+                return checkStr(strQuan,i,j)
+            }
+        }
+
+    }
+    let str = "quannauq"
+    let result =checkStr(str,0,str.length-1)
+    console.log(result)
+</script>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>remoteandtv</title>
+</head>
+<body>
+<script>
+    class Remote {
+        constructor(code) {
+            this.code = code
+        }
+
+        getCode() {
+            return this.code
+        }
+
+        changeChannel(str) {
+            toshiba.setChannel(str)
+            alert("Your channel of choice is " + str)
+        }
+
+        volume(number) {
+            alert("Volume: " + number)
+        }
+        status(str){
+            if (str == "on"){
+                return true
+            }else {
+                return false
+            }
+        }
+    }
+
+    class television {
+        constructor(channel, volume, status) {
+            this.channel = channel
+            this.volume = volume
+            this.status = status
+        }
+
+        getChannel() {
+            return this.channel
+
+        }
+
+        getVolume() {
+            return this.volume
+        }
+
+        getStatus() {
+            if (this.status == "on") {
+                return true
+            } else {
+                return false
+            }
+        }
+        setStatus(newStatus){
+            this.status = newStatus
+        }
+        setChannel(newChannel){
+            this.channel = newChannel
+            alert("Your channel is " + newChannel)
+        }
+
+        changeChannel(str) {
+            alert("Your channel of choice is " + str)
+
+        }
+
+        setVolume(newVolume) {
+            this.volume = this.volume + newVolume
+            alert("Volume: " + this.volume)
+
+        }
+
+    }
+
+    let toshiba = new television("sport",50,"on")
+    let remote = new Remote("123-abcxyz")
+
+    toshiba.getStatus()
+    console.log(toshiba.getStatus())
+    toshiba.setChannel("Music")
+    toshiba.getChannel()
+    console.log(toshiba.getChannel())
+    toshiba.setVolume(3)
+    alert(remote.status("off"))
+
+
+</script>
+</body>
+</html>

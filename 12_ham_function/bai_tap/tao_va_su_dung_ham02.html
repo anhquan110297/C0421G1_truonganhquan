@@ -6,8 +6,8 @@
 </head>
 <body>
 <div>
-    <input type="text" id="enterAnything" oninput="test(this.value)">
-    <p id="result"></p>
+<!--    <input type="text" id="enterAnything" oninput="test(this.value)">-->
+<!--    <p id="result"></p>-->
 </div>
 </body>
 <script>
@@ -59,13 +59,15 @@
     //     let b = parseInt(prompt("Please enter b number: "));
     //     let c = parseInt(prompt("Please enter c number: "));
     //     function checkMinNumbers(a,b,c) {
-    //         if ((a<b)&&(a<c))
+    //         if ((a<b)&&(a<c)){
     //             console.log(a)
-    //         else if (b>c)
+    //          }
+    //         else if (b>c){
     //             console.log(c)
-    //         else
+    //         }else{
     //             console.log(b)
-    //     }
+    //            }
+    //      }
     //     checkMinNumbers(a,b,c);
 
     // Bài 6: Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không.
@@ -80,7 +82,19 @@
     // let integer = parseInt(prompt("Please enter a number:"))
     // console.log(integerCheck(integer))
 
-    // Bài 7,8: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.
+    // Bai 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.
+    //     function swap(testArr) {
+    //         let intermediary = testArr[0]
+    //         testArr[0] = testArr[1]
+    //         testArr[1] = intermediary
+    //     }
+    // let a = parseInt(prompt('input a:')); //1
+    // let b = parseInt(prompt('input b:')); //2
+    // let arr = [a,b];
+    // swap(arr);
+    // console.log(arr)
+
+    // Bài ,8: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.
     // let index = parseInt(prompt("How much elements do you want?"))
     // function reverseArr() {
     //     let arr = new Array(index)
@@ -103,7 +117,7 @@
     //             bool = true
     //         }
     //     }
-    //     if (bool)
+    //     if (count !== 0)
     //         document.getElementById("result").innerText = "Có ký tự "+ any+ " trong mảng" + " và xuất hiện " + count + " lần"
     //     else
     //         document.getElementById("result").innerText = "Không có ký  tự trong mảng"

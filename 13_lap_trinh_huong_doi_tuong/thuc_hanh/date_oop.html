@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dateoop</title>
+</head>
+<body>
+</body>
+    <script>
+        function creatDate(day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+            this.getDay = function () {
+                return this.day
+            }
+            this.getMonth = function () {
+                return this.month
+            }
+            this.getYear = function () {
+                return this.year
+            }
+            this.setDay = function (day) {
+                this.day = day
+            }
+            this.setMonth = function (month) {
+                this.month = month
+            }
+            this.setYear = function (year) {
+                this.year = year
+            }
+            this.setDate = function (day,month,year) {
+                this.day = day;
+                this.month = month;
+                this.year = year;
+            }
+            this.toString = function () {
+                alert( this.day +"/" + this.month + "/"+ this.year)
+            }
+        }
+        const myDate = new creatDate(11,02,1997);
+        let day = myDate.getDay();
+        let month = myDate.getMonth();
+        let year = myDate.getYear();
+        alert(day +"/"+ month + "/"+ year);
+        myDate.setDay(11);
+        myDate.setMonth(11);
+        myDate.setYear(1111);
+        let dayNew = myDate.getDay();
+        let monthNew = myDate.getMonth();
+        let yearNew = myDate.getYear();
+        alert(dayNew +"/"+ monthNew + "/"+ yearNew);
+        myDate.setDate(22,22,2222);
+        console.log(myDate.toString());
+
+    </script>
+</html>

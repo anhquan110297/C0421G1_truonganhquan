@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mobile</title>
+</head>
+<body>
+
+</body>
+<script>
+    class Mobile {
+        constructor(battery, saveMailBox, saveInBox, saveOutBox) {
+            this.battery = battery;
+            this.saveMailbox = saveMailBox
+            this.saveInBox = saveInBox
+            this.saveOutbox = saveOutBox
+        }
+
+        statusCheck(status) {
+            if (this.status === "on"){
+                alert("Your phone is on")
+            }else {
+                alert("Your phone is off ")
+            }
+            this.battery--
+        }
+
+        toggleOnOff(turn) {
+            if (turn === "on"){
+                alert("Your phone is running")
+                this.battery--
+            }else {
+                alert("Your phone was turned off")
+                this.battery--
+            }
+
+        }
+
+        reChargeBattery() {
+
+        }
+
+        receiveMail() {
+
+        }
+
+        sendMail() {
+
+        }
+
+        functionReceive() {
+
+        }
+
+        functionGive() {
+
+        }
+
+        viewInBox() {
+
+        }
+
+
+    }
+
+    class Iphone extends Mobile {
+        constructor(battery, saveMailBox, saveInBox, saveOutBox) {
+            super(battery, saveMailBox, saveInBox, saveOutBox);
+        }
+    }
+
+    class Nokia extends Mobile {
+        constructor(battery, saveMailBox, saveInBox, saveOutBox) {
+            super(battery, saveMailBox, saveInBox, saveOutBox);
+        }
+    }
+    let ip1tyObj = new Iphone(100,"","","")
+    let nokia1tyObj = new Nokia(100,"","","")
+</script>
+</html>

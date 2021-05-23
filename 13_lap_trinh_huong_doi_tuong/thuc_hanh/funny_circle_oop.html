@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>funnycircleoop</title>
+</head>
+<body>
+<canvas id="canvas" style="border: 1px solid #d3d3d3" width="1368px" height="768px" > </canvas>
+</body>
+    <script>
+        function Cirle(x,y,radius) {
+            this.x =x;
+            this.y =y;
+            this.radius = radius;
+        }
+        function getRandomNumber() {
+            return Math.round(Math.random()*255);
+        }
+        function getRandomColor() {
+            let a = getRandomNumber();
+            let b = getRandomNumber();
+            let c =getRandomNumber();
+            return "rgb(" + a + ","+ b+ ","+c+")";
+
+        }
+
+        function createCicrle() {
+            let canv = document.getElementById("canvas").getContext("2d");
+            let radius = Math.round(Math.random()*80);
+            let color = getRandomColor();
+            let y = Math.floor(Math.random()*window.innerHeight);
+            let x = Math.floor(Math.random()*window.innerWidth);
+            let circle = new Cirle(x,y,radius);
+            canv.beginPath();
+            canv.arc(circle.x, circle.y, circle.radius, 0, 2*Math.PI);
+            canv.fillStyle = color;
+            canv.fill()
+        }
+
+        for (let i =0; i<30;i++){
+            createCicrle();
+        }
+
+    </script>
+</html>

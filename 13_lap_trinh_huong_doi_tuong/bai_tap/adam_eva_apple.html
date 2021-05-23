@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>saints</title>
+</head>
+<body>
+    <script>
+        class Apple {
+            constructor(weight) {
+                this.weight = weight
+
+            }
+
+            getWeight(){
+                return this.weight
+            }
+            decrease(){
+                if (this.weight > 0){
+                    this.weight--
+                }
+            }
+            isEmpty(){
+                if (this.weight > 0){
+                    return true
+                }else {
+                    return false
+                }
+            }
+
+        }
+
+        class Human{
+            constructor(name,gender,weight) {
+                this.name = name
+                this.gender = gender
+                this.weight = weight
+            }
+            getGender(){
+                return this.gender
+            }
+            getName(){
+                return this.name
+            }
+            getWeight(){
+                return this.weight
+            }
+            setName(newName){
+                this.name = newName
+
+            }
+            setGender(newGender){
+                this.gender = newGender
+            }
+            setWeight(newWeight){
+                this.weight= newWeight
+            }
+            isMale(){
+                if (this.gender == "male"){
+                    return true
+                }else {
+                    return false
+                }
+            }
+            checkApple(apple){
+                if (apple.getWeight()>0){
+                    return true
+                }else {
+                    return false
+                }
+            }
+            eatApple(apple){
+                if (apple.getWeight()>0){
+                    this.weight++
+                    apple.decrease()
+                }else {
+                    alert("apple was gone")
+                }
+            }
+            say(anyThing){
+                alert(anyThing)
+            }
+        }
+
+        let appleQan = new Apple(10)
+        let adam = new Human("Anhquan","male",60);
+        let eva = new Human("Anhquan2","female",50)
+
+        adam.say("anhquandeptraiqua")
+        eva.say("tatnhien")
+
+        adam.eatApple(appleQan)
+        alert("apple weight: " + appleQan.getWeight())
+        alert("anhquan'sweight: " + adam.getWeight())
+        adam.setName("quananh")
+        adam.setWeight(100)
+        console.log(adam.getName()+adam.getWeight())
+    </script>
+</body>
+</html>

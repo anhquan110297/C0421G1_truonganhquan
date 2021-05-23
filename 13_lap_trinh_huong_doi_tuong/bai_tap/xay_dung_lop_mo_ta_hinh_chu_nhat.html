@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xaydunglopmotahinhchunha</title>
+</head>
+<body>
+<canvas height="1000" id="display" width="1000"></canvas>
+</body>
+<script>
+    class Rectangle {
+        constructor(length, height, area, perimeter) {
+            this.length = length;
+            this.height = height;
+            this.area = function areCal(length, height) {
+                return area = length * height
+            }
+            this.perimeter = function perimeterCal(length, height) {
+                return perimeter = (length + height) * 2
+            }
+        }
+    }
+
+
+    let Rectangle1 = new Rectangle(40, 50)
+    let areaResult = Rectangle1.area(4, 5)
+    console.log(areaResult)
+    let perimeterResult = Rectangle1.perimeter(4, 5)
+    console.log(perimeterResult)
+    let canvas = document.getElementById("display");
+    let canvasContext = canvas.getContext("2d")
+    canvasContext.rect(100, 100, 40, 50);
+    canvasContext.stroke()
+</script>
+</html>

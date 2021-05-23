@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>circleoop</title>
+</head>
+<body>
+
+</body>
+<script>
+    function creatCicrle(radius, color) {
+        this.radius = radius;
+        this.color = color;
+        this.getRadius = function () {
+            return radius;
+        }
+        this.getArea = function () {
+            return Math.PI*Math.pow(radius,2)
+        }
+    }
+
+    const circleEx = new creatCicrle(10.21,"green");
+    let radius = circleEx.getRadius();
+    let area = circleEx.getArea();
+    document.write("Bán kính của vòng tròn: " + radius +"<br>"+ "Diện tích hình tròn: "+ area);
+    alert(circleEx.color);
+
+</script>
+</html>
