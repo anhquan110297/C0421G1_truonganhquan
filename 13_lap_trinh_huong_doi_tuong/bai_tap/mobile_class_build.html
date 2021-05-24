@@ -9,72 +9,98 @@
 </body>
 <script>
     class Mobile {
-        constructor(battery, saveMailBox, saveInBox, saveOutBox) {
+        constructor(battery, saveMessBox, saveMessInBox, saveMessOutBox, status) {
             this.battery = battery;
-            this.saveMailbox = saveMailBox
-            this.saveInBox = saveInBox
-            this.saveOutbox = saveOutBox
+            this.saveMessBox = [];
+            this.saveInBox = [];
+            this.saveOutBox = [];
+            this.status = status
+
         }
 
-        statusCheck(status) {
-            if (this.status === "on"){
-                alert("Your phone is on")
-            }else {
-                alert("Your phone is off ")
+        setStatus(strStatus) {
+            if (strStatus == "on") {
+                this.descrease()
+                return this.status = strStatus
+                console.log("Your phone is on")
+            } else {
+                return this.status = strStatus
+                this.descrease()
+                console.log("Your phone is off")
             }
+
+        }
+
+        descrease() {
             this.battery--
         }
 
-        toggleOnOff(turn) {
-            if (turn === "on"){
-                alert("Your phone is running")
-                this.battery--
-            }else {
-                alert("Your phone was turned off")
-                this.battery--
+        rechargeBattery() {
+            if (this.battery < 100) {
+                this.battery++
+            } else {
+                return this.battery
             }
 
         }
 
-        reChargeBattery() {
+        createMess(message) {
+            if (this.status == "on") {
+                this.descrease()
+                return this.saveMessBox.push(message)
+            } else {
+                console.log("Please turn on your phone")
+            }
 
         }
 
-        receiveMail() {
+        receiveMess() {
+            if (this.status == "on") {
+                this.descrease()
+                return this.saveInBox
+            } else {
+                console.log("Please turn on your phone")
+            }
 
         }
 
-        sendMail() {
+        sendMess(anyThing) {
+            if (this.status == "on") {
+                this.descrease()
+                this.saveInBox.push(anyThing)
+                return this.saveInBox
+            } else {
+                console.log("Please turn on your phone")
+            }
+        }
+
+        viewInBoxMess() {
+            if (this.status == "on") {
+                this.descrease()
+                return this.saveInBox
+            } else {
+                console.log("Please turn on your phone")
+            }
 
         }
 
-        functionReceive() {
-
-        }
-
-        functionGive() {
-
-        }
-
-        viewInBox() {
+        viewCreateMess() {
+            if (this.status == "on") {
+                this.descrease()
+                return this.saveMessBox
+            } else {
+                console.log("Please turn on your phone")
+            }
 
         }
 
 
     }
-
-    class Iphone extends Mobile {
-        constructor(battery, saveMailBox, saveInBox, saveOutBox) {
-            super(battery, saveMailBox, saveInBox, saveOutBox);
-        }
-    }
-
-    class Nokia extends Mobile {
-        constructor(battery, saveMailBox, saveInBox, saveOutBox) {
-            super(battery, saveMailBox, saveInBox, saveOutBox);
-        }
-    }
-    let ip1tyObj = new Iphone(100,"","","")
-    let nokia1tyObj = new Nokia(100,"","","")
+    let nokia = new Mobile(80,"","","","on")
+    let iphone1ty = new Mobile(90,"","","","off")
+    iphone1ty.setStatus("on")
+    nokia.sendMess("anhquandeptraiqua")
+    iphone1ty.viewInBoxMess()
+    console.log(this.saveInBox)
 </script>
 </html>

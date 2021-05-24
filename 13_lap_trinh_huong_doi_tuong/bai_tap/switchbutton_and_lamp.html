@@ -7,4 +7,81 @@
 <body>
 
 </body>
+    <script>
+        class SwitchButton {
+            constructor(status, electricLamp) {
+                this.status = true
+                this.electricLamp = electricLamp
+            }
+
+            getStatus() {
+                return this.status
+            }
+
+            setStatus(str) {
+                if (str == "on") {
+                    alert("Your lamp is on")
+                } else {
+                    alert("Please turn on your lamp")
+                }
+            }
+
+            turnOn() {
+                return true;
+            }
+
+            turnOff() {
+                return false;
+            }
+
+
+            switchOn() {
+                if (this.electricLamp.turnOn()) {
+                    console.log("Your lamp is on")
+                }
+            }
+
+            switchOff() {
+                if (!this.electricLamp.turnOff()) {
+                    console.log("Your lamp is off")
+                }
+            }
+
+            connectToLamp() {
+                alert("Your electriclamp is good bro")
+            }
+        }
+        class ElectricLamp{
+            constructor (status,name) {
+                this.staus = true;
+                this.name = name
+            }
+            getStatus() {
+                return this.staus
+            }
+
+            setStatus(str) {
+                if (str == "on") {
+                    alert("Your lamp is on")
+                } else {
+                    alert("Please turn on your lamp")
+                }
+            }
+            turnOn(){
+                return  true;
+            }
+            turnOff(){
+                return  false;
+            }
+        }
+        let button = new SwitchButton(true,"anhquanLamp")
+        let pin = new ElectricLamp(true,"anhquanElectric")
+        button.connectToLamp(pin)
+        for (let i = 0;i<10;i++){
+            button.switchOn()
+            button.switchOff()
+        }
+
+
+    </script>
 </html>
