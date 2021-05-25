@@ -41,12 +41,12 @@
         function outputconvertCtoF() {
             let C = parseFloat(document.getElementById("Temperature").value)
             let F = 9/5*C + 32
-            document.write("độ F là: " + F)
+            alert("độ F là: " + F)
         }
         function outputconvertFtoC() {
             let F = parseFloat(document.getElementById("Temperature").value)
             let C = 5/9*(F-32)
-            document.write("độ C là: " + C)
+            alert("độ C là: " + C)
         }
         // tinh dien tinh hinh tron
         function outputacreage() {
@@ -57,7 +57,7 @@
         //tinh chu vi hinh tron
         function outputperimeter() {
             let r = parseFloat(document.getElementById("radius2").value)
-            alert(r*2*3.14)
+            document.write(r*2*3.14)
 
         }
 
