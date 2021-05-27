@@ -20,8 +20,35 @@
     //     }
     //     console.log(a);
 
-    typeof ("")
-    console.log(typeof)
+    // typeof ("")
+    // console.log(typeof)
+
+    function plusMinus(arr) {
+        let counta = 0
+        let countb = 0
+        let countc = 0
+        for (let i=0;i<arr.length;i++){
+            if (arr[i]<0){
+                counta++
+            }
+            else if (arr[i]>0){
+                countb++
+            }else{
+                countc++
+            }
+        }
+        let a = (counta/arr.length).toFixed(6)
+        let b = (countb/arr.length).toFixed(6)
+        let c = (countc/arr.length).toFixed(6)
+        console.log(a)
+        console.log(b)
+        console.log(c)
+
+
+
+
+    }
+    plusMinus([-1,0,1,1,1,1,-1])
 </script>
 </body>
 </html>

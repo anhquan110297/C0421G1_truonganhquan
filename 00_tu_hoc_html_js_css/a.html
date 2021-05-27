@@ -8,52 +8,25 @@
 <div id="game"></div>
 </body>
 <script>
-    class Hero {
-        constructor(image, top, left, size, speed) {
-            this.image = image;
-            this.top = top;
-            this.left = left;
-            this.size = size;
-            this.speed = speed;
+    function diagonalDifference(arr) {
+        // Write your code here
+        let result = [0, 0]
+        for(let i=0;i<arr.length; i++){
+            let a = arr[i][0+i]
+                b = arr[i][arr.length-1-i]
+            result = [result[0]+ a, result[1]+b]
+
         }
-        getHeroElement() {
-            return '<img width="' + this.size + '"' +
-                ' height="' + this.size + '"' +
-                ' src="' + this.image + '"' +
-                ' style="top: ' + this.top + 'px; left:' + this.left + 'px;position:absolute;" />';
-        }
-        moveRight() {
-            this.left += this.speed;
-            console.log('ok: ' + this.left);
-        }
-        moveLeft() {
-            this.left -= this.speed;
-            console.log('ok: ' + this.left);
-        }
-        moveDown() {
-            this.top += this.speed;
-            console.log('ok: ' + this.top);
-        }
-        moveUp() {
-            this.top -= this.speed;
-            console.log('ok: ' + this.top);
-        }
+
+        return Math.abs(result[0]-result[1])
+
     }
-    let hero = new Hero('tải xuống.jpg', 20, 30, 200,70)
-    function start() {
-        if (hero.left < window.innerWidth - hero.size) {
-            hero.moveRight();
-        // } else {
-        //     hero.moveLeft();
-        // }
-        // if (hero.top < window.innerHeight - hero.size) {
-        //     hero.moveDown();
-        // } else {
-        //     hero.moveUp()
-        }
-        document.getElementById('game').innerHTML = hero.getHeroElement();
-        setTimeout(start, 500)
-    }
-    start()
+
+
+
+
+
+
+
 </script>
 </html>
