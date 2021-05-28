@@ -5,28 +5,31 @@
     <title>Title</title>
 </head>
 <body>
-<div id="game"></div>
-</body>
+<div id="bill">Vui lòng thanh toán: </div>
+<div id="order"></div>
 <script>
-    function diagonalDifference(arr) {
-        // Write your code here
-        let result = [0, 0]
-        for(let i=0;i<arr.length; i++){
-            let a = arr[i][0+i]
-                b = arr[i][arr.length-1-i]
-            result = [result[0]+ a, result[1]+b]
-
+    let menu = ['Cafe','Cam vắt','Nước ép cà rốt','Nước ép cà chua',' Nước lọc',' Nước dừa'];
+    let unitPrice = [12000,15000,14000,15000,7000,30000]
+    order(menu);
+    //tạo menu trên HTML
+    function order(menu) {
+        let html = '<table>'
+        for (let i = 0; i< menu.length; i++) {
+            html += '<tr>' +
+                '<td>' + menu[i] + '</td>' +
+                '<td><button type="button" onclick="orderDrink('+ i +')">chọn</button> </td>'+
+                '</tr>'
         }
-
-        return Math.abs(result[0]-result[1])
-
+        html += '</table>'
+        document.getElementById('order').innerHTML = html;
+    }   //ok
+    //tính tiền
+    function orderDrink(index) {
+        alert('giá ' + menu[index] + ': ' + unitPrice[index] + 'đ');
+        let soLuong = parseInt(prompt('Please enter amount: '))
+        let price = unitPrice[index]*soLuong;
+        document.getElementById('bill').innerHTML = price;
     }
-
-
-
-
-
-
-
 </script>
+</body>
 </html>

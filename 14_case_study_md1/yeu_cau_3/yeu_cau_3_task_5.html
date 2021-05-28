@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--    <table border= 1 style="border-collapse: collapse">-->
+<!--        <tr>-->
+<!--            <th>STT</th>-->
+<!--            <th>Tên Món</th>-->
+<!--            <th>Giá Tiền</th>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>1</td>-->
+<!--            <td>Coffe</td>-->
+<!--            <td>1 USD</td>-->
+<!--            <td><input type="button" onclick=""() value="Add to cart "></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td><input type="button" onclick=""></td>-->
+<!--        </tr>-->
+
+<!--    </table>-->
+<div><h3><strong>Menu</strong></h3></div>
+<div id="display"></div>
+<!--    <input type="button" onclick="payNow()" value="Pay now" >-->
+<span id="result">Result: </span>
+</body>
+<script>
+    //4(nước ép cà chua), 5(nước lọc), 6(nước dừa), 7(thoát gọi món)
+    let itemList = ["Coffee", "Orange juice", "Carrot juice", "Tomato juice", "Fresh water", "Coconut water"]
+    let itemPrice = [1, 2, 3, 4, 5, 6]
+
+    function display() {
+        let html = "<table border= 1 style=\"border-collapse: collapse\">\n" +
+            "        <tr>\n" +
+            "            <th>STT</th>\n" +
+            "            <th>Tên Món</th>\n" +
+            "            <th>Giá Tiền</th>\n" +
+            "        </tr>"
+        for (let i = 0; i < itemList.length; i++) {
+            html = html +
+                "<tr>\n" +
+                "            <td>" + i + "</td>\n" +
+                "            <td>" + itemList[i] + "</td>\n" +
+                "            <td>" + itemPrice[i] + "</td>\n" +
+                "            <td><input type=\"button\" onclick=\"orderMenu(" + i + ")\"value=\"Add to cart\"</td>\n" +
+                "        </tr>"
+        }
+
+
+        html = html +
+            "</table>"
+        document.getElementById("display").innerHTML = html;
+    }
+
+    display()
+
+    function orderMenu(index) {
+        let totalPrice = 0
+        alert("The " + itemList[index] + " is " + itemPrice[index] + " $")
+        let amount = prompt("How many cups do you want?")
+        let priceAll = amount * itemPrice[index]
+        totalPrice += totalPrice + priceAll
+        document.getElementById("result").innerHTML = "Result: " + totalPrice +" $"
+    }
+
+
+</script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task1</title>
+</head>
+<body>
+<script>
+    // x = 4, y= 5
+    let width = parseInt(prompt("Please enter width"))
+    let height = parseInt(prompt("Please enter height"))
+    for (let i = 1; i <= height; i++) { //i =1
+        for (let j = 1; j <= width; j++) {
+            if (i == 1 || j ==1 || i == height || j == width ) {
+                document.write("*")
+            } else {
+                document.write("&nbsp;"+"&nbsp;")
+            }
+        }
+        document.write("<br>")
+    }
+</script>
+</body>
+</html>
