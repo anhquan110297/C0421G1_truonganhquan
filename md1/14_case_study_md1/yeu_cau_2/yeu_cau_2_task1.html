@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let grossSalary = parseFloat(prompt("Please enter your salary"))
+    let netSalary
+    if (grossSalary < 7000000){
+        netSalary = grossSalary - (grossSalary*0.05)
+        alert("Your netSalary is: " + netSalary)
+    }else if ( grossSalary >= 7000000 && grossSalary <= 15000000 ){
+        netSalary = grossSalary - (grossSalary*0.1)
+        alert("Your netSalary is: " + netSalary)
+    }else {
+        netSalary = grossSalary - (grossSalary*0.2)
+        alert("Your netSalary is: " + netSalary)
+    // }
+</script>
+</body>
+</html>

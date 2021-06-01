@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    class Students {
+        constructor(index, name, dateOfBirth, avgScore) {
+            this.index = index
+            this.name = name
+            this.dateOfBirth = dateOfBirth
+            this.avgScore = avgScore
+        }
+
+        getIndex() {
+            return this.index
+        }
+
+        getName() {
+            return this.name
+        }
+
+        getDateOfBirth() {
+            return this.dateOfBirth
+        }
+
+        getAvgScore() {
+            return this.avgScore
+        }
+
+        setIndex(newIndex) {
+            this.index = newIndex
+        }
+
+        setName(newName) {
+            this.index = newName
+        }
+
+        setDateOfBirth(newDateOfBirth) {
+            this.index = newDateOfBirth
+        }
+
+        setAvgScore(newAvgScore) {
+            this.index = newAvgScore
+        }
+
+        displayProfile() {
+            alert("Profile: số thứ tự " + this.index + " tên: " + this.name + " ngày sinh: " + this.dateOfBirth + " điểm trung bình " + this.avgScore)
+        }
+
+        avgScoreCheck() {
+            if (this.avgScore > 8) {
+                alert("học sinh giỏi")
+            } else if (this.avgScore >= 6.5) {
+                alert("học sinh khá")
+            } else if (this.avgScore >= 5) {
+                alert("học sinh trung bình")
+            } else {
+                alert("học sinh yếu")
+            }
+        }
+    }
+
+    let student1 = new Students(1, "anhquan", "1102", 10)
+    let student2 = new Students(2,"quananh","0211", 5)
+    student1.avgScoreCheck()
+    student1.displayProfile()
+    student2.avgScoreCheck()
+    student2.displayProfile()
+
+</script>
+</html>
