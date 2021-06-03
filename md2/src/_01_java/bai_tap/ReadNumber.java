@@ -8,8 +8,8 @@ public class ReadNumber {
         System.out.println("Please enter a number");
         int number = scanner.nextInt();
         String display = "";
-        if ( number <= 10 && number > 0 ){
-            switch (number){
+        if (number <= 10 && number > 0) {
+            switch (number) {
                 case 1:
                     display = "One";
                     break;
@@ -42,8 +42,8 @@ public class ReadNumber {
                     break;
             }
 
-        }else if (number < 20){
-            switch (number){
+        } else if (number < 20) {
+            switch (number) {
                 case 11:
                     display = "Eleven";
                     break;
@@ -73,10 +73,10 @@ public class ReadNumber {
                     break;
             }
 
-        }else if (number < 100){
-            int tens = number/10;
-            int ones = number - (tens*10);
-            switch (tens){
+        } else if (number < 100) {
+            int tens = number / 10;
+            int ones = number - (tens * 10);
+            switch (tens) {
                 case 2:
                     display = "Twenty";
                     break;
@@ -103,7 +103,7 @@ public class ReadNumber {
                     break;
 
             }
-            switch (ones){
+            switch (ones) {
                 case 1:
                     display += " One";
                     break;
@@ -134,13 +134,13 @@ public class ReadNumber {
 
             }
 
-        }else if (number < 1000){
-            int hundreds = number/100;
-            int spec = number%100;
-            int tens = (number - (hundreds*100))/10;
-            int ones = (number - (hundreds*100)-(tens*10));
+        } else if (number < 1000) {
+            int hundreds = number / 100;
+            int spec = number % 100;
+            int tens = (number - (hundreds * 100)) / 10;
+            int ones = (number - (hundreds * 100) - (tens * 10));
 
-            switch (hundreds){
+            switch (hundreds) {
                 case 1:
                     display = "One hundred";
                     break;
@@ -170,9 +170,9 @@ public class ReadNumber {
                     break;
 
             }
-            switch (tens){
+            switch (tens) {
                 case 1:
-                    switch (spec){
+                    switch (spec) {
                         case 11:
                             display += " and eleven";
                             break;
@@ -201,6 +201,7 @@ public class ReadNumber {
                             display += " and  nineteen";
                             break;
                     }
+                    break;
                 case 2:
                     display += " and twenty";
                     break;
@@ -225,35 +226,36 @@ public class ReadNumber {
                 case 9:
                     display += " and ninety";
                     break;
-            }
-            switch (ones){
-                case 1:
-                    display += " one";
-                    break;
-                case 2:
-                    display += " two";
-                    break;
-                case 3:
-                    display += " three";
-                    break;
-                case 4:
-                    display += " four";
-                    break;
-                case 5:
-                    display += " five";
-                    break;
-                case 6:
-                    display += " six";
-                    break;
-                case 7:
-                    display += " seven";
-                    break;
-                case 8:
-                    display += " eight";
-                    break;
-                case 9:
-                    display += " nine";
-                    break;
+            }if (tens>1) {
+                switch (ones) {
+                    case 1:
+                        display += " one";
+                        break;
+                    case 2:
+                        display += " two";
+                        break;
+                    case 3:
+                        display += " three";
+                        break;
+                    case 4:
+                        display += " four";
+                        break;
+                    case 5:
+                        display += " five";
+                        break;
+                    case 6:
+                        display += " six";
+                        break;
+                    case 7:
+                        display += " seven";
+                        break;
+                    case 8:
+                        display += " eight";
+                        break;
+                    case 9:
+                        display += " nine";
+                        break;
+                }
             }
         }
         System.out.println(display);
