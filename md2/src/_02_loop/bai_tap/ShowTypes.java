@@ -58,6 +58,7 @@ public class ShowTypes {
                     }
                     System.out.println();
                 }
+                break;
             case 3:
                 System.out.println("Print isosceles triangle");
                 for (int i=1;i<=3;i++){

@@ -2,14 +2,14 @@ package _03_array_method_java.bai_tap;
 
 import java.util.Scanner;
 
-public class DeleteElements {
+public class DeleteElement {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter arrLength");
         int arrLength = scanner.nextInt();
         int[] myArr;
         myArr = new int[arrLength];
-
+    // nhập phần tử mảng
         for (int i = 0; i < arrLength; i++) {
             System.out.println("Please enter a[" + i + "]");
             myArr[i] = scanner.nextInt();
@@ -29,11 +29,10 @@ public class DeleteElements {
         }
         System.out.println("Index: " + index);
         //thực hiện xóa
-        for (int k=index;k<myArr.length;k++){
-            myArr[index] = myArr[index+1];
-            myArr[arrLength-1] = 0;
-            break;
+        for (int k=index;k<myArr.length-1;k++){
+            myArr[k] = myArr[k+1];
         }
+        myArr[arrLength-1] = 0;
         //kiểm tra mảng sau khi xóa
         for (int z : myArr){
             System.out.println("Mảng sau khi xóa "+ z);
@@ -41,4 +40,3 @@ public class DeleteElements {
 
     }
 }
-

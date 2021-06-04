@@ -29,11 +29,12 @@ public class AddNewElements {
             System.out.println("Unable to add new element into array");
             // thêm phần tử
         }else {
-            for (int j=indexInput;j<arrLength;j++){
-                myArr[indexInput+1] = myArr[indexInput];
-                break;
+            for (int j=myArr.length-1;j>= indexInput;j--){
+                myArr[j] = myArr[j-1];
             }
             myArr[indexInput] = valueInput;
+            myArr[arrLength-1] = 0;
+
             // xuất mảng kiểm tra
             for (int n : myArr){
                 System.out.println(n);
