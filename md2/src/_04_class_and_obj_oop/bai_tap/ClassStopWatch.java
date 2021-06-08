@@ -6,6 +6,7 @@ public class ClassStopWatch {
 
     public ClassStopWatch() {
         startTime = System.currentTimeMillis();
+        endTime = System.currentTimeMillis();
     }
 
     public long getStartTime() {

@@ -65,6 +65,7 @@ public class ClassFan {
                 '}';
     }
 
+
     public static void main(String[] args) {
         ClassFan xayDungLopFan = new ClassFan(2,true,5,"pink");
         System.out.println(xayDungLopFan.toString());
