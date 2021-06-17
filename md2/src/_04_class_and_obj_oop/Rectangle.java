@@ -26,5 +26,6 @@ public class Rectangle {
         newRectangle.getPerimeter();
         newRectangle.displayRectangle();
     }
+    Rectangle rectangle = new Rectangle(10,20);
 
 }
