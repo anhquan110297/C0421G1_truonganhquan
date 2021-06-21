@@ -41,7 +41,7 @@ public class RevertElement<T> {
             mWord[i] = wStack.pop();
             str += mWord[i] + " ";
         }
-        System.out.println("Result: "+ str);
+        System.out.println("Result: " + str);
     }
 
 

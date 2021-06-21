@@ -9,7 +9,7 @@ public class TreeMap {
         Scanner scanner = new Scanner(System.in);
         System.out.println("enter string: ");
         String string = scanner.nextLine();
-        String[] stringStorage = string.split(" ");
+        String[] stringStorage = string.split("");
         for (String n : stringStorage) {
             treeMap.put(n.toLowerCase(), 0);
         }
@@ -17,6 +17,9 @@ public class TreeMap {
         for (Map.Entry m : treeMap.entrySet()) {
 //            System.out.println(m);
             for (int i = 0; i < stringStorage.length; i++) {
+                if (m.getKey().equals(" ")){
+                    continue;
+                }
                 if (m.getKey().equals(stringStorage[i])) {
                     int temp = (int) m.getValue();
                     temp++;
