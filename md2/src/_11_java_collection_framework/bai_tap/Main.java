@@ -122,11 +122,8 @@ public class Main {
             if (id == n.getId()) {
                 System.out.println("newName");
                 String newName = input().nextLine();
-                System.out.println("newId");
-                int newId = input().nextInt();
                 System.out.println("newPrice");
                 int newPrice = input().nextInt();
-                n.setId(newId);
                 n.setName(newName);
                 n.setPrice(newPrice);
                 check = true;
