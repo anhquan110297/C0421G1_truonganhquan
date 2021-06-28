@@ -22,5 +22,4 @@ public class InsertSort {
             array[k + 1] = currentElement;
         }
     }
-    ArrayList
 }
