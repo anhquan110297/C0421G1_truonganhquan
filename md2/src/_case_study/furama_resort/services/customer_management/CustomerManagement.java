@@ -1,4 +1,4 @@
-package _case_study.furama_resort.services.custom_management;
+package _case_study.furama_resort.services.customer_management;
 
 import _case_study.furama_resort.controllers.FuramaController;
 
@@ -20,13 +20,19 @@ public class CustomerManagement {
             int choice = input().nextInt();
             switch (choice){
                 case 1:
+                    new CustomerServices().display();
                     break;
                 case 2:
+                    new CustomerServices().add();
                     break;
                 case 3:
+                    new CustomerServices().edit();
                     break;
                 case 4:
                     new FuramaController().displayMainMenu();
+                    break;
+                default:
+                    System.out.println("Wrong Type");
                     break;
             }
         }

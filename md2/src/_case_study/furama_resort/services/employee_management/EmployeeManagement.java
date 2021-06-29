@@ -20,13 +20,19 @@ public class EmployeeManagement {
             int choice = input().nextInt();
             switch (choice){
                 case 1:
+                    new EmployeeService().display();
                     break;
                 case 2:
+                    new EmployeeService().add();
                     break;
                 case 3:
+                    new EmployeeService().edit();
                     break;
                 case 4:
                     new FuramaController().displayMainMenu();
+                    break;
+                default:
+                    System.out.println("Wrong type");
                     break;
             }
         }

@@ -1,8 +1,7 @@
 package _case_study.furama_resort.controllers;
 
-import _case_study.furama_resort.models.facility.Facility;
 import _case_study.furama_resort.services.booking_contract_management.BookingContractManagement;
-import _case_study.furama_resort.services.custom_management.CustomerManagement;
+import _case_study.furama_resort.services.customer_management.CustomerManagement;
 import _case_study.furama_resort.services.employee_management.EmployeeManagement;
 import _case_study.furama_resort.services.facility_management.FacilityManagement;
 
@@ -41,6 +40,9 @@ public class FuramaController {
                     break;
                 case 6:
                     System.exit(1);
+                    break;
+                default:
+                    System.out.println("Wrong type");
                     break;
 
             }
