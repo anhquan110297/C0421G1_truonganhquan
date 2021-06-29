@@ -1,25 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="2963f8de-c2fd-4da5-86be-239d2c31d62b" name="Default Changelist" comment="">
+    <list default="true" id="d0f0b79f-360e-40f4-9093-e7cf058b2565" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,86 +11,43 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1tKw1geSpUfN1p9DjrUuSzFVTt0" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectId" id="1uYsGsyQ3p4que4PuFKLvffI95s" />
   <component name="ProjectViewState">
+    <option name="foldersAlwaysOnTop" value="false" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
-    <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/md2" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2963f8de-c2fd-4da5-86be-239d2c31d62b" name="Default Changelist" comment="" />
-      <created>1622530874453</created>
+      <changelist id="d0f0b79f-360e-40f4-9093-e7cf058b2565" name="Default Changelist" comment="" />
+      <created>1624853764055</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1622530874453</updated>
-      <workItem from="1622530886466" duration="31000" />
-      <workItem from="1622530993225" duration="19000" />
-      <workItem from="1622534806538" duration="2236000" />
+      <updated>1624853764055</updated>
+      <workItem from="1624853768152" duration="52000" />
+      <workItem from="1624853871868" duration="127000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="WindowStateProjectService">
-    <state x="249" y="7" key="#Project_Structure" timestamp="1622535318439">
+    <state x="654" y="295" key="#Notifications" timestamp="1624853932511">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="249" y="7" key="#Project_Structure/0.0.1536.864@0.0.1536.864" timestamp="1622535318439" />
-    <state x="399" y="121" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1622535161381">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="399" y="121" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1536.864@0.0.1536.864" timestamp="1622535161381" />
-    <state x="549" y="126" key="FileChooserDialogImpl" timestamp="1622535315656">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="549" y="126" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1622535315656" />
-    <state x="439" y="137" key="NewModule_or_Project.wizard" timestamp="1622535279598">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="439" y="137" key="NewModule_or_Project.wizard/0.0.1536.864@0.0.1536.864" timestamp="1622535279598" />
-    <state x="209" y="53" key="new project wizard" timestamp="1622535317239">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="209" y="53" key="new project wizard/0.0.1536.864@0.0.1536.864" timestamp="1622535317239" />
+    <state x="654" y="295" key="#Notifications/0.0.1536.864@0.0.1536.864" timestamp="1624853932511" />
   </component>
 </project>
