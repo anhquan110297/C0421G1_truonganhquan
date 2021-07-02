@@ -2,26 +2,23 @@ package _case_study.furama_resort.services.customer_management;
 
 import _case_study.furama_resort.models.person.Customer;
 
+import _case_study.furama_resort.models.person.Employee;
+import _case_study.furama_resort.utils.ReadAndWriteFileByStream;
+
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
 public class CustomerServices implements CustomerServicesInterface {
-    public static List<Customer> linkedList = new LinkedList<>();
+    public static List<Customer> customers = new LinkedList<>();
     static boolean check = false;
-    static {
-        Customer customer1 = new Customer(1,"Versace","11/02/97","Male",201751601,190473837,"customer1@gmail.com","Diamond","Da Nang");
-        Customer customer2 = new Customer(2,"Ysl","1/02/97","Female",201751501,107173837,"customer2@gmail.com","Platinium","HCM");
-        Customer customer3 = new Customer(3,"D&G","15/02/97","Male",201751301,109477537,"customer3@gmail.com","Gold","Ha Noi");
-        linkedList.add(customer1);
-        linkedList.add(customer2);
-        linkedList.add(customer3);
-    }
-
+    private static final String FILE_PATH = "D:\\C0421G1_truonganhquan\\md2\\src\\_case_study\\furama_resort\\data\\customer.csv";
     public static Scanner input() {
         Scanner scanner = new Scanner(System.in);
         return scanner;
     }
+
     @Override
     public void add() {
         System.out.println("Enter id");
@@ -42,21 +39,21 @@ public class CustomerServices implements CustomerServicesInterface {
         String typeOfGuest = input().nextLine();
         System.out.println("Enter address");
         String address = input().nextLine();
-        Customer customer = new Customer(id,name,dateOfBirth,gender,idNo,telePhoneNumber,email,typeOfGuest,address);
-        linkedList.add(customer);
-
+        Customer customer = new Customer(id, name, dateOfBirth, gender, idNo, telePhoneNumber, email, typeOfGuest, address);
+        customers.add(customer);
+        new ReadAndWriteFileByStream<>().writeFileByByteStream(Collections.singletonList(customers), FILE_PATH);
     }
 
     @Override
     public void delete() {
-
     }
 
     @Override
     public void edit() {
-        System.out.println("Please enter employee's id you want to edit");
+        System.out.println("Please enter customer's id you want to edit");
         int id = input().nextInt();
-        for (Customer n : linkedList) {
+        customers = (List<Customer>) new ReadAndWriteFileByStream<>().readFileByByteStream(FILE_PATH);
+        for (Customer n : customers) {
             if (id == n.getId()) {
                 System.out.println("Enter name");
                 String name = input().nextLine();
@@ -83,6 +80,7 @@ public class CustomerServices implements CustomerServicesInterface {
                 n.setTypeOfGuest(typeOfGuest);
                 n.setAddress(address);
                 check = true;
+                new ReadAndWriteFileByStream<>().writeFileByByteStream(Collections.singletonList(customers), FILE_PATH);
                 break;
             }
         }
@@ -93,9 +91,10 @@ public class CustomerServices implements CustomerServicesInterface {
 
     @Override
     public void display() {
-        for (Customer n : linkedList){
+        ReadAndWriteFileByStream display = new ReadAndWriteFileByStream();
+        customers = (List<Customer>) display.readFileByByteStream(FILE_PATH);
+        for (Customer n : customers) {
             System.out.println(n);
         }
     }
-
 }

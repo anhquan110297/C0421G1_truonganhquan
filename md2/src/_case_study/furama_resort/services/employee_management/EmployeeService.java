@@ -1,28 +1,22 @@
 package _case_study.furama_resort.services.employee_management;
 
-import _11_java_collection_framework.bai_tap.Product;
 import _case_study.furama_resort.models.person.Employee;
+import _case_study.furama_resort.utils.ReadAndWriteFileByStream;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 public class EmployeeService implements EmployeeServicesInterface {
-    public static List<Employee> list = new ArrayList<Employee>();
+    public static List<Employee> employees = new ArrayList<Employee>();
     static boolean check = false;
+    private static final String FILE_PATH = "D:\\C0421G1_truonganhquan\\md2\\src\\_case_study\\furama_resort\\data\\employee.csv";
+
 
     public static Scanner input() {
         Scanner scanner = new Scanner(System.in);
         return scanner;
-    }
-
-    static {
-        Employee employee1 = new Employee(1, "Thomas", "11/02/1997", "Male", 201751603, 1930192836, "employee1@gmail.com", "College", "Bellman", 1000);
-        Employee employee2 = new Employee(2, "Jone", "12/3/1990", "Male", 201751604, 2128102938, "employee2@gmail.com", "university", "Driver", 1000);
-        Employee employee3 = new Employee(3, "Jessica", "22/3/1990", "Female", 201752604, 1128102938, "employee3@gmail.com", "university", "Spa", 1000);
-        list.add(employee1);
-        list.add(employee2);
-        list.add(employee3);
     }
 
     @Override
@@ -48,7 +42,8 @@ public class EmployeeService implements EmployeeServicesInterface {
         System.out.println("Enter Slary");
         double salary = input().nextDouble();
         Employee employee = new Employee(id, name, dateOfBirth, gender, idNo, telePhoneNumber, email, level, onPosition, salary);
-        list.add(employee);
+        employees.add(employee);
+        new ReadAndWriteFileByStream<>().writeFileByByteStream(Collections.singletonList(employees),FILE_PATH);
     }
 
     @Override
@@ -60,7 +55,8 @@ public class EmployeeService implements EmployeeServicesInterface {
     public void edit() {
         System.out.println("Please enter employee's id you want to edit");
         int id = input().nextInt();
-        for (Employee n : list) {
+        employees = (List<Employee>) new ReadAndWriteFileByStream<>().readFileByByteStream(FILE_PATH);
+        for (Employee n : employees) {
             if (id == n.getId()) {
                 System.out.println("Enter name");
                 String name = input().nextLine();
@@ -90,6 +86,7 @@ public class EmployeeService implements EmployeeServicesInterface {
                 n.setOnPosition(onPosition);
                 n.setSalary(salary);
                 check = true;
+                new ReadAndWriteFileByStream<>().writeFileByByteStream(Collections.singletonList(employees), FILE_PATH);
                 break;
             }
         }
@@ -100,9 +97,10 @@ public class EmployeeService implements EmployeeServicesInterface {
 
     @Override
     public void display() {
-        for (Employee n : list) {
+        ReadAndWriteFileByStream display = new ReadAndWriteFileByStream();
+        employees = (List<Employee>) display.readFileByByteStream(FILE_PATH);
+        for (Employee n : employees) {
             System.out.println(n);
         }
-
     }
 }

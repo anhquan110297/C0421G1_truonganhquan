@@ -1,6 +1,7 @@
-package _case_study.furama_resort.services.employee_management;
+package _case_study.furama_resort.controllers;
 
 import _case_study.furama_resort.controllers.FuramaController;
+import _case_study.furama_resort.services.employee_management.EmployeeService;
 
 import java.util.Scanner;
 

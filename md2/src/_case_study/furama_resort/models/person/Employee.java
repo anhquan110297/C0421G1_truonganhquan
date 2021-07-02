@@ -1,6 +1,6 @@
 package _case_study.furama_resort.models.person;
 
-public class Employee extends Person {
+public class Employee extends Person  {
     private String level;
     private String onPosition;
     private double salary;

@@ -1,10 +1,5 @@
 package _case_study.furama_resort.controllers;
 
-import _case_study.furama_resort.services.booking_contract_management.BookingContractManagement;
-import _case_study.furama_resort.services.customer_management.CustomerManagement;
-import _case_study.furama_resort.services.employee_management.EmployeeManagement;
-import _case_study.furama_resort.services.facility_management.FacilityManagement;
-
 import java.util.Scanner;
 
 public class FuramaController {

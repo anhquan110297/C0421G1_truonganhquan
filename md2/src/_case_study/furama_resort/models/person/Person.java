@@ -1,6 +1,8 @@
 package _case_study.furama_resort.models.person;
 
-public abstract class Person {
+import java.io.Serializable;
+
+public abstract class Person implements Serializable {
     private int id;
     private String name;
     private String dateOfBirth;

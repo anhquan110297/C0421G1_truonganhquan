@@ -1,6 +1,8 @@
 package _case_study.furama_resort.models.facility;
 
-public abstract class Facility {
+import java.io.Serializable;
+
+public abstract class Facility implements Serializable {
     private String nameServices;
     private int area;
     private double rentalCost;
@@ -65,7 +67,7 @@ public abstract class Facility {
                 ", area=" + area +
                 ", rentalCost=" + rentalCost +
                 ", numberOfPeople=" + numberOfPeople +
-                ", rentOfType='" + rentOfType + '\'' +
-                '}';
+                ", rentOfType='" + rentOfType + '\''
+                ;
     }
 }
