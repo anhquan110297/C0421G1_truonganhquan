@@ -1,6 +1,6 @@
 package _case_study.furama_resort.models.booking_contract;
 
-public class Booking {
+public class Booking implements Comparable {
     private int idBooking;
     private String startDay;
     private String endDay;
@@ -78,5 +78,10 @@ public class Booking {
                 ", nameService='" + nameService + '\'' +
                 ", typeOfService='" + typeOfService + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 }

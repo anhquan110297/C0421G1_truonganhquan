@@ -8,27 +8,23 @@ import java.io.*;
 import java.util.List;
 import java.util.Map;
 
-public class ReadAndWriteFileByStream<K,V>{
+public class ReadAndWriteFileByStream<K> {
 
-    public Object readFileByByteStream(String filePath) {
-        File file = new File(filePath);
-        Object test = null;
-        FileInputStream inputStream = null;
-        ObjectInputStream objectInputStream = null;
+    public static Object readFileByByteStream(String filePath){
+        //Khai báo đối tượng FileInputStream và ObjectInputStream trỏ tới null
+        FileInputStream FIn = null;
+        ObjectInputStream OIn = null;
+        Object read = null;
         try {
-            inputStream = new FileInputStream(file);
-            objectInputStream = new ObjectInputStream(inputStream);
-            test = objectInputStream.readObject();
-            return test;
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                inputStream.close();
-                objectInputStream.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            //Khở tạo đối tượng với địa chỉ truyền vào
+            FIn = new FileInputStream(new java.io.File(filePath));
+            OIn = new ObjectInputStream(FIn);
+            read = OIn.readObject();
+            FIn.close();
+            OIn.close();
+            return read;
+        } catch (Exception e) {
+            System.err.println(e);
         }
         return null;
     }
@@ -53,7 +49,7 @@ public class ReadAndWriteFileByStream<K,V>{
         }
     }
 
-    public void writeFileByByteStreamUseMap(Map<K,V> map, String filePath) {
+    public void writeFileByByteStreamUseMap(Map<Facility, Integer> map, String filePath) {
         File file = new File(filePath);
         FileOutputStream outputStream = null;
         ObjectOutputStream objectOutputStream = null;

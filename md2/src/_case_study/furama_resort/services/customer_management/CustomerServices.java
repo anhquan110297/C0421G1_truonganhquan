@@ -2,7 +2,6 @@ package _case_study.furama_resort.services.customer_management;
 
 import _case_study.furama_resort.models.person.Customer;
 
-import _case_study.furama_resort.models.person.Employee;
 import _case_study.furama_resort.utils.ReadAndWriteFileByStream;
 
 import java.util.Collections;
@@ -11,9 +10,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class CustomerServices implements CustomerServicesInterface {
+    ReadAndWriteFileByStream<Customer> rawfbs = new ReadAndWriteFileByStream<>();
     public static List<Customer> customers = new LinkedList<>();
     static boolean check = false;
     private static final String FILE_PATH = "D:\\C0421G1_truonganhquan\\md2\\src\\_case_study\\furama_resort\\data\\customer.csv";
+
     public static Scanner input() {
         Scanner scanner = new Scanner(System.in);
         return scanner;
@@ -21,8 +22,13 @@ public class CustomerServices implements CustomerServicesInterface {
 
     @Override
     public void add() {
-        System.out.println("Enter id");
-        int id = input().nextInt();
+        customers = (List<Customer>) rawfbs.readFileByByteStream(FILE_PATH);
+        int id;
+        if (customers.isEmpty()) {
+            id = 1;
+        } else {
+            id = customers.get(customers.size() - 1).getId() + 1;
+        }
         System.out.println("Enter name");
         String name = input().nextLine();
         System.out.println("Enter DateOfBirth");
@@ -41,7 +47,7 @@ public class CustomerServices implements CustomerServicesInterface {
         String address = input().nextLine();
         Customer customer = new Customer(id, name, dateOfBirth, gender, idNo, telePhoneNumber, email, typeOfGuest, address);
         customers.add(customer);
-        new ReadAndWriteFileByStream<>().writeFileByByteStream(Collections.singletonList(customers), FILE_PATH);
+        rawfbs.writeFileByByteStream(customers, FILE_PATH);
     }
 
     @Override
@@ -50,9 +56,9 @@ public class CustomerServices implements CustomerServicesInterface {
 
     @Override
     public void edit() {
+        customers = (List<Customer>) rawfbs.readFileByByteStream(FILE_PATH);
         System.out.println("Please enter customer's id you want to edit");
         int id = input().nextInt();
-        customers = (List<Customer>) new ReadAndWriteFileByStream<>().readFileByByteStream(FILE_PATH);
         for (Customer n : customers) {
             if (id == n.getId()) {
                 System.out.println("Enter name");
@@ -80,7 +86,8 @@ public class CustomerServices implements CustomerServicesInterface {
                 n.setTypeOfGuest(typeOfGuest);
                 n.setAddress(address);
                 check = true;
-                new ReadAndWriteFileByStream<>().writeFileByByteStream(Collections.singletonList(customers), FILE_PATH);
+                customers = (List<Customer>) rawfbs.readFileByByteStream(FILE_PATH);
+                rawfbs.writeFileByByteStream(customers, FILE_PATH);
                 break;
             }
         }
@@ -91,10 +98,13 @@ public class CustomerServices implements CustomerServicesInterface {
 
     @Override
     public void display() {
-        ReadAndWriteFileByStream display = new ReadAndWriteFileByStream();
-        customers = (List<Customer>) display.readFileByByteStream(FILE_PATH);
-        for (Customer n : customers) {
-            System.out.println(n);
+        customers = (List<Customer>) rawfbs.readFileByByteStream(FILE_PATH);
+        if (customers == null) {
+            System.err.println("customer's list is empty");
+        } else {
+            for (Customer n : customers) {
+                System.out.println(n);
+            }
         }
     }
 }

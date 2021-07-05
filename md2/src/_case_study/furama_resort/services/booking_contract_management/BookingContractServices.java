@@ -11,8 +11,5 @@ public class BookingContractServices implements BookingContractInterface {
         Scanner scanner = new Scanner(System.in);
         return scanner;
     }
-    LinkedHashMap<String, Integer> list = new LinkedHashMap<>();
-    static {
-        Booking booking1 = new Booking(1,"1/1/2021","2/1/2021",1,"Car","hihi");
-    }
+
 }

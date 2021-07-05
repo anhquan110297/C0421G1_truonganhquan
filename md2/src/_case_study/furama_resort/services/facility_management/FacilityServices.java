@@ -19,19 +19,16 @@ public class FacilityServices implements FacilityServicesInterface {
         Scanner scanner = new Scanner(System.in);
         return scanner;
     }
-    public static ReadAndWriteFileByStream readAndWriteFile = new ReadAndWriteFileByStream();
-    private static final String FILE_PATH = "D:\\C0421G1_truonganhquan\\md2\\src\\_case_study\\furama_resort\\data\\facility.csv";
-    public static LinkedHashMap<Facility, Integer> facilities = new LinkedHashMap<>();
 
-    static {
-        House house = new House("House", 100, 500, 5, "Day", "vip", 2);
-        Room room = new Room("Room", 40, 100, 2, "week", "Clean Room");
-        Villa villa = new Villa("Villa", 150, 1000, 10, "year", "vip", 15, 2);
-        facilities.put(house, 0);
-        facilities.put(room, 0);
-        facilities.put(villa, 0);
-        readAndWriteFile.writeFileByByteStreamUseMap(facilities,FILE_PATH);
-    }
+    ReadAndWriteFileByStream rawfb = new ReadAndWriteFileByStream();
+    private static final String FILE_PATH_HOUSE = "D:\\C0421G1_truonganhquan\\md2\\src\\_case_study\\furama_resort\\data\\house.csv";
+    private static final String FILE_PATH_VILLA = "D:\\C0421G1_truonganhquan\\md2\\src\\_case_study\\furama_resort\\data\\villa.csv";
+    private static final String FILE_PATH_ROOM = "D:\\C0421G1_truonganhquan\\md2\\src\\_case_study\\furama_resort\\data\\room.csv";
+    private static final String FILE_PATH_FACILITY = "D:\\C0421G1_truonganhquan\\md2\\src\\_case_study\\furama_resort\\data\\facility.csv";
+    public static LinkedHashMap<Facility, Integer> facilities = new LinkedHashMap<>();
+    public static LinkedHashMap<Facility, Integer> house = new LinkedHashMap<>();
+    public static LinkedHashMap<Facility, Integer> villa = new LinkedHashMap<>();
+    public static LinkedHashMap<Facility, Integer> room = new LinkedHashMap<>();
 
     @Override
     public void add() {
@@ -49,9 +46,13 @@ public class FacilityServices implements FacilityServicesInterface {
 
     @Override
     public void display() {
-        facilities = (LinkedHashMap<Facility, Integer>) readAndWriteFile.readFileByByteStream(FILE_PATH);
-        for (Map.Entry<Facility,Integer> entry : facilities.entrySet()){
-            System.out.println(entry);
+        facilities = (LinkedHashMap<Facility, Integer>) rawfb.readFileByByteStream(FILE_PATH_FACILITY);
+        if (facilities == null){
+            System.err.println("facility's list is empty");
+        }else {
+            for (Map.Entry<Facility, Integer> entry : facilities.entrySet()) {
+                System.out.println(entry);
+            }
         }
     }
 
@@ -91,52 +92,80 @@ public class FacilityServices implements FacilityServicesInterface {
 
     @Override
     public void addHouse() {
-        for (Facility key : facilities.keySet()) {
-            if (key.getNameServices().equals("House")) {
-                if (facilities.get(key) >= 5) {
-                    System.out.println("Service is under maintenance");
-                    break;
-                }
-            }
-            facilities.put(key, facilities.get(key) + 1);
-        }
-        System.out.println("Ok");
+        facilities = (LinkedHashMap<Facility, Integer>) rawfb.readFileByByteStream(FILE_PATH_FACILITY);
+        house = (LinkedHashMap<Facility, Integer>) rawfb.readFileByByteStream(FILE_PATH_HOUSE);
+        System.out.println("Enter name");
+        String name = input().nextLine();
+        System.out.println("Enter area");
+        int area = input().nextInt();
+        System.out.println("Enter rental cost");
+        float rentalCost = input().nextFloat();
+        System.out.println("Enter number of people");
+        int numberOfPeople = input().nextInt();
+        System.out.println("Enter rent of type");
+        String rentOfType = input().nextLine();
+        System.out.println("Enter room standard");
+        String roomStandard = input().nextLine();
+        System.out.println("Enter number of floor");
+        int numberOfFloor = input().nextInt();
+        house.put(new House(name, area, rentalCost, numberOfPeople, rentOfType, roomStandard, numberOfFloor), 0);
+        facilities.put(new House(name, area, rentalCost, numberOfPeople, rentOfType, roomStandard, numberOfFloor), 0);
+        rawfb.writeFileByByteStreamUseMap(house, FILE_PATH_HOUSE);
+        rawfb.writeFileByByteStreamUseMap(house, FILE_PATH_FACILITY);
     }
 
     @Override
     public void addRoom() {
-        for (Facility key : facilities.keySet()) {
-            if (key.getNameServices().equals("Room")) {
-                if (facilities.get(key) >= 5) {
-                    System.out.println("Service is under maintenance");
-                    break;
-                }
-            }
-            facilities.put(key, facilities.get(key) + 1);
-        }
-        System.out.println("Ok");
-
+        facilities = (LinkedHashMap<Facility, Integer>) rawfb.readFileByByteStream(FILE_PATH_FACILITY);
+        house = (LinkedHashMap<Facility, Integer>) rawfb.readFileByByteStream(FILE_PATH_HOUSE);
+        System.out.println("Enter name");
+        String name = input().nextLine();
+        System.out.println("Enter area");
+        int area = input().nextInt();
+        System.out.println("Enter rental cost");
+        double rentalCost = input().nextDouble();
+        System.out.println("Enter number of people");
+        int numberOfPeople = input().nextInt();
+        System.out.println("Enter rent of type");
+        String rentOfType = input().nextLine();
+        System.out.println("Enter room standard");
+        String roomStandard = input().nextLine();
+        System.out.println("Enter number of floor");
+        int numberOfFloor = input().nextInt();
+        System.out.println("Enter freeservices");
+        String freeService = input().nextLine();
+        Room newRoom = new Room(name, area, rentalCost, numberOfPeople, rentOfType, freeService);
+        room.put(newRoom, 0);
+        facilities.put(newRoom, 0);
+        rawfb.writeFileByByteStreamUseMap(room, FILE_PATH_ROOM);
+        rawfb.writeFileByByteStreamUseMap(room, FILE_PATH_FACILITY);
     }
 
     @Override
     public void addVilla() {
-        for (Facility key : facilities.keySet()) {
-            if (key.getNameServices().equals("Villa")) {
-                if (facilities.get(key) >= 5) {
-                    System.out.println("Service is under maintenance");
-                    break;
-                }
-            }
-            facilities.put(key, facilities.get(key) + 1);
-        }
-        System.out.println("Ok");
+        facilities = (LinkedHashMap<Facility, Integer>) rawfb.readFileByByteStream(FILE_PATH_FACILITY);
+        house = (LinkedHashMap<Facility, Integer>) rawfb.readFileByByteStream(FILE_PATH_HOUSE);
+        System.out.println("Enter name");
+        String name = input().nextLine();
+        System.out.println("Enter area");
+        int area = input().nextInt();
+        System.out.println("Enter rental cost");
+        float rentalCost = input().nextFloat();
+        System.out.println("Enter number of people");
+        int numberOfPeople = input().nextInt();
+        System.out.println("Enter rent of type");
+        String rentOfType = input().nextLine();
+        System.out.println("Enter room standard");
+        String roomStandard = input().nextLine();
+        System.out.println("Enter pool's area");
+        int poolArea = input().nextInt();
+        System.out.println("Enter number of floor");
+        int numberOfFloor = input().nextInt();
+        Villa newVilla = new Villa(name, area, rentalCost, numberOfPeople, rentOfType, roomStandard, poolArea, numberOfFloor);
+        villa.put(newVilla, 0);
+        facilities.put(newVilla, 0);
+        rawfb.writeFileByByteStreamUseMap(villa, FILE_PATH_VILLA);
+        rawfb.writeFileByByteStreamUseMap(villa, FILE_PATH_FACILITY);
     }
 
-    public void displayMaintenance(){
-        for (Map.Entry<Facility,Integer> maintenance : facilities.entrySet()){
-            if (maintenance.getValue() > 5){
-                System.out.println("Service is under maintenance "+maintenance);
-            }
-        }
-    }
 }

@@ -1,5 +1,6 @@
 package _case_study.furama_resort.services.employee_management;
 
+import _case_study.furama_resort.models.person.Customer;
 import _case_study.furama_resort.models.person.Employee;
 import _case_study.furama_resort.utils.ReadAndWriteFileByStream;
 
@@ -9,20 +10,29 @@ import java.util.List;
 import java.util.Scanner;
 
 public class EmployeeService implements EmployeeServicesInterface {
-    public static List<Employee> employees = new ArrayList<Employee>();
+    static ReadAndWriteFileByStream<Employee> rawfbs = new ReadAndWriteFileByStream<>();
+    public static List<Employee> employees = new ArrayList<>();
     static boolean check = false;
     private static final String FILE_PATH = "D:\\C0421G1_truonganhquan\\md2\\src\\_case_study\\furama_resort\\data\\employee.csv";
-
-
     public static Scanner input() {
         Scanner scanner = new Scanner(System.in);
         return scanner;
     }
+//    static {
+//        Employee employee1 = new Employee(1,"quan","123","123",1,1,"123","123","123",1);
+//        employees.add(employee1);
+//        rawfbs.writeFileByByteStream(employees,FILE_PATH);
+//    }
 
     @Override
     public void add() {
-        System.out.println("Enter id");
-        int id = input().nextInt();
+        employees = (List<Employee>) rawfbs.readFileByByteStream(FILE_PATH);
+        int id;
+        if (employees.isEmpty()) {
+            id = 1;
+        } else {
+            id = employees.get(employees.size() - 1).getId() + 1;
+        }
         System.out.println("Enter name");
         String name = input().nextLine();
         System.out.println("Enter DateOfBirth");
@@ -43,7 +53,7 @@ public class EmployeeService implements EmployeeServicesInterface {
         double salary = input().nextDouble();
         Employee employee = new Employee(id, name, dateOfBirth, gender, idNo, telePhoneNumber, email, level, onPosition, salary);
         employees.add(employee);
-        new ReadAndWriteFileByStream<>().writeFileByByteStream(Collections.singletonList(employees),FILE_PATH);
+        rawfbs.writeFileByByteStream(employees, FILE_PATH);
     }
 
     @Override
@@ -55,7 +65,7 @@ public class EmployeeService implements EmployeeServicesInterface {
     public void edit() {
         System.out.println("Please enter employee's id you want to edit");
         int id = input().nextInt();
-        employees = (List<Employee>) new ReadAndWriteFileByStream<>().readFileByByteStream(FILE_PATH);
+        employees = (List<Employee>) rawfbs.readFileByByteStream(FILE_PATH);
         for (Employee n : employees) {
             if (id == n.getId()) {
                 System.out.println("Enter name");
@@ -86,7 +96,7 @@ public class EmployeeService implements EmployeeServicesInterface {
                 n.setOnPosition(onPosition);
                 n.setSalary(salary);
                 check = true;
-                new ReadAndWriteFileByStream<>().writeFileByByteStream(Collections.singletonList(employees), FILE_PATH);
+                rawfbs.writeFileByByteStream(employees, FILE_PATH);
                 break;
             }
         }
@@ -97,10 +107,13 @@ public class EmployeeService implements EmployeeServicesInterface {
 
     @Override
     public void display() {
-        ReadAndWriteFileByStream display = new ReadAndWriteFileByStream();
-        employees = (List<Employee>) display.readFileByByteStream(FILE_PATH);
-        for (Employee n : employees) {
-            System.out.println(n);
+        employees = (List<Employee>) rawfbs.readFileByByteStream(FILE_PATH);
+        if (employees == null) {
+            System.err.println("Employees's list is empty");
+        } else {
+            for (Employee n : employees) {
+                System.out.println(n);
+            }
         }
     }
 }

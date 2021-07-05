@@ -1,4 +1,4 @@
-package _00_bai_tap_them.tu_hoc.tu_hoc;
+package _00_bai_tap_them.tu_hoc.tu_hoc.test_linh_tinh;
 
 import java.io.*;
 import java.util.ArrayList;
