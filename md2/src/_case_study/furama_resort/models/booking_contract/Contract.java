@@ -1,6 +1,8 @@
 package _case_study.furama_resort.models.booking_contract;
 
-public class Contract {
+import java.io.Serializable;
+
+public class Contract implements Serializable {
     private int idContract;
     private int idBooking;
     private double depositAmount;

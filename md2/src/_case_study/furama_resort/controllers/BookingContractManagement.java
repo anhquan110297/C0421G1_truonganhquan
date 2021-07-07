@@ -1,6 +1,7 @@
 package _case_study.furama_resort.controllers;
 
 import _case_study.furama_resort.controllers.FuramaController;
+import _case_study.furama_resort.services.booking_contract_management.BookingContractServices;
 
 import java.util.Scanner;
 
@@ -9,6 +10,7 @@ public class BookingContractManagement {
         Scanner scanner = new Scanner(System.in);
         return scanner;
     }
+    BookingContractServices b = new BookingContractServices();
     public void display(){
         while (true){
             System.out.println("-----Menu-----");
@@ -22,8 +24,10 @@ public class BookingContractManagement {
             int choice = input().nextInt();
             switch (choice){
                 case 1:
+                  b.display();
                     break;
                 case 2:
+                    b.add();
                     break;
                 case 3:
                     break;

@@ -1,6 +1,8 @@
 package _case_study.furama_resort.models.booking_contract;
 
-public class Booking implements Comparable {
+import java.io.Serializable;
+
+public class Booking implements Comparable<Booking>, Serializable {
     private int idBooking;
     private String startDay;
     private String endDay;
@@ -81,7 +83,10 @@ public class Booking implements Comparable {
     }
 
     @Override
-    public int compareTo(Object o) {
-        return 0;
+    public int compareTo(Booking o) {
+        if (this.getStartDay().equals(o.getStartDay())){
+            return this.getEndDay().compareTo(o.getEndDay());
+        }
+        return this.getStartDay().compareTo(o.getStartDay());
     }
 }

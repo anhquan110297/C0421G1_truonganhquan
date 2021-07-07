@@ -5,19 +5,20 @@ import _case_study.furama_resort.models.person.Customer;
 import _case_study.furama_resort.models.person.Employee;
 
 import java.io.*;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
 public class ReadAndWriteFileByStream<K> {
 
-    public static Object readFileByByteStream(String filePath){
+    public  Object readFileByByteStream(String diaChi){
         //Khai báo đối tượng FileInputStream và ObjectInputStream trỏ tới null
         FileInputStream FIn = null;
         ObjectInputStream OIn = null;
         Object read = null;
         try {
             //Khở tạo đối tượng với địa chỉ truyền vào
-            FIn = new FileInputStream(new java.io.File(filePath));
+            FIn = new FileInputStream(new java.io.File(diaChi));
             OIn = new ObjectInputStream(FIn);
             read = OIn.readObject();
             FIn.close();
@@ -29,7 +30,8 @@ public class ReadAndWriteFileByStream<K> {
         return null;
     }
 
-    public void writeFileByByteStream(List<K> list, String filePath) {
+
+    public void writeFileByByteStream(Collection<K> list, String filePath) {
         File file = new File(filePath);
         FileOutputStream outputStream = null;
         ObjectOutputStream objectOutputStream = null;

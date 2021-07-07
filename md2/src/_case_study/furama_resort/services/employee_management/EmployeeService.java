@@ -3,7 +3,11 @@ package _case_study.furama_resort.services.employee_management;
 import _case_study.furama_resort.models.person.Customer;
 import _case_study.furama_resort.models.person.Employee;
 import _case_study.furama_resort.utils.ReadAndWriteFileByStream;
+import _case_study.furama_resort.utils.RegexClass;
 
+import java.io.EOFException;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -13,30 +17,40 @@ public class EmployeeService implements EmployeeServicesInterface {
     static ReadAndWriteFileByStream<Employee> rawfbs = new ReadAndWriteFileByStream<>();
     public static List<Employee> employees = new ArrayList<>();
     static boolean check = false;
+    RegexClass regexClass = new RegexClass();
     private static final String FILE_PATH = "D:\\C0421G1_truonganhquan\\md2\\src\\_case_study\\furama_resort\\data\\employee.csv";
+
     public static Scanner input() {
         Scanner scanner = new Scanner(System.in);
         return scanner;
     }
+
 //    static {
-//        Employee employee1 = new Employee(1,"quan","123","123",1,1,"123","123","123",1);
-//        employees.add(employee1);
-//        rawfbs.writeFileByByteStream(employees,FILE_PATH);
+//        rawfbs.writeFileByByteStream(employees, FILE_PATH);
 //    }
 
     @Override
     public void add() {
-        employees = (List<Employee>) rawfbs.readFileByByteStream(FILE_PATH);
+        employees = (ArrayList<Employee>)rawfbs.readFileByByteStream("D:\\C0421G1_truonganhquan\\md2\\src\\_case_study\\furama_resort\\data\\employee.csv");
         int id;
-        if (employees.isEmpty()) {
+        if (employees == null) {
+            employees = new ArrayList<>();
             id = 1;
         } else {
             id = employees.get(employees.size() - 1).getId() + 1;
         }
         System.out.println("Enter name");
         String name = input().nextLine();
-        System.out.println("Enter DateOfBirth");
-        String dateOfBirth = input().nextLine();
+        String dateOfBirth = "";
+        while (true) {
+            System.out.println("Enter DateOfBirth");
+            dateOfBirth = input().nextLine();
+            if (regexClass.dayOfBirth(dateOfBirth) == true) {
+                break;
+            } else {
+                System.out.println("Vui lòng nhập theo định dạng DD/MM/YY ");
+            }
+        }
         System.out.println("Enter Gender");
         String gender = input().nextLine();
         System.out.println("Enter idNo");
@@ -49,10 +63,10 @@ public class EmployeeService implements EmployeeServicesInterface {
         String level = input().nextLine();
         System.out.println("Enter onPosition");
         String onPosition = input().nextLine();
-        System.out.println("Enter Slary");
+        System.out.println("Enter Salary");
         double salary = input().nextDouble();
-        Employee employee = new Employee(id, name, dateOfBirth, gender, idNo, telePhoneNumber, email, level, onPosition, salary);
-        employees.add(employee);
+        Employee employee2 = new Employee(id, name, dateOfBirth, gender, idNo, telePhoneNumber, email, level, onPosition, salary);
+        employees.add(employee2);
         rawfbs.writeFileByByteStream(employees, FILE_PATH);
     }
 
@@ -70,8 +84,16 @@ public class EmployeeService implements EmployeeServicesInterface {
             if (id == n.getId()) {
                 System.out.println("Enter name");
                 String name = input().nextLine();
-                System.out.println("Enter DateOfBirth");
-                String dateOfBirth = input().nextLine();
+                String dateOfBirth = "";
+                while (true) {
+                    System.out.println("Enter DateOfBirth");
+                    dateOfBirth = input().nextLine();
+                    if (regexClass.dayOfBirth(dateOfBirth) == true) {
+                        break;
+                    } else {
+                        System.out.println("Vui lòng nhập theo định dạng DD/MM/YY ");
+                    }
+                }
                 System.out.println("Enter Gender");
                 String gender = input().nextLine();
                 System.out.println("Enter idNo");
@@ -100,7 +122,7 @@ public class EmployeeService implements EmployeeServicesInterface {
                 break;
             }
         }
-        if (check) {
+        if (!check) {
             System.out.println("Please re-enter id");
         }
     }
@@ -108,12 +130,13 @@ public class EmployeeService implements EmployeeServicesInterface {
     @Override
     public void display() {
         employees = (List<Employee>) rawfbs.readFileByByteStream(FILE_PATH);
-        if (employees == null) {
+        if (employees == null ) {
             System.err.println("Employees's list is empty");
         } else {
             for (Employee n : employees) {
                 System.out.println(n);
             }
         }
+
     }
 }

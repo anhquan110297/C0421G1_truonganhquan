@@ -13,6 +13,7 @@ public class Customer extends Person {
         this.address = address;
     }
 
+
     public String getTypeOfGuest() {
         return typeOfGuest;
     }
@@ -31,7 +32,7 @@ public class Customer extends Person {
 
     @Override
     public String toString() {
-        return super.toString()+
+        return super.toString() +
                 "typeOfGuest='" + typeOfGuest + '\'' +
                 ", address='" + address + '\'' +
                 '}';

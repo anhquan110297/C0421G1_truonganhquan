@@ -7,11 +7,11 @@ import _case_study.furama_resort.models.facility.House;
 import _case_study.furama_resort.models.facility.Room;
 import _case_study.furama_resort.models.facility.Villa;
 import _case_study.furama_resort.utils.ReadAndWriteFileByStream;
+import _case_study.furama_resort.utils.RegexClass;
 
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class FacilityServices implements FacilityServicesInterface {
 
@@ -20,6 +20,7 @@ public class FacilityServices implements FacilityServicesInterface {
         return scanner;
     }
 
+    RegexClass regexClass = new RegexClass();
     ReadAndWriteFileByStream rawfb = new ReadAndWriteFileByStream();
     private static final String FILE_PATH_HOUSE = "D:\\C0421G1_truonganhquan\\md2\\src\\_case_study\\furama_resort\\data\\house.csv";
     private static final String FILE_PATH_VILLA = "D:\\C0421G1_truonganhquan\\md2\\src\\_case_study\\furama_resort\\data\\villa.csv";
@@ -47,9 +48,9 @@ public class FacilityServices implements FacilityServicesInterface {
     @Override
     public void display() {
         facilities = (LinkedHashMap<Facility, Integer>) rawfb.readFileByByteStream(FILE_PATH_FACILITY);
-        if (facilities == null){
+        if (facilities == null) {
             System.err.println("facility's list is empty");
-        }else {
+        } else {
             for (Map.Entry<Facility, Integer> entry : facilities.entrySet()) {
                 System.out.println(entry);
             }
@@ -92,80 +93,269 @@ public class FacilityServices implements FacilityServicesInterface {
 
     @Override
     public void addHouse() {
-        facilities = (LinkedHashMap<Facility, Integer>) rawfb.readFileByByteStream(FILE_PATH_FACILITY);
         house = (LinkedHashMap<Facility, Integer>) rawfb.readFileByByteStream(FILE_PATH_HOUSE);
-        System.out.println("Enter name");
-        String name = input().nextLine();
-        System.out.println("Enter area");
-        int area = input().nextInt();
-        System.out.println("Enter rental cost");
-        float rentalCost = input().nextFloat();
-        System.out.println("Enter number of people");
-        int numberOfPeople = input().nextInt();
-        System.out.println("Enter rent of type");
-        String rentOfType = input().nextLine();
-        System.out.println("Enter room standard");
-        String roomStandard = input().nextLine();
-        System.out.println("Enter number of floor");
-        int numberOfFloor = input().nextInt();
+        facilities = (LinkedHashMap<Facility, Integer>) rawfb.readFileByByteStream(FILE_PATH_FACILITY);
+        if (house == null) {
+            house = new LinkedHashMap<>();
+        }
+        if (facilities == null) {
+            facilities = new LinkedHashMap<>();
+        }
+        String name = "";
+        while (true) {
+            System.out.println("Enter name");
+            name = input().nextLine();
+            if (regexClass.regexNameService(name) == true) {
+                break;
+            } else {
+                System.out.println("Vui lòng nhập theo định dạng SVRO-YYYY với Y là 4 chữ số");
+            }
+        }
+        int area = 0;
+        while (true) {
+            System.out.println("Enter area");
+            area = input().nextInt();
+            String str = String.valueOf(area); // String.valueof(int) -> chuyển đổi từ int sang string
+            if (regexClass.area(str) == true) {
+                break;
+            } else {
+                System.out.println("diện tích hồ bơi phải lớn hơn 30");
+            }
+        }
+
+        float rentalCost = 0;
+        while (true) {
+            System.out.println("Enter rental cost");
+            rentalCost = input().nextFloat();
+            String str = String.valueOf(rentalCost); // String.valueof(int) -> chuyển đổi từ int sang string
+            if (regexClass.rentalFee(str) == true) {
+                break;
+            } else {
+                System.out.println("rental fee is positive number");
+            }
+        }
+        int numberOfPeople = 0;
+        while (true) {
+            System.out.println("Enter number of people");
+            numberOfPeople = input().nextInt();
+            String str = String.valueOf(numberOfPeople); // String.valueof(int) -> chuyển đổi từ int sang string
+            if (regexClass.numberOfPeople(str) == true) {
+                break;
+            } else {
+                System.out.println("rental fee is positive number");
+            }
+        }
+        String rentOfType = "";
+        while (true) {
+            System.out.println("Enter rent of type");
+            rentOfType = input().nextLine();
+            if (regexClass.rentOfType(rentOfType) == true) {
+                break;
+            } else {
+                System.out.println("Kiểu thuê phải theo định dạng ngày tháng năm");
+            }
+        }
+        String roomStandard = "";
+        while (true) {
+            System.out.println("Enter room standard");
+            roomStandard = input().nextLine();
+            if (regexClass.roomStandard(roomStandard) == true) {
+                break;
+            } else {
+                System.out.println("Kiểu phòng phải theo định dạng NORMAL,VIP,LOW-YYYY");
+            }
+        }
+        int numberOfFloor = 0;
+        while (true) {
+            System.out.println("Enter number of floor");
+            numberOfFloor = input().nextInt();
+            String str = String.valueOf(numberOfFloor); // String.valueof(int) -> chuyển đổi từ int sang string
+            if (regexClass.numberOfFloor(str) == true) {
+                break;
+            } else {
+                System.out.println("number of floor is positive number");
+            }
+        }
         house.put(new House(name, area, rentalCost, numberOfPeople, rentOfType, roomStandard, numberOfFloor), 0);
         facilities.put(new House(name, area, rentalCost, numberOfPeople, rentOfType, roomStandard, numberOfFloor), 0);
         rawfb.writeFileByByteStreamUseMap(house, FILE_PATH_HOUSE);
-        rawfb.writeFileByByteStreamUseMap(house, FILE_PATH_FACILITY);
+        rawfb.writeFileByByteStreamUseMap(facilities, FILE_PATH_FACILITY);
     }
 
     @Override
     public void addRoom() {
+        room = (LinkedHashMap<Facility, Integer>) rawfb.readFileByByteStream(FILE_PATH_ROOM);
         facilities = (LinkedHashMap<Facility, Integer>) rawfb.readFileByByteStream(FILE_PATH_FACILITY);
-        house = (LinkedHashMap<Facility, Integer>) rawfb.readFileByByteStream(FILE_PATH_HOUSE);
-        System.out.println("Enter name");
-        String name = input().nextLine();
-        System.out.println("Enter area");
-        int area = input().nextInt();
-        System.out.println("Enter rental cost");
-        double rentalCost = input().nextDouble();
-        System.out.println("Enter number of people");
-        int numberOfPeople = input().nextInt();
-        System.out.println("Enter rent of type");
-        String rentOfType = input().nextLine();
-        System.out.println("Enter room standard");
-        String roomStandard = input().nextLine();
-        System.out.println("Enter number of floor");
-        int numberOfFloor = input().nextInt();
-        System.out.println("Enter freeservices");
+        if (room == null) {
+            room = new LinkedHashMap<>();
+        }
+        if (facilities == null) {
+            facilities = new LinkedHashMap<>();
+        }
+        String name = "";
+        while (true) {
+            System.out.println("Enter name");
+            name = input().nextLine();
+            if (regexClass.regexNameService(name) == true) {
+                break;
+            } else {
+                System.out.println("Vui lòng nhập theo định dạng SVRO-YYYY với Y là 4 chữ số");
+            }
+        }
+        int area = 0;
+        while (true) {
+            System.out.println("Enter area");
+            area = input().nextInt();
+            String str = String.valueOf(area); // String.valueof(int) -> chuyển đổi từ int sang string
+            if (regexClass.area(str) == true) {
+                break;
+            } else {
+                System.out.println("diện tích sử dụng phải lớn hơn 30");
+            }
+        }
+
+        float rentalCost = 0;
+        while (true) {
+            System.out.println("Enter rental cost");
+            rentalCost = input().nextFloat();
+            String str = String.valueOf(rentalCost); // String.valueof(int) -> chuyển đổi từ int sang string
+            if (regexClass.rentalFee(str) == true) {
+                break;
+            } else {
+                System.out.println("rental fee is positive number");
+            }
+        }
+        int numberOfPeople = 0;
+        while (true) {
+            System.out.println("Enter number of people");
+            numberOfPeople = input().nextInt();
+            String str = String.valueOf(numberOfPeople); // String.valueof(int) -> chuyển đổi từ int sang string
+            if (regexClass.numberOfPeople(str) == true) {
+                break;
+            } else {
+                System.out.println("number of people is positive number");
+            }
+        }
+        String rentOfType = "";
+        while (true) {
+            System.out.println("Enter rent of type");
+            rentOfType = input().nextLine();
+            if (regexClass.rentOfType(rentOfType) == true) {
+                break;
+            } else {
+                System.out.println("Kiểu thuê phải theo định dạng ngày tháng năm");
+            }
+        }
+        System.out.println("Enter free services");
         String freeService = input().nextLine();
         Room newRoom = new Room(name, area, rentalCost, numberOfPeople, rentOfType, freeService);
         room.put(newRoom, 0);
         facilities.put(newRoom, 0);
         rawfb.writeFileByByteStreamUseMap(room, FILE_PATH_ROOM);
-        rawfb.writeFileByByteStreamUseMap(room, FILE_PATH_FACILITY);
+        rawfb.writeFileByByteStreamUseMap(facilities, FILE_PATH_FACILITY);
     }
 
     @Override
     public void addVilla() {
+        villa = (LinkedHashMap<Facility, Integer>) rawfb.readFileByByteStream(FILE_PATH_VILLA);
         facilities = (LinkedHashMap<Facility, Integer>) rawfb.readFileByByteStream(FILE_PATH_FACILITY);
-        house = (LinkedHashMap<Facility, Integer>) rawfb.readFileByByteStream(FILE_PATH_HOUSE);
-        System.out.println("Enter name");
-        String name = input().nextLine();
-        System.out.println("Enter area");
-        int area = input().nextInt();
-        System.out.println("Enter rental cost");
-        float rentalCost = input().nextFloat();
-        System.out.println("Enter number of people");
-        int numberOfPeople = input().nextInt();
-        System.out.println("Enter rent of type");
-        String rentOfType = input().nextLine();
-        System.out.println("Enter room standard");
-        String roomStandard = input().nextLine();
-        System.out.println("Enter pool's area");
-        int poolArea = input().nextInt();
-        System.out.println("Enter number of floor");
-        int numberOfFloor = input().nextInt();
+        if (villa == null) {
+            villa = new LinkedHashMap<>();
+        }
+        if (facilities == null) {
+            facilities = new LinkedHashMap<>();
+        }
+        String name = "";
+        while (true) {
+            System.out.println("Enter name");
+            name = input().nextLine();
+            if (regexClass.regexNameService(name) == true) {
+                break;
+            } else {
+                System.out.println("Vui lòng nhập theo định dạng SVRO-YYYY với Y là 4 chữ số");
+            }
+        }
+        int area = 0;
+        while (true) {
+            System.out.println("Enter area");
+            area = input().nextInt();
+            String str = String.valueOf(area); // String.valueof(int) -> chuyển đổi từ int sang string
+            if (regexClass.area(str) == true) {
+                break;
+            } else {
+                System.out.println("diện tích sử dụng phải lớn hơn 30");
+            }
+        }
+
+        float rentalCost = 0;
+        while (true) {
+            System.out.println("Enter rental cost");
+            rentalCost = input().nextFloat();
+            String str = String.valueOf(rentalCost); // String.valueof(int) -> chuyển đổi từ int sang string
+            if (regexClass.rentalFee(str) == true) {
+                break;
+            } else {
+                System.out.println("rental fee is positive number");
+            }
+        }
+        int numberOfPeople = 0;
+        while (true) {
+            System.out.println("Enter number of people");
+            numberOfPeople = input().nextInt();
+            String str = String.valueOf(numberOfPeople); // String.valueof(int) -> chuyển đổi từ int sang string
+            if (regexClass.numberOfPeople(str) == true) {
+                break;
+            } else {
+                System.out.println("number of people is positive number");
+            }
+        }
+        String rentOfType = "";
+        while (true) {
+            System.out.println("Enter rent of type");
+            rentOfType = input().nextLine();
+            if (regexClass.rentOfType(rentOfType) == true) {
+                break;
+            } else {
+                System.out.println("Kiểu thuê phải theo định dạng ngày tháng năm");
+            }
+        }
+        String roomStandard = "";
+        while (true) {
+            System.out.println("Enter room standard");
+            roomStandard = input().nextLine();
+            if (regexClass.roomStandard(roomStandard) == true) {
+                break;
+            } else {
+                System.out.println("Kiểu phòng phải theo định dạng NORMAL,VIP,LOW-YYYY");
+            }
+        }
+        int poolArea = 0;
+        while (true) {
+            System.out.println("Enter pool's area");
+            poolArea = input().nextInt();
+            String str = String.valueOf(poolArea); // String.valueof(int) -> chuyển đổi từ int sang string
+            if (regexClass.area(str) == true) {
+                break;
+            } else {
+                System.out.println("diện tích hồ bơi lớn hơn 30");
+            }
+        }
+        int numberOfFloor = 0;
+        while (true) {
+            System.out.println("Enter number of floor");
+            numberOfFloor = input().nextInt();
+            String str = String.valueOf(numberOfFloor); // String.valueof(int) -> chuyển đổi từ int sang string
+            if (regexClass.numberOfFloor(str) == true) {
+                break;
+            } else {
+                System.out.println("number of floor is positive number");
+            }
+        }
         Villa newVilla = new Villa(name, area, rentalCost, numberOfPeople, rentOfType, roomStandard, poolArea, numberOfFloor);
         villa.put(newVilla, 0);
         facilities.put(newVilla, 0);
         rawfb.writeFileByByteStreamUseMap(villa, FILE_PATH_VILLA);
-        rawfb.writeFileByByteStreamUseMap(villa, FILE_PATH_FACILITY);
+        rawfb.writeFileByByteStreamUseMap(facilities, FILE_PATH_FACILITY);
     }
 
 }
