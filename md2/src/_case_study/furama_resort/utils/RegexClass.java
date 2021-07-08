@@ -40,8 +40,7 @@ public class RegexClass {
         final String REGEX_NUMBER_OF_PEOPLE = "^\\d+$"; // LỚN HƠN 1 SỐ VÀ BÉ HƠN 20
         Pattern pattern = Pattern.compile(REGEX_NUMBER_OF_PEOPLE);
         Matcher matcher = pattern.matcher(numberOfFloor);
-        boolean result = matcher.matches();
-        return result;
+        return matcher.matches();
     }
 
     public boolean roomStandard(String roomStandard) {

@@ -1,12 +1,9 @@
 package _case_study.furama_resort.utils;
 
 import _case_study.furama_resort.models.facility.Facility;
-import _case_study.furama_resort.models.person.Customer;
-import _case_study.furama_resort.models.person.Employee;
 
 import java.io.*;
 import java.util.Collection;
-import java.util.List;
 import java.util.Map;
 
 public class ReadAndWriteFileByStream<K> {

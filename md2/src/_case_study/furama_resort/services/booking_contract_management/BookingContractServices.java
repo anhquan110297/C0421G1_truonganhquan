@@ -23,7 +23,6 @@ public class BookingContractServices implements BookingContractInterface {
     public static List<Customer> customers = new LinkedList<>();
     public static RegexClass regexClass = new RegexClass();
 
-
     @Override
     public void displayCustomer() {
         customers = (List<Customer>) rawfbs.readFileByByteStream(FILE_PATH_CUSTOMER);
@@ -44,10 +43,10 @@ public class BookingContractServices implements BookingContractInterface {
     public void add() {
         bookings = (TreeSet<Booking>) rawfbs.readFileByByteStream(FILE_PATH_BOOKING);
         facilities = (LinkedHashMap<Facility, Integer>) rawfbs.readFileByByteStream(FILE_PATH_FACILITY);
-        if (bookings == null){
+        if (bookings == null) {
             bookings = new TreeSet<>();
         }
-        if (facilities == null){
+        if (facilities == null) {
             facilities = new LinkedHashMap<>();
         }
         System.out.println("Customer's list");
@@ -98,8 +97,8 @@ public class BookingContractServices implements BookingContractInterface {
         String typeOfServices = input().nextLine();
         Booking booking = new Booking(id, startDay, endDay, idCustomer, name, typeOfServices);
         bookings.add(booking);
-        rawfbs.writeFileByByteStream(bookings,FILE_PATH_BOOKING);
-        rawfbs.writeFileByByteStreamUseMap(facilities,FILE_PATH_FACILITY);
+        rawfbs.writeFileByByteStream(bookings, FILE_PATH_BOOKING);
+        rawfbs.writeFileByByteStreamUseMap(facilities, FILE_PATH_FACILITY);
     }
 
     @Override

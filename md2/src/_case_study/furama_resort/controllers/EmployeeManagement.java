@@ -2,6 +2,7 @@ package _case_study.furama_resort.controllers;
 
 import _case_study.furama_resort.controllers.FuramaController;
 import _case_study.furama_resort.services.employee_management.EmployeeService;
+import _case_study.furama_resort.utils.ExceptionCustom;
 
 import java.util.Scanner;
 
@@ -10,6 +11,7 @@ public class EmployeeManagement {
         Scanner scanner = new Scanner(System.in);
         return scanner;
     }
+    ExceptionCustom exceptionCustom = new ExceptionCustom();
     public void display(){
         while (true){
             System.out.println("-----Menu-----");
@@ -18,7 +20,7 @@ public class EmployeeManagement {
             System.out.println("3. Edit employee");
             System.out.println("4. Return main menu");
             System.out.println("Enter your choice");
-            int choice = input().nextInt();
+            int choice = ExceptionCustom.choiceNumber();
             switch (choice){
                 case 1:
                     new EmployeeService().display();

@@ -1,7 +1,9 @@
 package _case_study.furama_resort.controllers;
 
-import _case_study.furama_resort.controllers.FuramaController;
+
 import _case_study.furama_resort.services.booking_contract_management.BookingContractServices;
+import _case_study.furama_resort.services.booking_contract_management.ContractServices;
+import _case_study.furama_resort.utils.ExceptionCustom;
 
 import java.util.Scanner;
 
@@ -11,6 +13,8 @@ public class BookingContractManagement {
         return scanner;
     }
     BookingContractServices b = new BookingContractServices();
+    public ExceptionCustom exceptionCustom = new ExceptionCustom();
+
     public void display(){
         while (true){
             System.out.println("-----Menu-----");
@@ -21,7 +25,7 @@ public class BookingContractManagement {
             System.out.println("5. Edit contracts");
             System.out.println("6. Return main menu");
             System.out.println("Enter your choice");
-            int choice = input().nextInt();
+            int choice = ExceptionCustom.choiceNumber();
             switch (choice){
                 case 1:
                   b.display();
@@ -30,10 +34,13 @@ public class BookingContractManagement {
                     b.add();
                     break;
                 case 3:
+                    new ContractServices().add();
                     break;
                 case 4:
+                    new ContractServices().display();
                     break;
                 case 5:
+                    new ContractServices().edit();
                     break;
                 case 6:
                     new FuramaController().displayMainMenu();

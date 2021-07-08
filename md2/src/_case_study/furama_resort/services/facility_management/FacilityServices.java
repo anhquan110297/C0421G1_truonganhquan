@@ -6,6 +6,7 @@ import _case_study.furama_resort.models.facility.Facility;
 import _case_study.furama_resort.models.facility.House;
 import _case_study.furama_resort.models.facility.Room;
 import _case_study.furama_resort.models.facility.Villa;
+import _case_study.furama_resort.utils.ExceptionCustom;
 import _case_study.furama_resort.utils.ReadAndWriteFileByStream;
 import _case_study.furama_resort.utils.RegexClass;
 
@@ -21,6 +22,7 @@ public class FacilityServices implements FacilityServicesInterface {
     }
 
     RegexClass regexClass = new RegexClass();
+    ExceptionCustom exceptionCustom = new ExceptionCustom();
     ReadAndWriteFileByStream rawfb = new ReadAndWriteFileByStream();
     private static final String FILE_PATH_HOUSE = "D:\\C0421G1_truonganhquan\\md2\\src\\_case_study\\furama_resort\\data\\house.csv";
     private static final String FILE_PATH_VILLA = "D:\\C0421G1_truonganhquan\\md2\\src\\_case_study\\furama_resort\\data\\villa.csv";
@@ -67,7 +69,7 @@ public class FacilityServices implements FacilityServicesInterface {
             System.out.println("4. Return Facility menu");
             System.out.println("5. Exit");
             System.out.println("Enter your choice");
-            int choice = input().nextInt();
+            int choice = exceptionCustom.choiceNumber();
             switch (choice) {
                 case 1:
                     addHouse();
