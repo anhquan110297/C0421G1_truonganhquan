@@ -21,7 +21,7 @@ public class FuramaController {
             System.out.println("5. Promotion Management");
             System.out.println("6. Exit");
             System.out.println("Enter your choice");
-            int choice = ExceptionCustom.choiceNumber();
+            int choice = exceptionCustom.choiceNumber();
             switch (choice){
                 case 1:
                     new EmployeeManagement().display();

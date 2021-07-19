@@ -11,9 +11,15 @@ public class ExceptionCustom extends Exception {
     public static int choiceNumber() {
         boolean checkValid = false;
         int choice = 0;
+        String line;
         while (!checkValid) {
+            line = input().nextLine();
+            if (line.trim().equals("")){
+                System.out.println(" đúng đéo được nhập space");
+                continue;
+            }
             try {
-                choice = Integer.parseInt(input().nextLine());
+                choice = Integer.parseInt(line);
                 checkValid = true;
             } catch (NumberFormatException e) {
                 System.out.println("You must enter a number: ");

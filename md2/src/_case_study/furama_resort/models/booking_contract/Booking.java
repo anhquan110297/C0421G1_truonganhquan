@@ -1,6 +1,9 @@
 package _case_study.furama_resort.models.booking_contract;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 public class Booking implements Comparable<Booking>, Serializable {
     private int idBooking;
@@ -9,6 +12,9 @@ public class Booking implements Comparable<Booking>, Serializable {
     private int idCustomer;
     private String nameService;
     private String typeOfService;
+    DateFormat anhquandeptrai = new SimpleDateFormat("dd/mm/yy");
+    private static final long serialVersionUID = -6341435211739620956L;
+
 
     public Booking() {
     }
@@ -84,9 +90,14 @@ public class Booking implements Comparable<Booking>, Serializable {
 
     @Override
     public int compareTo(Booking o) {
-        if (this.getStartDay().equals(o.getStartDay())){
-            return this.getEndDay().compareTo(o.getEndDay());
+//        if (this.getStartDay().equals(o.getStartDay())){
+//            return this.getEndDay().compareTo(o.getEndDay());
+//        }
+//        return this.getStartDay().compareTo(o.getStartDay());
+        try {
+            return anhquandeptrai.parse(this.getStartDay()).compareTo(anhquandeptrai.parse(o.getStartDay()));
+        } catch (ParseException e) {
+            throw new IllegalArgumentException(e);
         }
-        return this.getStartDay().compareTo(o.getStartDay());
     }
 }

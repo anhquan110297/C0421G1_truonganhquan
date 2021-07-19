@@ -1,5 +1,6 @@
 package _case_study.furama_resort.services.booking_contract_management;
 
+import _case_study.furama_resort.libs.CompreSor;
 import _case_study.furama_resort.models.booking_contract.Booking;
 import _case_study.furama_resort.models.facility.Facility;
 import _case_study.furama_resort.models.person.Customer;
@@ -18,7 +19,7 @@ public class BookingContractServices implements BookingContractInterface {
     private static final String FILE_PATH_CUSTOMER = "D:\\C0421G1_truonganhquan\\md2\\src\\_case_study\\furama_resort\\data\\customer.csv";
     private static final String FILE_PATH_FACILITY = "D:\\C0421G1_truonganhquan\\md2\\src\\_case_study\\furama_resort\\data\\facility.csv";
     private static ReadAndWriteFileByStream<Booking> rawfbs = new ReadAndWriteFileByStream<>();
-    public static TreeSet<Booking> bookings = new TreeSet<>();
+    public static TreeSet<Booking> bookings = new TreeSet<>(new CompreSor());
     public static LinkedHashMap<Facility, Integer> facilities = new LinkedHashMap<>();
     public static List<Customer> customers = new LinkedList<>();
     public static RegexClass regexClass = new RegexClass();

@@ -1,0 +1,13 @@
+* các thực thể : PHIEUXUAT,VATTU,DONDH,NHACC,PHIEUNHAP
+
+* Các mối quan hệ: PHIEUXUAT-VATTU (NHIỀU-NHIỀU),VATTU-DONDH (NHIỀU-NHIỀU),DONDH-NHACC (1-NHIỀU)
+		  VATTU-PHIEUNHAP(NHIỀU-NHIỀU)
+* thuộc tính đa trị : SDT
+bảng sdt : ở ngay vấn đê này,câu hỏi đặt ra là tại sao sdt lại là đa trị -> sơ đồ nên chỉnh sửa
+	   phần này
+
+*liệt kê danh sách bản:
+ - Bảng phiếu xuất : bao gồm các property SOPX,NGAYXUAT, {DGXUAT,SLXUAT (KHÓA NGOẠI)}
+ - Bảng vật tư : bao gồm các property MaVTU,TENVATTU {DGNHAP,SLNHAP (KHÓA NGOẠI)}
+ - Đơn đặt hàng : bao gồm các property SoDH,NGAYDH
+ - Nhà cung cấp : bao gồm các property MaNCC,TenNCC, DiaChi, SDT.

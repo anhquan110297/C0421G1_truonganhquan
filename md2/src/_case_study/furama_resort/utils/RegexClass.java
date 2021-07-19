@@ -1,16 +1,34 @@
 package _case_study.furama_resort.utils;
 
+import javax.swing.*;
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RegexClass {
+    public Scanner input(){
+        Scanner scanner = new Scanner(System.in);
+        return scanner;
+    }
     public boolean regexNameService(String nameService) {
         final String REGEX_SERVICE = "^(SVVL|SVRO|SVHO)-[0-9]{4}$";
-        Pattern pattern = Pattern.compile(REGEX_SERVICE);
-        Matcher matcher = pattern.matcher(nameService);
-        boolean result = matcher.matches();
-        return result;
+        return Pattern.matches(REGEX_SERVICE,nameService);
     }
+
+//    public String inputName(String regex) {
+//        System.out.println("vui lòng nhập tên");
+//        String inputName = input().nextLine();
+//        while (true) {
+//            if (!Pattern.matches(regex, inputName)) {
+//                System.out.println("Sai định dạng vui lòng nhập lại");
+//                inputName = new Scanner(System.in).nextLine();
+//            }else {
+//                break;
+//            }
+//        }
+//        return inputName;
+//    }
+
 
     public boolean area(String area) {
         final String REGEX_AREA_POOL = "^([3-9]\\d|[0-9]\\d{2,})$"; // 1 số lớn hơn bao nhiêu ( cụ thể là 30)

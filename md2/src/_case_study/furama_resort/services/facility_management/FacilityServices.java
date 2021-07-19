@@ -103,6 +103,7 @@ public class FacilityServices implements FacilityServicesInterface {
         if (facilities == null) {
             facilities = new LinkedHashMap<>();
         }
+        System.out.println("Please enter name");
         String name = "";
         while (true) {
             System.out.println("Enter name");
@@ -113,6 +114,7 @@ public class FacilityServices implements FacilityServicesInterface {
                 System.out.println("Vui lòng nhập theo định dạng SVRO-YYYY với Y là 4 chữ số");
             }
         }
+
         int area = 0;
         while (true) {
             System.out.println("Enter area");

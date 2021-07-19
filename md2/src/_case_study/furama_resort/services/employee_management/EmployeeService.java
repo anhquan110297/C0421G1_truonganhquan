@@ -8,10 +8,10 @@ import _case_study.furama_resort.utils.RegexClass;
 import java.io.EOFException;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class EmployeeService implements EmployeeServicesInterface {
     static ReadAndWriteFileByStream<Employee> rawfbs = new ReadAndWriteFileByStream<>();
@@ -130,6 +130,17 @@ public class EmployeeService implements EmployeeServicesInterface {
     @Override
     public void display() {
         employees = (List<Employee>) rawfbs.readFileByByteStream(FILE_PATH);
+        DateFormat anhquandeptraihihi = new SimpleDateFormat("dd/MM/yyyy");
+        Collections.sort(employees, new Comparator<Employee>() {
+            @Override
+            public int compare(Employee o1, Employee o2) {
+                try {
+                    return anhquandeptraihihi.parse(o1.getDateOfBirth()).compareTo(anhquandeptraihihi.parse(o2.getDateOfBirth()));
+                } catch (ParseException e) {
+                    throw new IllegalArgumentException(e);
+                }
+            }
+        });
         if (employees == null ) {
             System.err.println("Employees's list is empty");
         } else {

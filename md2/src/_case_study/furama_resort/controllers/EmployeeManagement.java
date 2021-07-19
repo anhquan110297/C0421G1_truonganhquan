@@ -5,6 +5,7 @@ import _case_study.furama_resort.services.employee_management.EmployeeService;
 import _case_study.furama_resort.utils.ExceptionCustom;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class EmployeeManagement {
     public Scanner input(){
@@ -13,6 +14,7 @@ public class EmployeeManagement {
     }
     ExceptionCustom exceptionCustom = new ExceptionCustom();
     public void display(){
+
         while (true){
             System.out.println("-----Menu-----");
             System.out.println("1. Display list employees");
