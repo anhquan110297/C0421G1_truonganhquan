@@ -20,12 +20,12 @@ CREATE TABLE Student
     FOREIGN KEY (ClassId) REFERENCES Class (ClassID)
 );
 
-CREATE TABLE Subject
+CREATE TABLE `Subject`
 (
     SubId   INT         NOT NULL AUTO_INCREMENT PRIMARY KEY,
     SubName VARCHAR(30) NOT NULL,
     Credit  TINYINT     NOT NULL DEFAULT 1 CHECK ( Credit >= 1 ),
-    Status  BIT                  DEFAULT 1
+    `Status`  BIT                  DEFAULT 1
 );
 
 CREATE TABLE Mark
@@ -47,11 +47,11 @@ values (2,'A2','2008-12-22',1);
 INSERT INTO Class
 values (3,'B3',current_date(),0);
 
-INSERT INTO Student (StudentName, Address, Phone, Status, ClassId)
+INSERT INTO Student (StudentName, Address, Phone, `Status`, ClassId)
 VALUES ('Hung', 'Ha Noi', '0912113113', 1, 1);
-INSERT INTO Student (StudentName, Address, Status, ClassId)
+INSERT INTO Student (StudentName, Address, `Status`, ClassId)
 VALUES ('Hoa', 'Hai phong', 1, 1);
-INSERT INTO Student (StudentName, Address, Phone, Status, ClassId)
+INSERT INTO Student (StudentName, Address, Phone, `Status`, ClassId)
 VALUES ('Manh', 'HCM', '0123123123', 0, 2);
 
 INSERT INTO Subject
