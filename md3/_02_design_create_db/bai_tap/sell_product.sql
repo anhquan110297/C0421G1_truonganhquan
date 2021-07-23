@@ -26,7 +26,6 @@ create table order_details (
 	foreign key (order_id) references `order`(order_id),
     foreign key (product_id) references product (product_id)
 );
-
 INSERT into customer (customer_name,customer_age)
 values ('Minh Quan',18),('Ngoc Oanh',20),('Hong Ha',50);
 
