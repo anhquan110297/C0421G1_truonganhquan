@@ -24,7 +24,7 @@ BETWEEN 18 and 50) and
 select kh.ten_khach_hang,kh.id_khach_hang, count(hd.id_khach_hang) as hihi
 from khach_hang kh
     inner join loai_khach lk on kh.id_loai_khach = lk.id_loai_khach
-	right join hop_dong hd on kh.id_khach_hang = hd.id_khach_hang
+	INNER join hop_dong hd on kh.id_khach_hang = hd.id_khach_hang
 WHERE kh.id_loai_khach = 1
 group by hd.id_khach_hang
 ORDER BY hihi;
@@ -304,6 +304,7 @@ call xoa_khach_hang();
 -- với nguyên tắc không được trùng khóa chính và đảm bảo toàn vẹn tham chiếu đến các bảng liên quan.
 delimiter //
 create PROCEDURE sp_2(
+	new_id_hop_dong int,
     new_id_nhan_vien int,
     new_id_khach_hang int,
     new_id_dich_vu int,
@@ -314,16 +315,17 @@ create PROCEDURE sp_2(
 )
 BEGIN
 if (new_id_nhan_vien in (select id_nhan_vien from nhan_vien) AND
+	new_id_hop_dong not in (SELECT id_hop_dong from hop_dong) and
 	new_id_khach_hang in (SELECT id_khach_hang FROM khach_hang)AND
     new_id_dich_vu IN (SELECT id_dich_vu FROM dich_vu)) THEN
-	INSERT into hop_dong (id_nhan_vien,id_khach_hang,id_dich_vu,ngay_lam_hop_dong,ngay_ket_thuc_hop_dong,new_tien_dat_coc,tong_tien)
+	INSERT into hop_dong (id_hop_dong,id_nhan_vien,id_khach_hang,id_dich_vu,ngay_lam_hop_dong,ngay_ket_thuc_hop_dong,new_tien_dat_coc,tong_tien)
     VALUEs (new_id_hop_dong,new_id_nhan_vien,new_id_khach_hang,new_id_dich_vu,new_ngay_lam_hop_dong,new_ngay_ket_thuc_hop_dong,new_tien_dat_coc,new_tong_tien);
  ELSE
 	SIGNAL SQLSTATE '02000' SET MESSAGE_TEXT = 'Wrong';
     end if;
 end;
 // delimiter ;
-call sp_2(3,2,3,'2019-4-12','2019-4-12',500,1500);
+call sp_2(4,3,2,3,'2019-4-12','2019-4-12',500,1500);
 
 -- 25.	Tạo triggers có tên Tr_1 Xóa bản ghi trong bảng HopDong 
 -- thì hiển thị tổng số lượng bản ghi còn lại có trong bảng HopDong ra giao diện console của database
