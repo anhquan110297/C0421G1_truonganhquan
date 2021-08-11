@@ -1,5 +1,9 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+/>
 <html>
 <head>
     <title>Title</title>
@@ -27,11 +31,35 @@
                     <td>${userRemove.getCountry()}</td>
                 </tr>
             </table>
-            <span>Please re-enter id </span>
-            <input type="number" name="idRemove" value="0"> <br>
-            <input type="submit" id="submit" value="submit">
         </form>
     </div>
-
+    <button onclick="onDelete()" type="button" class="btn btn-danger" data-toggle="modal" data-target="#anhquan">Delete</button>
+<%--    modal--%>
+    <div class="modal" tabindex="-1" id="modelId" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Confirm Delete</h3>
+                </div>
+                <form method="post">
+                    <input type="hidden" name="id" value="" id="userID">
+                    <div class="modal-body">
+                        <p>Are you sure delete <strong>${userRemove.getName()}</strong></p>
+                    </div>
+                    <div class="modal-footer">
+                        <a type="button" class="btn btn-secondary" data-bs-dismiss="modal" href="/users">Close</a>
+                        <button type="submit" class="btn btn-primary">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        function onDelete(id) {
+            document.getElementById("userID").value = id;
+        }
+    </script>
 </body>
 </html>

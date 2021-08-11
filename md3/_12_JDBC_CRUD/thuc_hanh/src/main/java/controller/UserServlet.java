@@ -58,7 +58,7 @@ public class UserServlet extends javax.servlet.http.HttpServlet {
 
     private void actionRemove(HttpServletRequest request, HttpServletResponse response) {
         try {
-            int id = Integer.parseInt(request.getParameter("idRemove"));
+            int id = Integer.parseInt(request.getParameter("id"));
             boolean result = userService.remove(id);
             if (result){
                 viewList(request,response);

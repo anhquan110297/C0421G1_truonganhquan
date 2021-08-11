@@ -11,7 +11,7 @@
         <a href="users?action=users">List All Users</a>
     </h2>
 </center>
-<div align="center">
+<div>
     <form method="post">
         <table border="1" cellpadding="5">
             <caption>

@@ -34,14 +34,14 @@ CREATE table education_degree (
 		ON DELETE CASCADE
     );
     create table employee (
-		employee_id int not null primary key,
+		employee_id int not null primary key AUTO_INCREMENT,
         employee_name varchar (45),
         employee_birthday date,
         employee_id_card varchar(45),
         employee_salary double,
         employee_phone varchar(45),
         employee_email varchar(45),
-        employy_address varchar (45),
+        employee_address varchar (45),
 		position_id int,
         education_degree_id int,
         division_id int,
@@ -60,22 +60,23 @@ CREATE table education_degree (
 		ON DELETE CASCADE
     );
     create table attach_service(
-		attach_service_id int not null PRIMARY key,
+		attach_service_id int not null PRIMARY key AUTO_INCREMENT,
+        attach_service_cost double,
         attach_service_name VARCHAR(45),
         attach_service_unit int,
         attach_service_status varchar(50)
     );
     create table rent_type (
-		rent_type_id int not null primary key,
+		rent_type_id int not null primary key AUTO_INCREMENT,
         rent_type_name varchar (45),
         rent_type_cost double
     );
     create table service_type (
-		service_type_id int not null primary key,
+		service_type_id int not null primary key AUTO_INCREMENT,
         service_type_name varchar(45)
 	);
     create table service (
-		service_id int not null PRIMARY key,
+		service_id int not null PRIMARY key AUTO_INCREMENT,
         service_name varchar(45),
         service_are int,
         service_coost double,
@@ -94,7 +95,7 @@ CREATE table education_degree (
 		ON DELETE CASCADE
     );
     create table customer_type (
-		customer_type_id int not null primary key,
+		customer_type_id int not null primary key AUTO_INCREMENT,
         customer_type_name varchar(45)
     );
     create table customer (
