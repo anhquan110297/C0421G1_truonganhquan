@@ -1,4 +1,4 @@
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
           rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
           crossorigin="anonymous">
-<%--    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css/boostrap.min.css">--%>
+    <%--    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css/boostrap.min.css">--%>
 </head>
 <body>
 <jsp:include page="../layout/header.jsp"/>
@@ -15,16 +15,19 @@
         <div class="col-lg-2">
             hihihih
         </div>
-        <div class="col-lg-10" style="background-color: hotpink">
-            <h1 style="color: white">Anh Quan Dep Trai Qua Troi Qua Dat</h1>
-            <h1 style="color: white">Anh Quan Dep Trai Qua Troi Qua Dat</h1>
-            <h1 style="color: white">Anh Quan Dep Trai Qua Troi Qua Dat</h1>
-            <h1 style="color: white">Anh Quan Dep Trai Qua Troi Qua Dat</h1>
-            <h1 style="color: white">Anh Quan Dep Trai Qua Troi Qua Dat</h1>
-            <h1 style="color: white">Anh Quan Dep Trai Qua Troi Qua Dat</h1>
-            <h1 style="color: white">Anh Quan Dep Trai Qua Troi Qua Dat</h1>
-            <h1 style="color: white">Anh Quan Dep Trai Qua Troi Qua Dat</h1>
-            <h1 style="color: white">Anh Quan Dep Trai Qua Troi Qua Dat</h1>
+        <div class="col-lg-10">
+            <h3 style="background-color: hotpink; color: white"><strong>anhquandeptrainhat</strong></h3>
+            <h3 style="background-color: hotpink; color: white"><strong>anhquandeptrainhat</strong></h3>
+            <h3 style="background-color: hotpink; color: white"><strong>anhquandeptrainhat</strong></h3>
+            <h3 style="background-color: hotpink; color: white"><strong>anhquandeptrainhat</strong></h3>
+            <h3 style="background-color: hotpink; color: white"><strong>anhquandeptrainhat</strong></h3>
+            <h3 style="background-color: hotpink; color: white"><strong>anhquandeptrainhat</strong></h3>
+            <h3 style="background-color: hotpink; color: white"><strong>anhquandeptrainhat</strong></h3>
+            <h3 style="background-color: hotpink; color: white"><strong>anhquandeptrainhat</strong></h3>
+            <h3 style="background-color: hotpink; color: white"><strong>anhquandeptrainhat</strong></h3>
+            <h3 style="background-color: hotpink; color: white"><strong>anhquandeptrainhat</strong></h3>
+            <h3 style="background-color: hotpink; color: white"><strong>anhquandeptrainhat</strong></h3>
+            <h3 style="background-color: hotpink; color: white"><strong>anhquandeptrainhat</strong></h3>
         </div>
     </div>
 </div>

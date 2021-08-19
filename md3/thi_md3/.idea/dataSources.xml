@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="thi_md3_db" uuid="06729721-7032-4f10-aa74-0e5189a41271">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/thi_md3_db</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="@thimd3" uuid="e51a915f-4ac0-4b74-859b-4db620dbf5c4">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/thi_md3_db</jdbc-url>
+    </data-source>
+  </component>
+</project>

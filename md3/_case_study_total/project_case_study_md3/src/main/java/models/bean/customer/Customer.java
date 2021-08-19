@@ -3,14 +3,14 @@ package models.bean.customer;
 import models.bean.Person;
 
 public class Customer extends Person {
-    private int gender;
+    private boolean gender;
     private int customerTypeId;
     private String customerCode;
 
     public Customer() {
     }
 
-    public Customer(String name, String birthDay, String idCard, String email, String phone, String address, int gender,
+    public Customer(String name, String birthDay, String idCard, String email, String phone, String address, boolean gender,
                     int customerTypeId, String customerCode) {
         super(name, birthDay, idCard, email, phone, address);
         this.gender = gender;
@@ -18,11 +18,11 @@ public class Customer extends Person {
         this.customerCode = customerCode;
     }
 
-    public int getGender() {
+    public boolean isGender() {
         return gender;
     }
 
-    public void setGender(int gender) {
+    public void setGender(boolean gender) {
         this.gender = gender;
     }
 

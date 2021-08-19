@@ -4,12 +4,12 @@ import models.bean.employee.Division;
 import models.bean.employee.EducationDegree;
 import models.bean.employee.Employee;
 import models.bean.employee.Position;
-import service.model_service.employee_service.EmployeeService;
-import service.model_service.employee_service.IEmployeeService;
-import service.model_service.employee_service.DivisionService;
-import service.model_service.employee_service.EducationDegreeService;
-import service.model_service.employee_service.ILinkedEmployeeService;
-import service.model_service.employee_service.PositionService;
+import service.employee_service.EmployeeService;
+import service.employee_service.IEmployeeService;
+import service.employee_service.DivisionService;
+import service.employee_service.EducationDegreeService;
+import service.employee_service.ILinkedEmployeeService;
+import service.employee_service.PositionService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

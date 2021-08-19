@@ -2,7 +2,7 @@ package models.repositories.customer_repository;
 
 import models.bean.customer.CustomerType;
 import models.repositories.BaseRepository;
-import service.model_service.cusomer_service.CustomerTypeService;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

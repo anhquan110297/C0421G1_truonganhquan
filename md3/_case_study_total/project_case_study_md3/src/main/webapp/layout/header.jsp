@@ -4,6 +4,11 @@
         <head>
         <title>Title</title>
         <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+            <style>
+                small {
+                color: red;
+            }
+            </style>
         </head>
         <body>
         <!-- homepage-->
@@ -32,6 +37,7 @@
         <a class="navbar-brand" href="/customer">Customer</a>
         <a class="navbar-brand" href="/service">Service</a>
         <a class="navbar-brand" href="/contract">Contract</a>
+        <a class="navbar-brand" href="/contractDetail">Contract Detail</a>
         <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>

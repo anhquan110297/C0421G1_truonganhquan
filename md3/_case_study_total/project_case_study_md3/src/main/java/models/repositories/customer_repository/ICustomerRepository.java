@@ -7,6 +7,7 @@ import java.util.List;
 public interface ICustomerRepository {
     public Customer findById (int id);
     public List<Customer> displayCustomer ();
-    public boolean createCustomer(int id);
-    public boolean editCustomer(int id);
+    public boolean createCustomer(Customer customer);
+    public boolean editCustomer(Customer customer);
+    public boolean removeCustomer (int id);
 }
