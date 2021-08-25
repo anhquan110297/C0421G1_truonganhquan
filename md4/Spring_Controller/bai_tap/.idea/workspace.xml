@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="88fd81bb-abc5-4596-8128-813de74cdc47" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1/fileContent/fileContent.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1/javaCompile/classAnalysis.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1/javaCompile/javaCompile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1/javaCompile/taskHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/bai_tap/controllers/Operation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/bai_tap/controllers/SandwichCondiments.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/bai_tap/models/services/ISandwichCondimentsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/bai_tap/models/services/SandwichCondimentsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/bai_tap-1.0-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/war/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bai_tap/controllers/Operation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bai_tap/controllers/SandwichCondiments.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bai_tap/models/services/ISandwichCondimentsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bai_tap/models/services/SandwichCondimentsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/.gradle/6.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/.gradle/6.1/fileContent/fileContent.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/.gradle/6.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/.gradle/6.1/javaCompile/classAnalysis.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/.gradle/6.1/javaCompile/javaCompile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/.gradle/6.1/javaCompile/taskHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/.gradle/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/build/classes/java/main/com/codegym/controller/Exercises.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/build/libs/money_convert-1.0-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/build/tmp/war/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/src/main/java/com/codegym/controller/Exercises.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/src/main/webapp/WEB-INF/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/src/main/webapp/WEB-INF/dispatcher-servlet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/bai_tap/money_convert/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/readmetest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/.gradle/6.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/.gradle/6.1/fileContent/fileContent.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/.gradle/6.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/.gradle/6.1/javaCompile/classAnalysis.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/.gradle/6.1/javaCompile/javaCompile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/.gradle/6.1/javaCompile/taskHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/.gradle/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/.gradle/checksums/md5-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/.gradle/checksums/sha1-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/build/classes/java/main/com/codegym/controller/GreetingController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/build/libs/thuc_hanh-1.0-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/build/tmp/war/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/src/main/java/com/codegym/controller/GreetingController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/src/main/webapp/WEB-INF/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/src/main/webapp/WEB-INF/dispatcher-servlet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring_MVC_Overview/thuc_hanh/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectId" id="1x80vfNElr426Y7IdC4XDixyLOp" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="foldersAlwaysOnTop" value="false" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\C0421G1_truonganhquan\md4\Spring_Controller\bai_tap\src\main" />
+      <recent name="D:\C0421G1_truonganhquan\md4\Spring_Controller\bai_tap\src\main\webapp" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.501" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.501" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="Gradle : org.example : bai_tap-1.0-SNAPSHOT.war">
+          <settings>
+            <option name="CONTEXT_PATH" value="" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_bai_tap" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="62839" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Gradle : org.example : bai_tap-1.0-SNAPSHOT.war" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="88fd81bb-abc5-4596-8128-813de74cdc47" name="Default Changelist" comment="" />
+      <created>1629721639962</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1629721639962</updated>
+      <workItem from="1629721652355" duration="6335000" />
+      <workItem from="1629795251520" duration="757000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1629723690614">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1629723690614" />
+    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1629796401594">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1629796401594" />
+    <state width="1023" height="270" key="GridCell.Tab.0.bottom" timestamp="1629731697692">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1023" height="270" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1629731697692" />
+    <state width="1023" height="270" key="GridCell.Tab.0.center" timestamp="1629731697691">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1023" height="270" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1629731697691" />
+    <state width="1023" height="270" key="GridCell.Tab.0.left" timestamp="1629731697691">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1023" height="270" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1629731697691" />
+    <state width="1023" height="270" key="GridCell.Tab.0.right" timestamp="1629731697692">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1023" height="270" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1629731697692" />
+    <state width="1023" height="270" key="GridCell.Tab.1.bottom" timestamp="1629731697692">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1023" height="270" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1629731697692" />
+    <state width="1023" height="270" key="GridCell.Tab.1.center" timestamp="1629731697692">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1023" height="270" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1629731697692" />
+    <state width="1023" height="270" key="GridCell.Tab.1.left" timestamp="1629731697692">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1023" height="270" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1629731697692" />
+    <state width="1023" height="270" key="GridCell.Tab.1.right" timestamp="1629731697692">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1023" height="270" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1629731697692" />
+    <state width="1023" height="270" key="GridCell.Tab.2.bottom" timestamp="1629731697692">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1023" height="270" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1629731697692" />
+    <state width="1023" height="270" key="GridCell.Tab.2.center" timestamp="1629731697692">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1023" height="270" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1629731697692" />
+    <state width="1023" height="270" key="GridCell.Tab.2.left" timestamp="1629731697692">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1023" height="270" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1629731697692" />
+    <state width="1023" height="270" key="GridCell.Tab.2.right" timestamp="1629731697692">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1023" height="270" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1629731697692" />
+    <state x="209" y="43" key="new project wizard" timestamp="1629796403355">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="209" y="43" key="new project wizard/0.0.1536.864@0.0.1536.864" timestamp="1629796403355" />
+  </component>
+</project>
