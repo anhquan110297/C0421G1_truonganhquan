@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<caption>Create New</caption>
+<form th:object="${product}" action="/product/remove/" method="post">
+    <label for="id">ID</label>
+    <input type="number" th:field="*{id}" id="id" th:value="${product.getId()}"><br>
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name" th:value="${product.getName()}"><br>
+    <label for="price">Price</label>
+    <input type="number" th:field="*{price}" id="price" th:value="${product.getPrice()}"><br>
+    <label for="description">Description</label>
+    <input type="text" th:field="*{description}" id="description" th:value="${product.getDescription()}"><br>
+    <label for="producer">Producer</label>
+    <input type="text" th:field="*{producer}" id="producer" th:value="${product.getProducer()}"><br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

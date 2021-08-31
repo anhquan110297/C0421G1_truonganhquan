@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p th:if="${productList.isEmpty()}" style="color: red"> List is empty</p>
+<div align="center">
+    <a href="/product/create">Add new product</a>
+<!--    <div th:if="${hihi}">-->
+<!--        <span th:text="${hihi}"></span>-->
+<!--    </div>-->
+    <table class="table" border="1">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Producer</th>
+            <th colspan="2">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product, status : ${productList}">
+            <td th:text="${status.index} + 1"></td>
+            <td><a th:text="${product.getName()}" th:href="@{detail/__${product.getId()}__}"></a></td>
+            <td th:text="${product.getPrice()}"></td>
+            <td th:text="${product.getDescription()}"></td>
+            <td th:text="${product.getProducer()}"></td>
+            <td><a th:href="@{edit/__${product.getId()}__}">Edit</a></td>
+            <td><a th:href="@{remove/__${product.getId()}__}">Remove</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
