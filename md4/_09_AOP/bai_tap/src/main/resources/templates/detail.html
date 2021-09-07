@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input{
+            border: none;
+        }
+    </style>
+</head>
+<body style="background-color: pink">
+<form action="/detail" method="post" th:object="${book}">
+    <input type="hidden" th:field="*{id}" th:value="${book.getId()}" ><br>
+    <input  th:field="*{name}" th:value="${book.getName()}" readonly ><br>
+    <input  th:field="*{description}" th:value="${book.getDescription()}" readonly ><br>
+    <input  th:field="*{amount}" th:value="${book.getAmount()}" readonly ><br>
+    <button type="submit">Submit</button>
+    <button><a th:href="@{/pay/__${book.getId()}__}">Pay</a></button>
+</form>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            color: white;
+        }
+        div {
+            color: red;
+        }
+    </style>
+</head>
+<body style="background-color: pink">
+    <div th:if="${borrowCode}">
+        <span th:text="${borrowCode}"></span>
+    </div>
+    <div th:if="${msg}">
+        <span th:text="${msg}"></span>
+    </div>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>STT</th>
+            <th>Name</th>
+            <th>Detail</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="items, status : ${bookList}">
+            <td th:text="${status.index} + 1"></td>
+            <td th:text="${items.getName()}"></td>
+            <td><a th:href="@{detail/__${items.getId()}__}">Detail</a></td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>

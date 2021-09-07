@@ -1,5 +1,4 @@
 package com.codegym.register_form.controllers;
-
 import com.codegym.register_form.dto.UsersDto;
 import com.codegym.register_form.models.entity.Users;
 import com.codegym.register_form.models.services.RegisterFormServiceInterface;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import java.util.List;
 
 @Controller
