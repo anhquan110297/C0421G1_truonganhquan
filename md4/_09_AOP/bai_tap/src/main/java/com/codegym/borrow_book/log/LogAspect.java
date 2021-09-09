@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class LogAspect {
-    @Pointcut("execution(* com.codegym.borrow_book.controllers.action*(..))")
+    @Pointcut("execution(* com.codegym.borrow_book.controllers.BorrowBookController.action*(..))")
     public void methodPointCut(){
     }
 

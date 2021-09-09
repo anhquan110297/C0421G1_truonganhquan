@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/add" method="post">
+        <table border="1">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="productMap: ${cart.getCartMap()}">
+                <td th:text="${productMap.key.name}"></td>
+                <td th:text="${productMap.key.description}"></td>
+                <td><input id="price" th:value="${productMap.key.price}" readonly></td>
+                <td><input id="quantity" type="number" th:value="${productMap.value}" min="1"></td>
+            </tr>
+            </tbody>
+            <label for="total">Total: </label>
+            <input style="border: none" type="text" id="total" readonly>
+            <label for="submit">Submit</label>
+            <input type="submit" role="button"  id="submit">
+        </table>
+    </form>
+</body>
+<script>
+    let price = parseInt(document.getElementById("price").value);
+    let quantity = parseInt(document.getElementById("quantity").value);
+    let total = price*quantity;
+    console.log("price " + price);
+    console.log("quantity " + quantity);
+    document.getElementById("total").value = total;
+</script>
+</html>

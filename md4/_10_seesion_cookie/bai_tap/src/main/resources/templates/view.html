@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color: pink">
+    <div th:if="${msg}">
+        <span th:text="${msg}"></span>
+    </div>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>STT</th>
+            <th>Name</th>
+            <th colspan="2">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="items, status : ${productList}">
+            <td th:text="${status.index} + 1"></td>
+            <td th:text="${items.getName()}"></td>
+            <td><a th:href="@{detail/__${items.getId()}__}">Detail</a></td>
+            <td><a th:href="@{add/__${items.getId()}__}">Add To Cart</a></td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>

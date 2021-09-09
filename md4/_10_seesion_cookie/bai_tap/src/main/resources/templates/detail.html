@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/cart" method="post" th:object="${product}">
+    <input type="hidden" th:field="*{id}" th:value="${product.getId()}" ><br>
+    <input  th:field="*{name}" th:value="${product.getName()}" readonly ><br>
+    <input  th:field="*{description}" th:value="${product.getDescription()}" readonly ><br>
+    <input  th:field="*{price}" th:value="${product.getPrice()}" readonly ><br>
+</form>
+</body>
+</html>
