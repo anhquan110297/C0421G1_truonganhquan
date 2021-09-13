@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class="table" border="1">
+    <label for="inputSearch"></label>
+    <input type="text" id="inputSearch">
+    <button>Search</button>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Signature</th>
+        <th>category</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<script src="../static/jquery-3.5.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: "http://localhost:8080/api/blog/list",
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                console.log(data)
+                let tr = [];
+                for (let i = 0;i < data.length; i++){
+                    tr.push('<tr>')
+                    tr.push('<td>' + data[i].id + '</td>')
+                    tr.push('<td>' + data[i].title + '</td>')
+                    tr.push('<td>' + data[i].content + '</td>')
+                    tr.push('<td>' + data[i].signature + '</td>')
+                    tr.push('<td>' + data[i].category.categoryName + '</td>')
+                    tr.push('</tr>')
+                }
+                $('table').append($(tr.join('')));
+            }
+        })
+
+
+        $("button").click(function () {
+            let value = $("#inputSearch").val();
+            $("table").empty()
+
+            $.ajax({
+                url: "http://localhost:8080/api/blog/search?category=" + value,
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    let tr = [];
+                    for (let i = 0;i < data.length; i++){
+                        tr.push('<tr>')
+                        tr.push('<td>' + data[i].id + '</td>')
+                        tr.push('<td>' + data[i].title + '</td>')
+                        tr.push('<td>' + data[i].content + '</td>')
+                        tr.push('<td>' + data[i].signature + '</td>')
+                        tr.push('</tr>')
+                    }
+                    $('table').append($(tr.join('')))
+                }
+            })
+        })
+
+    })
+//    chay len
+</script>
+</body>
+</html>

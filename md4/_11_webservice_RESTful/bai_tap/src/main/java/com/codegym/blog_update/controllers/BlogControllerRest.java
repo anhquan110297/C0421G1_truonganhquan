@@ -5,6 +5,8 @@ import com.codegym.blog_update.models.Entity.Category;
 import com.codegym.blog_update.models.services.BlogServiceInterface;
 import com.codegym.blog_update.models.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +17,7 @@ import java.util.List;
 @CrossOrigin (origins = "*")
 @RestController
 // bat buoc phai co api, api interface
-@RequestMapping ("/blog/api")
+@RequestMapping ("/api/blog")
 public class BlogControllerRest {
     @Autowired
     private BlogServiceInterface blogService;
@@ -23,8 +25,8 @@ public class BlogControllerRest {
     @Autowired
     private CategoryService categoryService;
 
-    @GetMapping()
-    public ResponseEntity<List<Blog>> show() {
+    @GetMapping(value = "/list")
+    public ResponseEntity<List<Blog>> show(@PageableDefault(value = 2) Pageable pageable) {
         List<Blog> blogList = blogService.showAll();
         if (blogList.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
