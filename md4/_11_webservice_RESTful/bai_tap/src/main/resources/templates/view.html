@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -57,7 +57,7 @@
                 dataType: "json",
                 success: function (data) {
                     let tr = [];
-                    for (let i = 0;i < data.length; i++){
+                    for (let i = 0; i < data.length; i++) {
                         tr.push('<tr>')
                         tr.push('<td>' + data[i].id + '</td>')
                         tr.push('<td>' + data[i].title + '</td>')
@@ -114,14 +114,13 @@
                         blogList += "<td>" + arr[i].category.categoryName + "</td>";
                         blogList += "</tr>";
                     }
-                    $("table").append(blogList);  // chèn - nối  thêm nội dung mới vào table
-                    // $("table").html(blogList); // chỉ in ra phần nội dung mới
+                    $("table").append(blogList);
+                }
 
-                },
-
-
+            })
+        })
     })
-//    chay len
+    //    chay len
 </script>
 </body>
 </html>
