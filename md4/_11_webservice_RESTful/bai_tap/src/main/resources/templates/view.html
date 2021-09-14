@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -20,29 +20,31 @@
     </thead>
     <tbody>
     </tbody>
+    <button id="loadMore">Click me to load more</button>
 </table>
 <script src="../static/jquery-3.5.1.min.js"></script>
 <script>
     $(document).ready(function () {
-        $.ajax({
-            url: "http://localhost:8080/api/blog/list",
-            type: "GET",
-            dataType: "json",
-            success: function (data) {
-                console.log(data)
-                let tr = [];
-                for (let i = 0;i < data.length; i++){
-                    tr.push('<tr>')
-                    tr.push('<td>' + data[i].id + '</td>')
-                    tr.push('<td>' + data[i].title + '</td>')
-                    tr.push('<td>' + data[i].content + '</td>')
-                    tr.push('<td>' + data[i].signature + '</td>')
-                    tr.push('<td>' + data[i].category.categoryName + '</td>')
-                    tr.push('</tr>')
-                }
-                $('table').append($(tr.join('')));
-            }
-        })
+        // tra ve du lieu bth
+        // $.ajax({
+        //     url: "http://localhost:8080/api/blog/list",
+        //     type: "GET",
+        //     dataType: "json",
+        //     success: function (data) {
+        //         console.log(data)
+        //         let tr = [];
+        //         for (let i = 0;i < data.length; i++){
+        //             tr.push('<tr>')
+        //             tr.push('<td>' + data[i].id + '</td>')
+        //             tr.push('<td>' + data[i].title + '</td>')
+        //             tr.push('<td>' + data[i].content + '</td>')
+        //             tr.push('<td>' + data[i].signature + '</td>')
+        //             tr.push('<td>' + data[i].category.categoryName + '</td>')
+        //             tr.push('</tr>')
+        //         }
+        //         $('table').append($(tr.join('')));
+        //     }
+        // })
 
 
         $("button").click(function () {
@@ -67,6 +69,56 @@
                 }
             })
         })
+        let page = 0;
+        //tra ve page
+        $.ajax({
+            url: "http://localhost:8080/api/blog/list?page=" + page,
+            type: "GET",
+            dataType: "json",
+
+            success: function (data) {
+                console.log(data)
+                // data la gia tri content nen .content tu` data de chuyen ve
+                let arr = data.content;
+
+                let blogList = "";
+                for (let i = 0; i < arr.length; i++) {
+                    blogList += "<tr>";
+                    blogList += "<td>" + arr[i].id + "</td>";
+                    blogList += "<td>" + arr[i].title + "</td>";
+                    blogList += "<td>" + arr[i].content + "</td>";
+                    blogList += "<td>" + arr[i].signature + "</td>";
+                    blogList += "<td>" + arr[i].category.categoryName + "</td>";
+                    blogList += "</tr>";
+                }
+                $(".table").append(blogList);
+            }
+        });
+
+        $('#loadMore').click(function () {
+
+            $.ajax({
+                url: "http://localhost:8080//v1/blog/api/list?page=" + page,
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    let arr = data.content;
+
+                    let blogList = "";
+                    for (let i = 0; i < arr.length; i++) {
+                        blogList += "<tr>";
+                        blogList += "<td>" + arr[i].id + "</td>";
+                        blogList += "<td>" + arr[i].title + "</td>";
+                        blogList += "<td>" + arr[i].content + "</td>";
+                        blogList += "<td>" + arr[i].signature + "</td>";
+                        blogList += "<td>" + arr[i].category.categoryName + "</td>";
+                        blogList += "</tr>";
+                    }
+                    $("table").append(blogList);  // chèn - nối  thêm nội dung mới vào table
+                    // $("table").html(blogList); // chỉ in ra phần nội dung mới
+
+                },
+
 
     })
 //    chay len

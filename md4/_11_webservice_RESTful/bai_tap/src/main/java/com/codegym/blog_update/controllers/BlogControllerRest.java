@@ -5,10 +5,12 @@ import com.codegym.blog_update.models.Entity.Category;
 import com.codegym.blog_update.models.services.BlogServiceInterface;
 import com.codegym.blog_update.models.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,8 +28,8 @@ public class BlogControllerRest {
     private CategoryService categoryService;
 
     @GetMapping(value = "/list")
-    public ResponseEntity<List<Blog>> show(@PageableDefault(value = 2) Pageable pageable) {
-        List<Blog> blogList = blogService.showAll();
+    public ResponseEntity<Page<Blog>> show(@PageableDefault(value = 2) Pageable pageable, @RequestParam (value = "page") int page) {
+        Page <Blog> blogList = blogService.findAll(pageable);
         if (blogList.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
@@ -60,5 +62,12 @@ public class BlogControllerRest {
         }
         return new ResponseEntity<>(categoryList,HttpStatus.OK);
     }
+
+    @GetMapping (value = "/edit")
+    public String showEdit (Model model){
+        model.addAttribute("blog",blogService.showAll());
+        return "view";
+    }
+    
 
 }
