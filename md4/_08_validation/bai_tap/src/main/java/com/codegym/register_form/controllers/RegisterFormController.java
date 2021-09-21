@@ -39,6 +39,7 @@ public class RegisterFormController {
     public String create (@ModelAttribute @Validated UsersDto usersDto, BindingResult bindingResult, RedirectAttributes redirectAttributes){
         // Nếu có lỗi sẽ quăng lõio ra
         if (bindingResult.hasFieldErrors()){
+            
             return "create";
         } else {
             Users users = new Users();

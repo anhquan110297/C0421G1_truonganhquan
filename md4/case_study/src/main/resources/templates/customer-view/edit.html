@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        label {
+            text-align: center;
+            color: #088A68;
+        }
+        option {
+            color: #088A68;
+        }
+        small {
+            color: red;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha
+    384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+<button class="btn btn-primary">
+    <a href="/employee/list" style="text-decoration: none;color: white">Back to Employee List</a>
+</button>
+<div class="container-fluid border border-1">
+    <div class="row bg-light">
+        <div class="col-lg-12">
+            <div>
+                <!--                <%&#45;&#45;  form create&#45;&#45;%>-->
+                <form method="post" th:object="${customerDto}" action="/customer/edit">
+<!--                    lam on gui id qua -->
+                    <input type="hidden" th:field="*{id}">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Customer Name</label>
+                        <input type="text" class="form-control" id="name" th:field="*{name}">
+                        <small th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" th:field="*{email}">
+                        <small th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="idCard" class="form-label">ID Card</label>
+                        <input type="text" class="form-control" id="idCard" th:field="*{idCard}">
+                        <small th:if="${#fields.hasErrors('idCard')}" th:errors="*{idCard}"></small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="text" class="form-control" id="phone" th:field="*{phone}">
+                        <small th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="gender" class="form-label">Gender</label>
+                        <select th:field="*{gender}" id="gender" class="form-select">
+                            <option th:text="Male" th:value="${true}"></option>
+                            <option th:text="Female" th:value="${false}"></option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="customerCode" class="form-label">Customer Code</label>
+                        <input type="text" class="form-control" id="customerCode" th:field="*{code}">
+                        <small th:if="${#fields.hasErrors('code')}" th:errors="*{code}"></small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="customerType" class="form-label">Customer Type</label>
+                        <select class="form-select" id="customerType" th:field="*{customerType}">
+                            <option style="color: #088A68 " th:text="${items.getName()}" th:value="${items.getId()}"
+                                    th:each="items : ${customerTypeList}">
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="birthDay" class="form-label">Birth Day</label>
+                        <input type="date" class="form-control" id="birthDay" th:field="*{birthday}">
+                        <small th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}"></small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="address" th:field="*{address}">
+                        <small th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></small>
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU
+4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ
+9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+</body>
+</html>

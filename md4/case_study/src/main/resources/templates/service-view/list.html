@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha
+    384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+<div th:if="${msg}" align="center" style="color: red">
+    <p th:text="${msg}"></p>
+</div>
+<button class="btn btn-primary">
+    <a href="/home" style="text-decoration: none;color: white">Back Home Page</a>
+</button>
+<button class="btn btn-primary">
+    <a href="/service/create" style="text-decoration: none;color: white">Create</a>
+</button>
+<div class="container-fluid">
+    <div class="col-lg-12">
+        <table class="table table-success table-hover">
+            <thead>
+            <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Service Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Area</th>
+                <th scope="col">Capacity</th>
+                <th scope="col">Cost</th>
+                <th scope="col">Floor</th>
+                <th scope="col">Pool Area</th>
+                <th scope="col">Standard</th>
+                <th scope="col">Rent Type</th>
+                <th scope="col">Service Type</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="items,status : ${serviceList}">
+                <td th:text="${status.index} + 1"></td>
+                <td th:text="${items.getName()}"></td>
+                <td th:text="${items.getDescription()}"></td>
+                <td th:text="${items.getArea()}"></td>
+                <td th:text="${items.getCapacity()}"></td>
+                <td th:text="${items.getCost()}"></td>
+                <td th:text="${items.getFloor()}"></td>
+                <td th:text="${items.getPoolArea()}"></td>
+                <td th:text="${items.getStandard()}"></td>
+                <td th:text="${items.getRentType().name}"></td>
+                <td th:text="${items.getServiceType().name}"></td>
+<!--                <td>-->
+<!--                    <a class="btn btn-info" th:href="@{edit/__${items.getId()}__}">Edit</a>-->
+<!--                    <button type="button" class="btn btn-danger"-->
+<!--                            th:onclick="'deleteCustomer('+${items.id}+')'"-->
+<!--                            data-bs-toggle="modal"-->
+<!--                            data-bs-target="#deleteModal">Delete-->
+<!--                    </button>-->
+<!--                </td>-->
+            </tr>
+            </tbody>
+        </table>
+        <!--        phan trang-->
+        <div>
+            <div align="center">
+                <a class="btn-primary btn" style="color: white;text-decoration: none"
+                   th:href="@{'/employee/list'(page=${serviceList.number - 1})}"
+                   th:if="${serviceList.hasPrevious()}">Previous</a>
+                <span th:text="${serviceList.number + 1}"></span>/<span th:text="${serviceList.totalPages}"></span>
+                <a class="btn btn-primary" style="color: white;text-decoration: none"
+                   th:href="@{'/employee/list'(page=${serviceList.number + 1})}"
+                   th:if="${serviceList.hasNext()}">Next</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--modal-->
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU
+4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ
+9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+</body>
+</html>
