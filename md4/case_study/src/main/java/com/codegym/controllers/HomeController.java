@@ -60,7 +60,7 @@ public class HomeController {
             String password = passwordEncoder.encode(userDto.getPassWord());
             userDto.setPassWord(password);
             List<Role> roleList = new ArrayList<>();
-            roleList.add(roleService.findRoleByName("USER"));
+            roleList.add(roleService.findRoleByName("ROLE_USER"));
             User user = new User();
             user.setEnabled(true);
             user.setRoles(roleList);

@@ -1,0 +1,3 @@
+interface IAea {
+    area(): number;
+}
