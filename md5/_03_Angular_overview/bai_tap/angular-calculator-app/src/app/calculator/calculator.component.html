@@ -1,0 +1,36 @@
+<h1>Calculator</h1>
+<table>
+  <thead>
+  <tr>
+    <td>
+      <label>First</label>
+    </td>
+    <td>
+      <input type="number" class="form-control" #numberA required>
+    </td>
+    <td>
+      <label>Second</label>
+    </td>
+    <td>
+      <input type="number" class="form-control" #numberB required>
+    </td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <select #select>
+      <option value="plus">+</option>
+      <option value="minus">-</option>
+      <option value="multi">*</option>
+      <option value="divide">/</option>
+    </select>
+    <input type="button" class="btn btn-success" (click)="calculation(numberA.value,numberB.value,select.value)"
+           value="Cal">
+  </tr>
+  <tr>
+    <td colspan="4">
+      <p>{{result}}</p>
+    </td>
+  </tr>
+  </tbody>
+</table>
