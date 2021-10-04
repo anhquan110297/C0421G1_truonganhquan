@@ -1,0 +1,30 @@
+<table>
+  <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>BirthDay</th>
+            <th>ID Card</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Customer Code</th>
+            <th>CustomerType</th>
+        </tr>
+  </thead>
+  <tbody>
+        <tr *ngFor="let items of customerList">
+            <td>{{items.name}}</td>
+            <td>{{items.birthday}}</td>
+            <td>{{items.idCard}}</td>
+            <td>
+               <span *ngIf="items.gender == 0; else elseBlock">Male</span>
+             <ng-template #elseBlock>
+               <span>Female</span>
+             </ng-template>
+            </td>
+            <td>{{items.address}}</td>
+            <td>{{items.customerCode}}</td>
+            <td>{{items.customerType}}</td>
+        </tr>
+  </tbody>
+</table>
