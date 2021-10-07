@@ -1,0 +1,33 @@
+<table class="table table-info table-hover">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Customer Code</th>
+    <th scope="col">Customer Name</th>
+    <th scope="col">Birthday</th>
+    <th scope="col">Gender</th>
+    <th scope="col">ID Card</th>
+    <th scope="col">Email</th>
+    <th scope="col">Phone</th>
+    <th scope="col">Address</th>
+    <th scope="col">Customer Type</th>
+    <th scope="col" colspan="2">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let items of customerList; let i = index" class="table-info">
+    <td class="table-info">{{i + 1}}</td>
+    <td class="table-info">{{items.code}}</td>
+    <td class="table-info">{{items.name}}</td>
+    <td class="table-info">{{items.birthday}}</td>
+    <td class="table-info">{{items.gender}}</td>
+    <td class="table-info">{{items.idCard}}</td>
+    <td class="table-info">{{items.email}}</td>
+    <td class="table-info">{{items.phone}}</td>
+    <td class="table-info">{{items.address}}</td>
+    <td class="table-info">{{items.customerType.name}}</td>
+    <td>hihi</td>
+    <td>haha</td>
+  </tr>
+  </tbody>
+</table>

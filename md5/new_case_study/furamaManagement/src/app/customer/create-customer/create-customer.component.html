@@ -1,0 +1,64 @@
+<div class="container-fluid">
+
+  <form [formGroup]="customerForm" (ngSubmit)="createCustomer()">
+    <div class="mb-3">
+      <label for="customerCode" class="form-label">Customer Code</label>
+      <input type="text" class="form-control" id="customerCode" aria-describedby="emailHelp" formControlName="code">
+    </div>
+    <div class="mb-3">
+      <label for="name" class="form-label">Customer name</label>
+      <input type="text" class="form-control" id="name" aria-describedby="emailHelp" formControlName="name">
+    </div>
+    <div class="mb-3">
+      <label for="birthday" class="form-label">Customer Birthday</label>
+      <input type="date" class="form-control" id="birthday" aria-describedby="emailHelp" formControlName="birthday">
+    </div>
+    <div>
+      <label> Customer Gender</label><br><br>
+      <div class="form-check-inline mb-3">
+        <input class="form-check-input" type="radio"  id="male" formControlName="gender"
+               value="Male">
+        <label class="form-check-label" for="male">
+          Male
+        </label>
+      </div>
+      <div class="form-check-inline mb-3">
+        <input class="form-check-input" type="radio"  id="female" formControlName="gender"
+               value="Female">
+        <label class="form-check-label" for="female">
+          Female
+        </label>
+      </div>
+      <div class="form-check-inline mb-3">
+        <input class="form-check-input" type="radio"  id="other" formControlName="gender"
+               value="Other">
+        <label class="form-check-label" for="other">
+          Other
+        </label>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="idCard" class="form-label">Customer ID Card</label>
+      <input type="text" class="form-control" id="idCard" aria-describedby="emailHelp" formControlName="idCard">
+    </div>
+    <div class="mb-3">
+      <label for="phone" class="form-label">Customer phone</label>
+      <input type="text" class="form-control" id="phone" aria-describedby="emailHelp" formControlName="phone">
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Customer email</label>
+      <input type="text" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email">
+    </div>
+    <div class="mb-3">
+      <label for="address" class="form-label">Customer address</label>
+      <input type="text" class="form-control" id="address" aria-describedby="emailHelp" formControlName="address">
+    </div>
+    <div class="mb-3">
+      <label for="customerType" class="form-label">Customer Type</label>
+      <select formControlName="customerType" id="customerType" class="form-select">
+        <option *ngFor="let items of customerType " [ngValue]="items" >{{items.name}}</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

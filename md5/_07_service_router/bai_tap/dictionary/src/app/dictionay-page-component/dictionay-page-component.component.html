@@ -1,0 +1,15 @@
+<table class="table" border="1">
+  <tr>
+    <th>#</th>
+    <th>WORD</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let items of dictionaryList; let i = index">
+    <td>{{i + 1}}</td>
+    <td>{{items.word}}</td>
+    <td [routerLink]="['/detail',items.word]">Detail</td>
+  </tr>
+</table>
+<input type="text" #detail>
+<button (click)="showDetail(detail.value)" >Search</button>
+<p *ngIf="searchTest">{{searchTest.mean}}</p>
