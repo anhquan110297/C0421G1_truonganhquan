@@ -25,16 +25,16 @@
     {
       "code": "KH-0001",
       "name": "Nguyen Tien Danh",
-      "gender": "Male",
-      "idCard": "123456781",
-      "phone": "0901111111",
-      "customerType": {
-        "id": 1,
-        "name": "Diamond"
-      },
       "birthday": "2001-01-22",
+      "gender": "Female",
+      "idCard": "123456789",
+      "phone": "0901111111",
       "email": "ndanh@gmail.com",
       "address": "Da Nang",
+      "customerType": {
+        "id": 4,
+        "name": "Silver"
+      },
       "id": 1
     },
     {
@@ -53,64 +53,91 @@
       "id": 2
     },
     {
-      "code": "KH-0003",
-      "name": "Ngo Nhat Minh",
+      "code": "KH-0122",
+      "name": "Tran Em Quan",
+      "birthday": "1997-02-12",
       "gender": "Female",
-      "idCard": "201482948",
-      "phone": "0903928172",
+      "idCard": "123456788",
+      "phone": "0901111111",
+      "email": "ronaldo@hihi.com",
+      "address": "Singapore",
+      "customerType": {
+        "id": 4,
+        "name": "Silver"
+      },
+      "id": 3
+    },
+    {
+      "code": "KH-0092",
+      "name": "Quan Hoc Gioi",
+      "birthday": "1990-11-11",
+      "gender": "Other",
+      "idCard": "20121313112",
+      "phone": "0901111111",
+      "email": "mouse@outlook.com",
+      "address": "VietNam",
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      },
+      "id": 4
+    },
+    {
+      "code": "KH-2345",
+      "name": "Tran Van Anh Quan Hoc Gioi",
+      "birthday": "1996-12-20",
+      "gender": "Female",
+      "idCard": "2123211122",
+      "phone": "0905555555",
+      "email": "ronaldo@hihi.com",
+      "address": "Buhtan",
       "customerType": {
         "id": 3,
         "name": "Gold"
       },
-      "birthday": "2021-07-03",
-      "email": "min@codegym.vn",
-      "address": "Hue",
-      "id": 3
-    },
-    {
-      "code": "KH-0002",
-      "name": "Nguyen Thanh Lam",
-      "gender": "Female",
-      "idCard": "192740281",
-      "phone": "0909217320",
-      "customerType": {
-        "id": 4,
-        "name": "Silver"
-      },
-      "birthday": "2021-07-03",
-      "email": "lam@codegym.vn",
-      "address": "Ha Noi",
-      "id": 4
-    },
-    {
-      "code": "KH-1234",
-      "name": "Tran Em Quan",
-      "birthday": "1997-02-11",
-      "gender": "Female",
-      "idCard": "123456789",
-      "phone": "0905111111",
-      "email": "taqdnc@gmail.com",
-      "address": "philippines",
-      "customerType": {
-        "id": 4,
-        "name": "Silver"
-      },
       "id": 5
     },
     {
-      "code": "KH-1234",
-      "name": "Thanh",
-      "birthday": "1111-11-11",
-      "gender": "Male",
-      "idCard": "20121313112",
-      "phone": "0905555555",
-      "email": "taqdnc@gmail.com",
-      "address": "VietNam",
+      "code": "KH-9492",
+      "name": "Nguyen Thi Hoc Gioi",
+      "birthday": "2000-03-29",
+      "gender": "Female",
+      "idCard": "2017221332",
+      "phone": "0988111111",
+      "email": "hocgioi@outlook.com",
+      "address": "Mongolia",
       "customerType": {
         "id": 1,
         "name": "Diamond"
       },
       "id": 6
+    },
+    {
+      "code": "KH-3491",
+      "name": "Bach Hong Hoc Ngu",
+      "birthday": "2003-12-22",
+      "gender": "Female",
+      "idCard": "20182039012",
+      "phone": "0905111111",
+      "email": "hocngu@codegym.vn",
+      "address": "Thai Binh",
+      "customerType": {
+        "id": 5,
+        "name": "Member"
+      },
+      "id": 7
+    },
+    {
+      "code": "",
+      "name": "",
+      "birthday": "",
+      "gender": "Male",
+      "idCard": "",
+      "phone": "",
+      "email": "",
+      "address": "",
+      "customerType": "",
+      "id": 8
     }
   ],
   "educationDegrees": [

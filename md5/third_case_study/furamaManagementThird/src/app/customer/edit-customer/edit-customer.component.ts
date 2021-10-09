@@ -4,6 +4,8 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {CustomerServiceService} from "../customer-service.service";
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {ICustomerType} from "../icustomer-type";
+import {SnackBarComponent} from "../snack-bar/snack-bar.component";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-edit-customer',
@@ -28,7 +30,8 @@ export class EditCustomerComponent implements OnInit {
 
   constructor(private customerService: CustomerServiceService,
               private router : Router,
-              private activatedRoute: ActivatedRoute) {
+              private activatedRoute: ActivatedRoute,
+              private snackBar : MatSnackBar) {
     this.activatedRoute.paramMap.subscribe((paramMap : ParamMap) => {
       this.customerId = Number(paramMap.get('id'));
       this.customerService.findById(this.customerId).subscribe( next => {
@@ -49,6 +52,11 @@ export class EditCustomerComponent implements OnInit {
     console.log(value);
     console.log(this.customerId);
     this.customerService.editCustomer(this.customerId,value).subscribe( next => this.router.navigateByUrl("customer/list"))
+  }
+
+  openSnackBar (customerName : string | any){
+    console.log(customerName)
+    this.snackBar.openFromComponent(SnackBarComponent, {data: {name : 'Update ' +customerName+' Success '} , duration : 4000})
   }
 
 }

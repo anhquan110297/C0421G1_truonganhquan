@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ICustomer} from "../icustomer";
-import {ICustomerType} from "../icustomer-type";
 import {CustomerServiceService} from "../customer-service.service";
 
 @Component({
@@ -9,15 +8,25 @@ import {CustomerServiceService} from "../customer-service.service";
   styleUrls: ['./list-customer.component.css']
 })
 export class ListCustomerComponent implements OnInit {
-  customerList : ICustomer[];
-  constructor(private customerService : CustomerServiceService) {
-    customerService.findAllCustomer().subscribe( next => {
+  customerList: ICustomer[];
+  name: string | any;
+
+  constructor(private customerService: CustomerServiceService) {
+
+  }
+
+  ngOnInit(): void {
+    this.customerService.findAllCustomer().subscribe(next => {
       this.customerList = next;
       console.log(this.customerList)
     });
   }
 
-  ngOnInit(): void {
+  search() {
+    if (this.name == "") {
+      this.ngOnInit()
+    } else {
+      // this.customerList = this.customerList.filter()
+    }
   }
-
 }

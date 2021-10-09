@@ -6,7 +6,7 @@
     </div>
     <div class="mb-3">
       <label for="name" class="form-label">Customer name</label>
-      <input type="text" class="form-control" id="name" aria-describedby="emailHelp" formControlName="name">
+      <input #customerName type="text" class="form-control" id="name" aria-describedby="emailHelp" formControlName="name">
     </div>
     <div class="mb-3">
       <label for="birthday" class="form-label">Customer Birthday</label>
@@ -59,7 +59,7 @@
                 [selected]="items.name == customerForm.controls.customerType.value.name">{{items.name}}</option>
       </select>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" (click)="openSnackBar(customerName.value)">Submit</button>
   </form>
 </div>
 

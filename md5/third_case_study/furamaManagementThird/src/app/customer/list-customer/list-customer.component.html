@@ -1,0 +1,63 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+      <div>
+        <input type="text" id="search" class="form-control" name="name" [(ngModel)]="nameSearch" (ngModelChange)="search()"
+               placeholder="Enter customer's name to search">
+      </div>
+      <table class="table table-success  table-hover">
+        <thead>
+        <tr>
+          <th scope="col" (click)="sort('id')">#
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
+              <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+          </th>
+          <th scope="col" (click)="sort('customerName')">Customer Name
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
+              <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+          </th>
+          <th scope="col">Customer Code &nbsp; <i class="bi bi-sort-alpha-down"></i></th>
+          <th scope="col">Birthday</th>
+          <th scope="col">Gender</th>
+          <th scope="col">ID Card</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Address</th>
+          <th scope="col">Customer Type</th>
+          <th scope="col" colspan="2">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let items of customerList | orderBy: key: reverse | paginate: {itemsPerPage:3,currentPage:p} ; let i = index"
+            class="table-info">
+          <td class="table-success" #customerId id="customerId">{{items.id}}</td>
+          <td class="table-success" #customerName>{{items.name}}</td>
+          <td class="table-success">{{items.code}}</td>
+          <td class="table-success">{{items.birthday}}</td>
+          <td class="table-success">{{items.gender}}</td>
+          <td class="table-success">{{items.idCard}}</td>
+          <td class="table-success">{{items.email}}</td>
+          <td class="table-success">{{items.phone}}</td>
+          <td class="table-success">{{items.address}}</td>
+          <td class="table-success">{{items.customerType.name}}</td>
+          <td class="table-success">
+            <button [routerLink]="['/customer/edit', items.id]" class="btn btn-primary" >Update
+            </button>
+          </td>
+          <td class="table-success">
+            <button  class="btn btn-danger"
+            (click)="openDialogDelete(items.id,items.name)">Delete</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <button type="button" class="btn btn-success" [routerLink]="['/customer/create']">Create</button>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+    <div class="col-1"></div>
+  </div>
+</div>

@@ -8,7 +8,8 @@ import { CreateCustomerComponent } from './customer/create-customer/create-custo
 import { EditCustomerComponent } from './customer/edit-customer/edit-customer.component';
 import { RemoveCustomerComponent } from './customer/remove-customer/remove-customer.component';
 import {HttpClientModule} from "@angular/common/http";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { SearchComponentComponent } from './customer/search-component/search-component.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +17,15 @@ import {ReactiveFormsModule} from "@angular/forms";
     ListCustomerComponent,
     CreateCustomerComponent,
     EditCustomerComponent,
-    RemoveCustomerComponent
+    RemoveCustomerComponent,
+    SearchComponentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,7 @@
+<div class="nav">
+  <input type="text" class="form-control" name="name" [(ngModel)]="name" (ngModelChange)="search()">
+</div>
+
 <table class="table table-info table-hover">
   <thead>
   <tr>
@@ -26,7 +30,10 @@
     <td class="table-info">{{items.phone}}</td>
     <td class="table-info">{{items.address}}</td>
     <td class="table-info">{{items.customerType.name}}</td>
-    <td>hihi</td>
+    <td>
+      <button [routerLink]="['/customer/edit', items.id]" class="btn btn-dark">lam on chuyen trang gium tao cai angular rac ruoi
+      </button>
+    </td>
     <td>haha</td>
   </tr>
   </tbody>

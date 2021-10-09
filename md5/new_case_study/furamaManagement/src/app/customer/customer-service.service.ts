@@ -25,4 +25,12 @@ export class CustomerServiceService {
       return this.httpClient.post(this.api_url_customer, customer);
   }
 
+  findById (id : number ) : Observable<ICustomer> | any{
+    return this.httpClient.get(this.api_url_customer + '/' + id )
+  }
+
+  editCustomer (id : number, editedCustomer : ICustomer) : Observable<ICustomer> | any {
+    return this.httpClient.put(this.api_url_customer + '/'+ id, editedCustomer)
+  }
+
 }

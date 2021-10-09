@@ -1,12 +1,20 @@
 <div class="container-fluid">
-  <form [formGroup]="customerForm" (ngSubmit)="editCustomer()">
+  <form [formGroup]="customerForm" (ngSubmit)="createCustomer()">
     <div class="mb-3">
       <label for="customerCode" class="form-label">Customer Code</label>
       <input type="text" class="form-control" id="customerCode" aria-describedby="emailHelp" formControlName="code">
+      <!--      validate-->
+      <div class="alert-danger" *ngFor="let validator of validationMessage.name" [hidden]="validator.valid">
+        <div *ngIf="customerForm.get('code').hasError(validator.type)&& customerForm.get('code').dirty">{{validator.message}}</div>
+      </div>
     </div>
     <div class="mb-3">
-      <label for="name" class="form-label">Customer name</label>
-      <input type="text" class="form-control" id="name" aria-describedby="emailHelp" formControlName="name">
+      <label for="name" class="form-label" >Customer name</label>
+      <input type="text" class="form-control" id="name" aria-describedby="emailHelp" formControlName="name" #customerName>
+<!--      validate-->
+      <div class="alert-danger" *ngFor="let validator of validationMessage.name" [hidden]="validator.valid">
+        <div *ngIf="customerForm.get('name').hasError(validator.type)&& customerForm.get('name').dirty">{{validator.message}}</div>
+      </div>
     </div>
     <div class="mb-3">
       <label for="birthday" class="form-label">Customer Birthday</label>
@@ -55,11 +63,9 @@
     <div class="mb-3">
       <label for="customerType" class="form-label">Customer Type</label>
       <select formControlName="customerType" id="customerType" class="form-select">
-        <option *ngFor="let items of customerType " [ngValue]="items"
-                [selected]="items.name == customerForm.controls.customerType.value.name">{{items.name}}</option>
+        <option *ngFor="let items of customerType " [ngValue]="items" >{{items.name}}</option>
       </select>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" mat-button (click)="openSnackBar(customerName.value)">Submit</button>
   </form>
 </div>
-
