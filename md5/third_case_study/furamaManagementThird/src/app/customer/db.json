@@ -40,16 +40,16 @@
     {
       "code": "KH-0002",
       "name": "Truong Anh Quan",
-      "gender": "Male",
+      "birthday": "2021-07-03",
+      "gender": "Other",
       "idCard": "123123123112",
       "phone": "0901231232",
+      "email": "qan@codegym.vn",
+      "address": "Vung Tau",
       "customerType": {
         "id": 2,
         "name": "Platinum"
       },
-      "birthday": "2021-07-03",
-      "email": "qan@codegym.vn",
-      "address": "Vung Tau",
       "id": 2
     },
     {
@@ -126,18 +126,6 @@
         "name": "Member"
       },
       "id": 7
-    },
-    {
-      "code": "",
-      "name": "",
-      "birthday": "",
-      "gender": "Male",
-      "idCard": "",
-      "phone": "",
-      "email": "",
-      "address": "",
-      "customerType": "",
-      "id": 8
     }
   ],
   "educationDegrees": [

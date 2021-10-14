@@ -33,7 +33,7 @@ export class CustomerServiceService {
     return this.httpClient.put(this.api_url_customer + '/' + id, editedCustomer)
   }
 
-  delete(id: number): Observable<ICustomer> | any {
+    delete(id: number): Observable<ICustomer> | any {
     return this.httpClient.delete(this.api_url_customer + '/' + id);
   }
 

@@ -34,14 +34,18 @@ export class ListCustomerComponent implements OnInit {
   // search method
   search() {
     if (this.nameSearch == "") {
-      this.ngOnInit()
+      this.customerService.findAllCustomer().subscribe(next => {
+        this.customerList = next;
+        console.log(this.customerList)
+      });
     } else {
       this.customerList = this.customerList.filter(res => {
+        this.p = 1;
         return res.name.toLocaleLowerCase().match(this.nameSearch.toLocaleLowerCase())
       })
+
     }
   }
-
   // sort method
   sort(key) {
     this.key = key;

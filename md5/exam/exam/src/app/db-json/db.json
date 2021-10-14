@@ -1,0 +1,64 @@
+{
+  "garage": [
+    {
+      "id": 1,
+      "name": "Mai Linh"
+    },
+    {
+      "id": 2,
+      "name": "Hoang Long"
+    },
+    {
+      "id": 3,
+      "name": "Phuong Trang"
+    }
+  ],
+  "carType": [
+    {
+      "id": 1,
+      "name": "Giuong Nam"
+    },
+    {
+      "id": 2,
+      "name": "Ghe Ngoi"
+    }
+  ],
+  "carStation": [
+    {
+      "carCode": "0002",
+      "carType": {
+        "id": 2,
+        "name": "Ghe Ngoi"
+      },
+      "garage": {
+        "id": 3,
+        "name": "Phuong Trang"
+      },
+      "destination": "Ha Noi",
+      "departure": "Quang Ngai",
+      "email": "qadanh@gmail.com",
+      "phone": "0903111222",
+      "startTime": "15:20",
+      "endTime": "17:00",
+      "id": 2
+    },
+    {
+      "carCode": "0003",
+      "carType": {
+        "id": 1,
+        "name": "Giuong Nam"
+      },
+      "garage": {
+        "id": 2,
+        "name": "Hoang Long"
+      },
+      "destination": "Nha Trang",
+      "departure": "Dong Nai",
+      "email": "hitdanh@gmail.com",
+      "phone": "0903111555",
+      "startTime": "16:20",
+      "endTime": "18:00",
+      "id": 3
+    }
+  ]
+}

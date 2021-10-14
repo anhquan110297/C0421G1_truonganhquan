@@ -1,0 +1,55 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+<!--      <div>-->
+<!--        <input type="text" id="search" class="form-control" name="name" [(ngModel)]="nameSearch" (ngModelChange)="search()"-->
+<!--               placeholder="Enter customer's name to search">-->
+<!--      </div>-->
+      <table class="table table-success  table-hover">
+        <thead>
+        <tr>
+          <th scope="col" (click)="sort('id')">#
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
+              <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+          </th>
+          <th scope="col" (click)="sort('customerName')">Show Time Code
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
+              <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+          </th>
+          <th scope="col">Movie Name</th>
+          <th scope="col">Show Date</th>
+          <th scope="col">Ticket Amount</th>
+          <th scope="col" colspan="2">Action</th>
+        </tr>
+<!--        | orderBy: key: reverse | paginate: {itemsPerPage:3,currentPage:p}-->
+        </thead>
+        <tbody>
+        <tr *ngFor="let items of showTimeList | paginate: {itemsPerPage:3,currentPage:p} ; let i = index"
+            class="table-info">
+          <td class="table-success" >{{i + 1}}</td>
+          <td class="table-success" >{{items.showTimeCode}}</td>
+          <td class="table-success">{{items.movieNameShow.movieName}}</td>
+          <td class="table-success">{{items.showDate}}</td>
+          <td class="table-success">{{items.ticketAmount}}</td>
+          <td class="table-success">
+            <button [routerLink]="['/show-times/edit', items.id]" class="btn btn-primary" >Update
+            </button>
+          </td>
+          <td class="table-success">
+            <button  class="btn btn-danger"
+                     (click)="openDialogDelete(items.id,items.showTimeCode)">Delete</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <button type="button" class="btn btn-success" [routerLink]="['/show-time/create']">Create</button>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+    <div class="col-1"></div>
+  </div>
+</div>
+

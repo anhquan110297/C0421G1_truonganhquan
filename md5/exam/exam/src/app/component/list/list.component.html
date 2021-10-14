@@ -1,0 +1,50 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <table class="table table-success  table-hover">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Car Code</th>
+          <th scope="col">Car Type </th>
+          <th scope="col">Garage</th>
+          <th scope="col">Destination</th>
+          <th scope="col">Departure</th>
+          <th scope="col">Email</th>
+          <th scope="col">Address</th>
+          <th scope="col">Start Time</th>
+          <th scope="col">End Time</th>
+          <th scope="col" colspan="2">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let items of carStationList ; let i = index"
+            class="table-info">
+          <td class="table-success">{{i + 1}}</td>
+          <td class="table-success">{{items.carCode}}</td>
+          <td class="table-success">{{items.carType.name}}</td>
+          <td class="table-success">{{items.garage.name}}</td>
+          <td class="table-success">{{items.destination}}</td>
+          <td class="table-success">{{items.departure}}</td>
+          <td class="table-success">{{items.email}}</td>
+          <td class="table-success">{{items.phone}}</td>
+          <td class="table-success">{{items.startTime}}</td>
+          <td class="table-success">{{items.endTime}}</td>
+          <td class="table-success">
+            <button [routerLink]="['/edit', items.id]" class="btn btn-primary" >Update
+            </button>
+          </td>
+          <td class="table-success">
+            <button  class="btn btn-danger"
+                     (click)="openDialogDelete(items.id,items.carCode)">Delete</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>
+<app-footer></app-footer>

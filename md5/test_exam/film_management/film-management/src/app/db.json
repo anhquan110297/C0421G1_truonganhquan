@@ -1,0 +1,66 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "movieName": "Avenger"
+    },
+    {
+      "id": 2,
+      "movieName": "Iron Man"
+    },
+    {
+      "id": 3,
+      "movieName": "Captain America"
+    },
+    {
+      "id": 4,
+      "movieName": "Thor"
+    },
+    {
+      "id": 5,
+      "movieName": "Black Panther"
+    }
+  ],
+  "showtime": [
+    {
+      "id": 1,
+      "showTimeCode": "CI-0001",
+      "movieNameShow": {
+        "id": "1",
+        "movieName": "Avenger"
+      },
+      "showDate": "2021-10-16",
+      "ticketAmount": "50"
+    },
+    {
+      "id": 2,
+      "showTimeCode": "CI-0002",
+      "movieNameShow": {
+        "id": "1",
+        "movieName": "Avenger"
+      },
+      "showDate": "2021-10-18",
+      "ticketAmount": "40"
+    },
+    {
+      "id": 3,
+      "showTimeCode": "CI-0003",
+      "movieNameShow": {
+        "id": "2",
+        "movieName": "Iron Man"
+      },
+      "showDate": "2021-10-20",
+      "ticketAmount": "30"
+    },
+    {
+      "id": 4,
+      "showTimeCode": "CI-0004",
+      "movieNameShow": {
+        "id": "3",
+        "movieName": "Captain America"
+      },
+      "showDate": "2021-10-31",
+      "ticketAmount": "90"
+    }
+  ]
+}

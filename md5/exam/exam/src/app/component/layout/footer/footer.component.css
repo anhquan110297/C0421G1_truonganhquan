@@ -1,0 +1,11 @@
+span {
+  font-size: 13px;
+}
+
+h1 {
+  color: #282828;
+  font-family: Georgia, serif;
+}
+.badge-img {
+  border-radius: 50%;
+}

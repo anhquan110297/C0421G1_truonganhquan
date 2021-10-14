@@ -1,24 +1,24 @@
 <div class="container-fluid">
-  <form [formGroup]="customerForm" (ngSubmit)="createCustomer()">
+  <form [formGroup]="customerForm" (ngSubmit)="createCustomer(customerName.value)">
     <div class="mb-3">
       <label for="customerCode" class="form-label">Customer Code</label>
       <input type="text" class="form-control" id="customerCode" aria-describedby="emailHelp" formControlName="code">
       <!--      validate-->
-      <div class="alert-danger" *ngFor="let validator of validationMessage.name" [hidden]="validator.valid">
-        <div *ngIf="customerForm.get('code').hasError(validator.type)&& customerForm.get('code').dirty">{{validator.message}}</div>
+      <div class="alert-danger" *ngFor="let validator of validationMessage.code" [hidden]="validator.valid">
+        <div *ngIf="customerForm.get('code').hasError(validator.type) && customerForm.get('code').dirty">{{validator.message}}</div>
       </div>
     </div>
     <div class="mb-3">
       <label for="name" class="form-label" >Customer name</label>
-      <input type="text" class="form-control" id="name" aria-describedby="emailHelp" formControlName="name" #customerName>
+      <input type="text" class="form-control" id="name" aria-describedby="emailHelp" formControlName="name" #customerName >
 <!--      validate-->
       <div class="alert-danger" *ngFor="let validator of validationMessage.name" [hidden]="validator.valid">
-        <div *ngIf="customerForm.get('name').hasError(validator.type)&& customerForm.get('name').dirty">{{validator.message}}</div>
+        <div *ngIf="customerForm.get('name').hasError(validator.type)&& customerForm.get('name').touched">{{validator.message}}</div>
       </div>
     </div>
     <div class="mb-3">
-      <label for="birthday" class="form-label">Customer Birthday</label>
-      <input type="date" class="form-control" id="birthday" aria-describedby="emailHelp" formControlName="birthday">
+        <label for="birthday" class="form-label"></label>
+        <input id="birthday" placeholder="birthday" class="form-control" formControlName="birthday" type="date">
     </div>
     <div>
       <label> Customer Gender</label><br><br>
@@ -47,18 +47,30 @@
     <div class="mb-3">
       <label for="idCard" class="form-label">Customer ID Card</label>
       <input type="text" class="form-control" id="idCard" aria-describedby="emailHelp" formControlName="idCard">
+      <!--      validate-->
+      <div class="alert-danger" *ngFor="let validator of validationMessage.idCard" [hidden]="validator.valid">
+        <div *ngIf="customerForm.get('idCard').hasError(validator.type) && customerForm.get('idCard').touched">{{validator.message}}</div>
+      </div>
     </div>
     <div class="mb-3">
       <label for="phone" class="form-label">Customer phone</label>
       <input type="text" class="form-control" id="phone" aria-describedby="emailHelp" formControlName="phone">
+      <!--      validate-->
+      <div class="alert-danger" *ngFor="let validator of validationMessage.phone" [hidden]="validator.valid">
+        <div *ngIf="customerForm.get('phone').hasError(validator.type) && customerForm.get('phone').dirty">{{validator.message}}</div>
+      </div>
     </div>
     <div class="mb-3">
       <label for="email" class="form-label">Customer email</label>
-      <input type="text" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email">
+      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email">
     </div>
     <div class="mb-3">
       <label for="address" class="form-label">Customer address</label>
       <input type="text" class="form-control" id="address" aria-describedby="emailHelp" formControlName="address">
+      <!--      validate-->
+<!--      <div class="alert-danger" *ngFor="let validator of validationMessage.address" [hidden]="validator.valid">-->
+<!--        <div *ngIf="customerForm.get('address').hasError(validator.type) && customerForm.get('address').dirty">{{validator.message}}</div>-->
+<!--      </div>-->
     </div>
     <div class="mb-3">
       <label for="customerType" class="form-label">Customer Type</label>
@@ -66,6 +78,6 @@
         <option *ngFor="let items of customerType " [ngValue]="items" >{{items.name}}</option>
       </select>
     </div>
-    <button type="submit" class="btn btn-primary" mat-button (click)="openSnackBar(customerName.value)">Submit</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>

@@ -16,6 +16,7 @@ export class CreateCustomerComponent implements OnInit {
   customer: ICustomer
   customerType : ICustomerType | any;
   customerForm: FormGroup
+  minDate: Date;
 
   constructor(private customerService: CustomerServiceService, private router: Router,private snackBar : MatSnackBar) {
     this.customerForm = new FormGroup({
@@ -30,6 +31,7 @@ export class CreateCustomerComponent implements OnInit {
       customerType: new FormControl("",[Validators.required]),
     })
     console.log(this.customerForm.value.id)
+    this.minDate = new Date();
     customerService.findAllCustomerType().subscribe( next => {
       this.customerType = next;
     });
@@ -38,14 +40,17 @@ export class CreateCustomerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  createCustomer() {
-    console.log(this.customerForm.value.id);
+  createCustomer(customerName : string | any) {
+    console.log(this.customerForm.value);
     if (this.customerForm.valid) {
-      this.customerService.createCustomer(this.customerForm.value).subscribe(() => this.router.navigateByUrl("customer/list"))
+      this.customerService.createCustomer(this.customerForm.value).subscribe(next => {
+        this.router.navigateByUrl("customer/list");
+        this.openSnackBar(customerName)
+      })
     }
   }
 
-  openSnackBar (customerName : string | any){
+  openSnackBar (customerName : string | null | any){
     console.log(customerName)
     this.snackBar.openFromComponent(SnackBarComponent, {data: {name : 'Create ' +customerName+' Success '} , duration : 4000})
   }

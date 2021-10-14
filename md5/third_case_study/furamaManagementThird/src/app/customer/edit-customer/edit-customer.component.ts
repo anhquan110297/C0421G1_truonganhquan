@@ -33,13 +33,13 @@ export class EditCustomerComponent implements OnInit {
               private activatedRoute: ActivatedRoute,
               private snackBar : MatSnackBar) {
     this.activatedRoute.paramMap.subscribe((paramMap : ParamMap) => {
+      customerService.findAllCustomerType().subscribe( next => {
+        this.customerType = next;
+      });
       this.customerId = Number(paramMap.get('id'));
       this.customerService.findById(this.customerId).subscribe( next => {
         this.customer = next;
         this.customerForm.setValue(next);
-      });
-      customerService.findAllCustomerType().subscribe( next => {
-        this.customerType = next;
       });
     });
   };
