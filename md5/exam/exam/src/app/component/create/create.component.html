@@ -1,5 +1,77 @@
 <app-footer></app-footer>
-<p>create works!</p>
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <form [formGroup]="createForm" (ngSubmit)="create()">
+    <div class="mb-3">
+      <label for="carCode" class="form-label">Car Code</label>
+      <input type="text" class="form-control" id="carCode" aria-describedby="emailHelp" formControlName="carCode" #carCode readonly>
+    </div>
+    <div class="mb-3">
+      <label for="carType" class="form-label">Car Type</label>
+      <select formControlName="carType" class="form-select" id="carType">
+        <option *ngFor="let items of carType " [ngValue]="items"
+                [selected]="items.name == createForm.controls.carType.value.name">{{items.name}}</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="garage" class="form-label">Garage</label>
+      <select formControlName="garage" class="form-select" id="garage">
+        <option *ngFor="let items of garage " [ngValue]="items"
+                [selected]="items.name == createForm.controls.garage.value.name">{{items.name}}</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="destination" class="form-label">Destination</label>
+      <input type="text" class="form-control" id="destination" aria-describedby="emailHelp" formControlName="destination">
+    </div>
+    <div class="alert-danger" *ngFor="let validate of validationMessage.destination" [hidden]="validate.valid">
+      <div style="color: red"
+           *ngIf="createForm.get('destination').hasError(validate.type)&& createForm.get('destination').dirty">{{validate.message}}</div>
+    </div>
+    <div class="mb-3">
+      <label for="departure" class="form-label">Departure</label>
+      <input type="text" class="form-control" id="departure" aria-describedby="emailHelp" formControlName="departure">
+    </div>
+    <div class="alert-danger" *ngFor="let validate of validationMessage.departure" [hidden]="validate.valid">
+      <div style="color: red"
+           *ngIf="createForm.get('departure').hasError(validate.type)&& createForm.get('departure').dirty">{{validate.message}}</div>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email">
+    </div>
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone</label>
+      <input type="text" class="form-control" id="phone" aria-describedby="emailHelp" formControlName="phone">
+    </div>
+    <div class="alert-danger" *ngFor="let validate of validationMessage.phone" [hidden]="validate.valid">
+      <div style="color: red"
+           *ngIf="createForm.get('phone').hasError(validate.type)&& createForm.get('phone').dirty">{{validate.message}}</div>
+    </div>
+    <div class="mb-3">
+      <label for="startTime" class="form-label">Start Time</label>
+      <input type="text" class="form-control" id="startTime" aria-describedby="emailHelp" formControlName="startTime">
+    </div>
+    <div class="alert-danger" *ngFor="let validate of validationMessage.startTime" [hidden]="validate.valid">
+      <div style="color: red"
+           *ngIf="createForm.get('startTime').hasError(validate.type)&& createForm.get('startTime').dirty">{{validate.message}}</div>
+    </div>
+    <div class="mb-3">
+      <label for="endTime" class="form-label">End Time</label>
+      <input type="text" class="form-control" id="endTime" aria-describedby="emailHelp" formControlName="endTime">
+    </div>
+    <div class="alert-danger" *ngFor="let validate of validationMessage.endTime" [hidden]="validate.valid">
+      <div style="color: red"
+           *ngIf="createForm.get('endTime').hasError(validate.type)&& createForm.get('endTime').dirty">{{validate.message}}</div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+
+<app-footer></app-footer>
+
+
 <app-footer></app-footer>
 
 

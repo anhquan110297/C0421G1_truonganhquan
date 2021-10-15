@@ -15,11 +15,12 @@ export class ListComponent implements OnInit {
   carStationList: CarStation[];
   carId : number;
   carCode: string;
+  currentPage : number = 0;
   constructor(private carStationService : CarStationServiceService,private dialog: MatDialog, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    this.carStationService.findAllCarStation().subscribe(next => {
-      this.carStationList = next;
+    this.carStationService.findAllCarStation(this.currentPage).subscribe(next => {
+      this.carStationList = next.content;
       console.log(this.carStationList)
     });
   }
@@ -48,5 +49,19 @@ export class ListComponent implements OnInit {
       data: {name: 'Delete ' + code + ' Success '},
       duration: 4000
     })
+  }
+
+  previousPage() {
+    console.log(this.currentPage);
+    if (this.currentPage > 0) {
+      this.currentPage--;
+      this.ngOnInit();
+    }
+  }
+
+  nextPage() {
+    console.log(this.currentPage);
+    this.currentPage++;
+    this.ngOnInit();
   }
 }

@@ -34,29 +34,43 @@ export class EditComponent implements OnInit {
               private router: Router,
               private activatedRoute: ActivatedRoute,
               private snackBar: MatSnackBar) {
-    this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
-      this.carStationService.findAllCarType().subscribe(next => {
-        this.carType = next;
-      });
-      this.carStationService.findAllGarage().subscribe(next => {
-        this.garage = next;
-      });
-      this.carStationId = Number(paramMap.get('id'));
-      this.carStationService.findById(this.carStationId).subscribe(next => {
-        this.carStation = next;
-        this.carStationForm.setValue(next);
-      });
-    });
+
   }
 
   ngOnInit(): void {
+    this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
+      this.carStationId = Number(paramMap.get('id'));
+      this.getCarType();
+      this.getGarage();
+      this.getCarStation(this.carStationId);
+    });
+  }
+
+  getCarStation(index: number){
+    return this.carStationService.findById(index).subscribe( item => {
+      console.log(item)
+      this.carStation = item;
+      console.log(this.carStation)
+      this.carStationForm.setValue(this.carStation);
+      console.log(this.carStationForm.value)
+    })
+  }
+
+  getCarType(){
+    return this.carStationService.findAllCarType().subscribe( list => {
+      this.carType = list;
+    })
+  }
+
+  getGarage(){
+    return this.carStationService.findAllGarage().subscribe( list => {
+      this.garage = list;
+    })
   }
 
 
   editCustomer(code: string | any) {
     const value = this.carStationForm.value;
-    console.log(value);
-    console.log(this.carStationId);
     if (this.carStationForm.valid) {
       this.carStationService.editCustomer(this.carStationId, value).subscribe(next => {this.router.navigateByUrl('list');
       this.openSnackBar(code)});
@@ -64,7 +78,6 @@ export class EditComponent implements OnInit {
   }
 
   openSnackBar(code: string | any) {
-    console.log(code);
     this.snackBar.openFromComponent(SnackBarComponent, {data: {name: 'Update ' + code + ' Success '}, duration: 4000});
   }
 
