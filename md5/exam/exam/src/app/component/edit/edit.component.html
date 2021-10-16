@@ -1,6 +1,7 @@
 <app-navbar></app-navbar>
 <div class="container-fluid">
   <form [formGroup]="carStationForm" (ngSubmit)="editCustomer(carCode.value)">
+    <input type="hidden" formControlName="id">
     <div class="mb-3">
       <label for="carCode" class="form-label">Car Code</label>
       <input type="text" class="form-control" id="carCode" aria-describedby="emailHelp" formControlName="carCode" #carCode readonly>

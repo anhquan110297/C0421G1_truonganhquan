@@ -1,23 +1,20 @@
-<app-footer></app-footer>
 <app-navbar></app-navbar>
 <div class="container-fluid">
   <form [formGroup]="createForm" (ngSubmit)="create()">
     <div class="mb-3">
       <label for="carCode" class="form-label">Car Code</label>
-      <input type="text" class="form-control" id="carCode" aria-describedby="emailHelp" formControlName="carCode" #carCode readonly>
+      <input type="text" class="form-control" id="carCode" aria-describedby="emailHelp" formControlName="carCode" #carCode>
     </div>
     <div class="mb-3">
       <label for="carType" class="form-label">Car Type</label>
       <select formControlName="carType" class="form-select" id="carType">
-        <option *ngFor="let items of carType " [ngValue]="items"
-                [selected]="items.name == createForm.controls.carType.value.name">{{items.name}}</option>
+        <option *ngFor="let items of carTypeList " [ngValue]="items">{{items.name}}</option>
       </select>
     </div>
     <div class="mb-3">
       <label for="garage" class="form-label">Garage</label>
       <select formControlName="garage" class="form-select" id="garage">
-        <option *ngFor="let items of garage " [ngValue]="items"
-                [selected]="items.name == createForm.controls.garage.value.name">{{items.name}}</option>
+        <option *ngFor="let items of garageList " [ngValue]="items">{{items.name}}</option>
       </select>
     </div>
     <div class="mb-3">
@@ -67,11 +64,6 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
-
-
-<app-footer></app-footer>
-
-
 <app-footer></app-footer>
 
 

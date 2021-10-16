@@ -53,7 +53,7 @@ public class MainController {
     @PostMapping("/create")
     public ResponseEntity<CarStation> createCarStation(@RequestBody CarStation carStation){
         CarStation newCarStation = this.carStationService.save(carStation);
-        return new ResponseEntity<>(carStation,HttpStatus.CREATED);
+        return new ResponseEntity<>(newCarStation,HttpStatus.CREATED);
     }
 
     @PutMapping("/edit")

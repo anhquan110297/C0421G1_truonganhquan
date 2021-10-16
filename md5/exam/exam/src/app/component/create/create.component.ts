@@ -21,7 +21,7 @@ export class CreateComponent implements OnInit {
     carCode: new FormControl('', [Validators.required]),
     carType: new FormControl('', [Validators.required]),
     garage: new FormControl('', [Validators.required]),
-    destination: new FormControl('Male', [Validators.required]),
+    destination: new FormControl('', [Validators.required]),
     departure: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required,Validators.email]),
     phone: new FormControl('', [Validators.required,Validators.pattern(/^(090|093|097)[0-9]{7}$/)]),
@@ -34,6 +34,8 @@ export class CreateComponent implements OnInit {
               private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+    this.getGarage();
+    this.getCarType();
   }
 
   getCarType() {

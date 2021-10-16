@@ -19,6 +19,7 @@ export class EditComponent implements OnInit {
   carType: CarType[];
   garage: Garage[];
   carStationForm: FormGroup = new FormGroup({
+    id: new FormControl(''),
     carCode: new FormControl('', [Validators.required]),
     carType: new FormControl('', [Validators.required]),
     garage: new FormControl('', [Validators.required]),
