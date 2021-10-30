@@ -1,23 +1,27 @@
-
 <div class="container-fluid">
   <div class="row">
     <div class="col-1"></div>
     <div class="col-10">
       <div>
-        <input type="text" id="search" class="form-control" name="name" [(ngModel)]="nameSearch" (ngModelChange)="search()"
+        <input type="text" id="search" class="form-control" name="name" [(ngModel)]="nameSearch"
+               (ngModelChange)="search()"
                placeholder="Enter customer's name to search">
       </div>
       <table class="table table-success  table-hover">
         <thead>
         <tr>
           <th scope="col" (click)="sort('id')">#
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
-              <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter"
+                 viewBox="0 0 16 16">
+              <path
+                d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
             </svg>
           </th>
           <th scope="col" (click)="sort('customerName')">Customer Name
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
-              <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter"
+                 viewBox="0 0 16 16">
+              <path
+                d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
             </svg>
           </th>
           <th scope="col">Customer Code &nbsp; <i class="bi bi-sort-alpha-down"></i></th>
@@ -32,8 +36,9 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let items of customerList | orderBy: key: reverse | paginate: {itemsPerPage:3,currentPage:p} ; let i = index"
-            class="table-info">
+        <tr
+          *ngFor="let items of customerList | orderBy: key: reverse | paginate: {itemsPerPage:3,currentPage:page} ; let i = index"
+          class="table-info">
           <td class="table-success" #customerId id="customerId">{{items.id}}</td>
           <td class="table-success" #customerName>{{items.name}}</td>
           <td class="table-success">{{items.code}}</td>
@@ -45,19 +50,97 @@
           <td class="table-success">{{items.address}}</td>
           <td class="table-success">{{items.customerType.name}}</td>
           <td class="table-success">
-            <button [routerLink]="['/customer/edit', items.id]" class="btn btn-primary" >Update
+            <button [routerLink]="['/customer/edit', items.id]" class="btn btn-primary">Update
             </button>
           </td>
           <td class="table-success">
-            <button  class="btn btn-danger"
-            (click)="openDialogDelete(items.id,items.name)">Delete</button>
+            <button class="btn btn-danger"
+                    (click)="openDialogDelete(items.id,items.name)">Delete
+            </button>
           </td>
         </tr>
         </tbody>
       </table>
       <button type="button" class="btn btn-success" [routerLink]="['/customer/create']">Create</button>
-      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+
+      <pagination-template #p="paginationApi" (pageChange)="page = $event">
+        <div class="row">
+          <div class="col-lg-12">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                <!--                trang truoc-->
+                <li class="page-item">
+                  <button class="page-link" aria-label="Previous" (click)="p.previous()"><span
+                    aria-hidden="true">&laquo;</span></button>
+                </li>
+                <!--                so trang tren tong so trang-->
+                <li class="page-item">
+                  <p class="page-link">{{p.getCurrent()}}/{{p.getTotalItems()}}</p>
+                </li>
+                <!--                trang sau-->
+                <li class="page-item" (click)="p.next()">
+                  <button class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></button>
+                </li>
+                <li class="page-item ml-2">
+                  <!--                  o input nhap so trang-->
+                  <div class="input-group"><input type="number" min="1" class="form-control" placeholder="Tới trang..."
+                                                  style="width: 100px;" #presentPage>
+                    <div class="input-group-append">
+<!--                      lay gia tri o input roi chuyen den-->
+                      <button class="btn input-group-text" style="background-color: #1BB1DC; color: white;"
+                              (click)="p.setCurrent(+presentPage.value)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-arrow-right-square" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd"
+                                d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </pagination-template>
+
+
     </div>
     <div class="col-1"></div>
   </div>
 </div>
+
+
+<!-- Phân trang và button quay lại-->
+<!--<div class="row mt-4">-->
+<!--  <div class="col-12">-->
+<!--    <nav aria-label="Pagination" class="d-flex justify-content-center">-->
+<!--      <ul class="pagination">-->
+<!--        <li class="page-item">-->
+<!--          <button class="page-link" aria-label="Previous" (click)="previousPage()"><span-->
+<!--            aria-hidden="true">&laquo;</span></button>-->
+<!--        </li>-->
+<!--        <li class="page-item"><p class="page-link">{{indexPagination + 1}}/{{totalPagination}}</p></li>-->
+<!--        <li class="page-item" (click)="nextPage()">-->
+<!--          <button class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></button>-->
+<!--        </li>-->
+<!--        <li class="page-item ml-2">-->
+<!--          <div class="input-group"><input type="number" min="1" class="form-control" placeholder="Tới trang..."-->
+<!--                                          id="presentPage" style="width: 100px;" #presentPage>-->
+<!--            <div class="input-group-append">-->
+<!--              <button class="btn input-group-text" style="background-color: #1BB1DC; color: white;"-->
+<!--                      (click)="findPagination(presentPage.value)">-->
+<!--                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"-->
+<!--                     class="bi bi-arrow-right-square" viewBox="0 0 16 16">-->
+<!--                  <path fill-rule="evenodd"-->
+<!--                        d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>-->
+<!--                </svg>-->
+<!--              </button>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </nav>-->
+<!--  </div>-->
+<!--</div>-->

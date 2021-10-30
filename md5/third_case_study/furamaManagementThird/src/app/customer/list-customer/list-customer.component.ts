@@ -16,7 +16,7 @@ export class ListCustomerComponent implements OnInit {
   nameSearch: string | any;
   key: string = 'id';
   reverse: boolean = false;
-  p: number = 1;
+  page: number = 1;
   customerId: number;
   customerName: any;
 
@@ -40,7 +40,7 @@ export class ListCustomerComponent implements OnInit {
       });
     } else {
       this.customerList = this.customerList.filter(res => {
-        this.p = 1;
+        this.page = 1;
         return res.name.toLocaleLowerCase().match(this.nameSearch.toLocaleLowerCase())
       })
 
@@ -76,5 +76,9 @@ export class ListCustomerComponent implements OnInit {
       data: {name: 'Delete ' + customerName + ' Success '},
       duration: 4000
     })
+  }
+
+  findPagination(value: string) {
+
   }
 }

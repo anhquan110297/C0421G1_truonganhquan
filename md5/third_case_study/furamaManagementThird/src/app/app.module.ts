@@ -21,6 +21,7 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
 import {MatInputModule} from "@angular/material/input";
+import { PagingComponentComponent } from './customer/paging-component/paging-component.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import {MatInputModule} from "@angular/material/input";
     EditCustomerComponent,
     DeleteCustomerComponent,
     SnackBarComponent,
+    PagingComponentComponent,
 
   ],
   // them vao entry component
