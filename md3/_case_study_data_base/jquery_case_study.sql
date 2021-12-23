@@ -2,12 +2,10 @@ use furama_resort;
 -- 2.	Hiển thị thông tin của tất cả nhân viên có trong hệ thống có tên bắt đầu là một 
 -- trong các ký tự “H”, “T” hoặc “K” 
 -- và có tối đa 15 ký tự.
-select *
-from nhan_vien
-WHERE (ten_nhan_vien like 'h%' or 
-ten_nhan_vien like 't%' 
-or ten_nhan_vien like 'k%') 
-and length(ten_nhan_vien) < 16;
+
+SELECT nv.ten_nhan_vien FROM nhan_vien nv
+WHERE ten_nhan_vien like ("h%" or "t%" or "k%")
+having length(ten_nhan_vien) < 16;
 
 -- 3.	Hiển thị thông tin của tất cả khách hàng 
 -- có độ tuổi từ 18 đến 50 tuổi và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”.
@@ -21,13 +19,8 @@ BETWEEN 18 and 50) and
 -- 4.	Đếm xem tương ứng với mỗi khách hàng đã từng đặt phòng bao nhiêu lần. 
 -- Kết quả hiển thị được sắp xếp tăng dần theo số lần đặt phòng của khách hàng. 
 -- Chỉ đếm những khách hàng nào có Tên loại khách hàng là “Diamond”.
-select kh.ten_khach_hang,kh.id_khach_hang, count(hd.id_khach_hang) as hihi
-from khach_hang kh
-    inner join loai_khach lk on kh.id_loai_khach = lk.id_loai_khach
-	INNER join hop_dong hd on kh.id_khach_hang = hd.id_khach_hang
-WHERE kh.id_loai_khach = 1
-group by hd.id_khach_hang
-ORDER BY hihi;
+SELECT ten_khach_hang, count(hd.id_khach_hang) FROM khach_hang kh INNER JOIN hop_dong hd
+on kh.id_khach_hang = hd.id_khach_hang
 
 -- 5.	Hiển thị IDKhachHang, HoTen, TenLoaiKhach, IDHopDong, TenDichVu, NgayLamHopDong, NgayKetThuc, TongTien 
 -- (Với TongTien được tính theo công thức như sau: ChiPhiThue + SoLuong*Gia, với SoLuong và Giá là từ bảng DichVuDiKem) 

@@ -76,7 +76,7 @@
                 </li>
                 <!--                so trang tren tong so trang-->
                 <li class="page-item">
-                  <p class="page-link">{{p.getCurrent()}}/{{p.getTotalItems()}}</p>
+                  <p class="page-link">{{p.getCurrent()}}/{{p.maxSize}}</p>
                 </li>
                 <!--                trang sau-->
                 <li class="page-item" (click)="p.next()">
