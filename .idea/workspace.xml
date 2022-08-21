@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0f0b79f-360e-40f4-9093-e7cf058b2565" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/md3/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/md3/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +24,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/react_project" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -38,16 +38,22 @@
       <updated>1624853764055</updated>
       <workItem from="1624853768152" duration="52000" />
       <workItem from="1624853871868" duration="127000" />
+      <workItem from="1651570961517" duration="42000" />
+      <workItem from="1652194624402" duration="10000" />
+      <workItem from="1652194635389" duration="13000" />
+      <workItem from="1652194665096" duration="96000" />
+      <workItem from="1652194763588" duration="21000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="654" y="295" key="#Notifications" timestamp="1624853932511">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="686" y="234" key="FileChooserDialogImpl" timestamp="1652194783633">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="654" y="295" key="#Notifications/0.0.1536.864@0.0.1536.864" timestamp="1624853932511" />
+    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1651571001935" />
+    <state x="686" y="234" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1652194783633" />
   </component>
 </project>
